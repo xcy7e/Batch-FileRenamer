@@ -117,23 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="shell32_240" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>icons\shell32_240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Speichern</value>
   </data>
-  <data name="shell32_319" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>icons\shell32_319.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
   </data>
-  <data name="shell32_16783" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>icons\shell32_16783.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Sprache</value>
   </data>
-  <data name="shell32_16802" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>icons\shell32_16802.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shell32_16803" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>icons\shell32_16803.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shell32_16826" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>icons\shell32_16826.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Einstellungen</value>
   </data>
 </root>

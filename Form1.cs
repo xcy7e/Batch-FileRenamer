@@ -1,23 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace BatchFileRenamer
 {
-    public partial class Form1 : Form
+    public partial class Form1 : LocalizedForm
     {
+
+        public Dictionary<string, Dictionary<string, string>> translations = new Dictionary<string, Dictionary<string, string>>();
 
         public Form1()
         {
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(Properties.Settings.Default.language);
             InitializeComponent();
             clearExampleLabels();
+            setTranslations();
+        }
+
+        private void setTranslations()
+        {
+            Dictionary<string, string> tDE = new Dictionary<string, string>();
+            Dictionary<string, string> tEN = new Dictionary<string, string>();
+            tDE.Add("lblRuleExplanationTextFile", "Klicke auf eine Datei um die angewendeten Regeln zu testen");
+            tEN.Add("lblRuleExplanationTextFile", "Click on a file to test the rules applied");
+            tDE.Add("lblRuleExplanationTextDir", "Klicke auf einen Ordner um die angewendeten Regeln zu testen");
+            tEN.Add("lblRuleExplanationTextDir", "Click on a directory to test the rules applied");
+            tDE.Add("typFilename", "Dateiname");
+            tEN.Add("typFilename", "Filename");
+            tDE.Add("typDirname", "Ordnername");
+            tEN.Add("typDirname", "Directoryname");
+            tDE.Add("files", " Dateien");
+            tEN.Add("files", " files");
+            tDE.Add("dirs", " Verzeichnisse");
+            tEN.Add("dirs", " directories");
+            tDE.Add("rename_sure", " werden umbenannt!\nWirklich fortfahren ? ");
+            tEN.Add("rename_sure", " will be renamed!\nProceed ? ");
+            tDE.Add("rename_sure_title", "Sicher ? ");
+            tEN.Add("rename_sure_title", "Sure ? ");
+
+            translations.Add("de", tDE);
+            translations.Add("en", tEN);
+        }
+
+        public string getLocStr(string lang, string key)
+        {
+            return translations[lang][key];
         }
 
         private void btnSearchPath_Click(object sender, EventArgs e)
@@ -43,10 +80,10 @@ namespace BatchFileRenamer
             setExampleRuleText();
             if(rbFiles.Checked == true)
             {
-                lblRuleExplanation.Text = "Klicke auf eine Datei um die angewendeten Regeln zu testen";
+                lblRuleExplanation.Text = getLocStr(Properties.Settings.Default.language, "lblRuleExplanationTextFile");
             } else
             {
-                lblRuleExplanation.Text = "Klicke auf einen Ordner um die angewendeten Regeln zu testen";
+                lblRuleExplanation.Text = getLocStr(Properties.Settings.Default.language, "lblRuleExplanationTextDir");
             }
         }
 
@@ -127,10 +164,10 @@ namespace BatchFileRenamer
         {
             string exampleStr = "";
             string pattern = txtRule_0_pattern.Text;
-            string itemName = "Dateiname";
+            string itemName = getLocStr(Properties.Settings.Default.language, "typFilename");
             if(rbDirs.Checked == true)
             {
-                itemName = "Ordnername";
+                itemName = getLocStr(Properties.Settings.Default.language, "typDirname");
             }
             exampleStr = txtRule_0_pattern.Text.Replace("%nnnnn", "00001").Replace("%nnnn", "0001").Replace("%nnn", "001").Replace("%nn", "01").Replace("%n", "1");
             if(before)
@@ -260,15 +297,53 @@ namespace BatchFileRenamer
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            string itemType = " Dateien";
+            string itemType = getLocStr(Properties.Settings.Default.language, "files");
             if (rbDirs.Checked) {
-                itemType = " Verzeichnisse";
+                itemType = getLocStr(Properties.Settings.Default.language, "dirs");
             }
-            DialogResult res = MessageBox.Show(listBoxFiles.Items.Count + itemType + " werden umbenannt!\nWirklich fortfahren?", "Sicher?", MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show(countRenameItems().ToString() + itemType + getLocStr(Properties.Settings.Default.language,"rename_sure"), getLocStr(Properties.Settings.Default.language, "rename_sure_title"), MessageBoxButtons.YesNo);
             if(res == DialogResult.Yes)
             {
                 startRenaming();
             }
+        }
+
+        private int countRenameItems()
+        {
+            int renameItemsCount = 0;
+            DirectoryInfo dinfo = new DirectoryInfo(txtPath.Text);
+            if (rbFiles.Checked == true)
+            {
+                string[] files = Directory.GetFiles(txtPath.Text);
+
+                FileInfo[] Files = dinfo.GetFiles("*.*");
+                int i = 1;
+                foreach (FileInfo file in Files)
+                {
+                    string oldFilename = file.Name;
+                    string newFilename = getRuledItemName(file.Name, i);
+                    if (oldFilename != newFilename)
+                    {
+                        renameItemsCount++;
+                        i++;
+                    }
+                }
+            } else if(rbDirs.Checked == true)
+            {
+                DirectoryInfo[] Dirs = dinfo.GetDirectories();
+                int i = 1;
+                foreach (DirectoryInfo dir in Dirs)
+                {
+                    string oldDirname = dir.Name;
+                    string newDirname = getRuledItemName(dir.Name, i);
+                    if (oldDirname != newDirname)
+                    {
+                        renameItemsCount++;
+                        i++;
+                    }
+                }
+            }
+            return renameItemsCount;
         }
 
         /** magic happens here: */
@@ -291,13 +366,16 @@ namespace BatchFileRenamer
                 {
                     string oldFilename = file.Name;
                     string newFilename = getRuledItemName(file.Name, i);
-                    // RENAME
-                    System.IO.File.Move(txtPath.Text + "\\" + oldFilename, txtPath.Text + "\\" + newFilename);
-                    // add protocoll entry
-                    ListViewItem logEntry = new ListViewItem(oldFilename);
-                    logEntry.SubItems.Add(newFilename);
-                    logList.Items.Add(logEntry);
-                    i++;
+                    if(oldFilename != newFilename)
+                    {
+                        // RENAME
+                        System.IO.File.Move(txtPath.Text + "\\" + oldFilename, txtPath.Text + "\\" + newFilename);
+                        // add protocoll entry
+                        ListViewItem logEntry = new ListViewItem(oldFilename);
+                        logEntry.SubItems.Add(newFilename);
+                        logList.Items.Add(logEntry);
+                        i++;
+                    }
                 }
 
             }
@@ -311,11 +389,14 @@ namespace BatchFileRenamer
                 {
                     string oldDirname = dir.Name;
                     string newDirname = getRuledItemName(dir.Name, i);
-                    // RENAME
-                    System.IO.Directory.Move(txtPath.Text + "\\" + oldDirname, txtPath.Text + "\\" + newDirname);
-                    // add protocoll entry
-                    logList.Items.Add(new ListViewItem(new[] { oldDirname, newDirname }));
-                    i++;
+                    if(oldDirname != newDirname)
+                    {
+                        // RENAME
+                        System.IO.Directory.Move(txtPath.Text + "\\" + oldDirname, txtPath.Text + "\\" + newDirname);
+                        // add protocoll entry
+                        logList.Items.Add(new ListViewItem(new[] { oldDirname, newDirname }));
+                        i++;
+                    }
                 }
             }
 
@@ -359,6 +440,34 @@ namespace BatchFileRenamer
         {
             ProcessStartInfo sInfo = new ProcessStartInfo("http://www.xcy7e.de");
             Process.Start(sInfo);
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Settings frmSettings = new Settings(this);
+            frmSettings.Show();
+        }
+
+        public void updateLanguage()
+        {
+            GlobalUICulture = CultureInfo.GetCultureInfo(Properties.Settings.Default.language);
+        }
+
+        public static CultureInfo GlobalUICulture
+        {
+            get { return Thread.CurrentThread.CurrentUICulture; }
+            set
+            {
+                if (GlobalUICulture.Equals(value) == false)
+                {
+                    foreach (var form in Application.OpenForms.OfType<LocalizedForm>())
+                    {
+                        form.Culture = value;
+                    }
+
+                    Thread.CurrentThread.CurrentUICulture = value;
+                }
+            }
         }
     }
 }
