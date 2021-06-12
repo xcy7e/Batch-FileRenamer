@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="BatchFileRenamer.exe" version="1.1.0.1" publicKeyToken="ea067bdf4307b672" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="BatchFileRenamer" version="1.1.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="BatchFileRenamer.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC-Manifestoptionen
+             Wenn Sie die Ebene der Benutzerkontensteuerung für Windows ändern möchten, ersetzen Sie den 
+             Knoten "requestedExecutionLevel" wie folgt.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Durch Angabe des Elements "requestedExecutionLevel" wird die Datei- und Registrierungsvirtualisierung deaktiviert. 
+            Entfernen Sie dieses Element, wenn diese Virtualisierung aus Gründen der Abwärtskompatibilität
+            für die Anwendung erforderlich ist.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BatchFileRenamer.exe" size="152000">
+      <assemblyIdentity name="BatchFileRenamer" version="1.1.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>ZgdiYpX4zaeeb2Yae7JahekZnk0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="de\BatchFileRenamer.resources.dll" size="18432">
+      <assemblyIdentity name="BatchFileRenamer.resources" version="1.1.0.0" language="de" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>XrpNgaOWuReMJKwrXvwd0Jo00h8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en\BatchFileRenamer.resources.dll" size="21504">
+      <assemblyIdentity name="BatchFileRenamer.resources" version="1.1.0.0" language="en" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>cviVLaAZ0PitpN/uVGJFZ84RlNc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="BatchFileRenamer.exe.config" size="830">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>jAHWds7RL9fSyKwa19nnosjBdJE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="icon.ico" size="13286">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>m8jI1IWv15DNtMlLHsKbtq5KjFw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Eine Liste der Windows-Versionen, unter denen diese Anwendung getestet
+           und für die sie entwickelt wurde. Wenn Sie die Auskommentierung der entsprechenden Elemente aufheben,
+           wird von Windows automatisch die kompatibelste Umgebung ausgewählt. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=J-LAPTOP-WINDOW\johnf" issuerKeyHash="42cd3cf72b040e1e610cb72cf3f9de10183bf003" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>eV9lW4dIPaCfp8nRymtTxCA9TEE=</DigestValue></Reference></SignedInfo><SignatureValue>Xj2P8r4iuRsO2HKudj5eM3y6ErUx7DJEbf6X820UJiVubqqVRLiH8lyZGzqZkmaNaup0yTUR8LvgrzFEjmWpW+t12g2fMkkU/Kd4HrZTWSlNoYGZWAUNrLvoTtR4AZA/obNzeehZnO1ILARfu0FayjkFNUqG92tjGuZUyhwOQyM=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>w/PB5bFRdULe+4d5KQeDHGEGiqXLYHnwiQzU8UVrraB2hog6DvuwWJqHGgDAsvdgBtKDpybK8uvZ+fPiE1HSCKqV+5aZUGPTEPQEXYwUJl/ZID8/4yXLRSne/5dalygANwYQZVndXRCXACssL4jVnK6HovUljj0SMcLyRa+4PsU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="414c3d20c4536bcad1c9a79fa03d48875b655f79" Description="" Url=""><as:assemblyIdentity name="BatchFileRenamer.exe" version="1.1.0.1" publicKeyToken="ea067bdf4307b672" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=J-LAPTOP-WINDOW\johnf</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>/55NyxJhO8UoAwJTurCMG7olt5Q=</DigestValue></Reference></SignedInfo><SignatureValue>IscNBnhV+64ACAIvDjm+uPeosRVMpXpGA1UoUP6l34JOXH+ejGirVkvQRL6grvnzlxZ0uBdmGeoogml/vGLLGOGlEWHO1Lc9w/QuivsYg1M5MJb8M5XvnNXVmgDxeXU/SEIihvXEOfwBnwzpBKn8dEhLFTlCRCJsI01492ckoE0=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>w/PB5bFRdULe+4d5KQeDHGEGiqXLYHnwiQzU8UVrraB2hog6DvuwWJqHGgDAsvdgBtKDpybK8uvZ+fPiE1HSCKqV+5aZUGPTEPQEXYwUJl/ZID8/4yXLRSne/5dalygANwYQZVndXRCXACssL4jVnK6HovUljj0SMcLyRa+4PsU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQfud9XPGAGYBDmf2CO95TszANBgkqhkiG9w0BAQUFADA1MTMwMQYDVQQDHioASgAtAEwAQQBQAFQATwBQAC0AVwBJAE4ARABPAFcAXABqAG8AaABuAGYwHhcNMjEwNjA1MjAyOTQ4WhcNMjIwNjA2MDIyOTQ4WjA1MTMwMQYDVQQDHioASgAtAEwAQQBQAFQATwBQAC0AVwBJAE4ARABPAFcAXABqAG8AaABuAGYwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMPzweWxUXVC3vuHeSkHgxxhBoqly2B58IkM1PFFa62gdoaIOg77sFiahxoAwLL3YAbSg6cmyvLr2fnz4hNR0giqlfuWmVBj0xD0BF2MFCZf2SA/P+Mly0Up3v+XWpcoADcGEGVZ3V0QlwArLC+I1Zyuh6L1JY49EjHC8kWvuD7FAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEARCxhrJR1h8g1lqIGM13LSQmiXh24hjZ5DZ+sZnJbojkmIc9Zwtz1OXfUaNbR6p6qPzgJHDZeOnyZd2ebAAqUKe4tSRz+tqkASy0gVM7wUfhr1M5QsKP769LuFyPr4RLKzjKRVeD8+1lN5Myg5b4nNMalu2wn1QsL6VzHMCR1QEk=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
