@@ -44,6 +44,12 @@ namespace BatchFileRenamer
             this.lblRule_0_example = new System.Windows.Forms.Label();
             this.txtRule_0_pattern = new System.Windows.Forms.TextBox();
             this.lblRule_0_pattern = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtRule_2_Replace = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRule_2_Search = new System.Windows.Forms.TextBox();
             this.rbRule_0_after = new System.Windows.Forms.RadioButton();
             this.rbRule_0_before = new System.Windows.Forms.RadioButton();
             this.cbRule_0_Numbers = new System.Windows.Forms.CheckBox();
@@ -54,12 +60,6 @@ namespace BatchFileRenamer
             this.txtRule_1_Replace = new System.Windows.Forms.TextBox();
             this.lblRule_1_SearchLbl = new System.Windows.Forms.Label();
             this.txtRule_1_Search = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtRule_2_Replace = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtRule_2_Search = new System.Windows.Forms.TextBox();
             this.panelRenameResultExample = new System.Windows.Forms.FlowLayoutPanel();
             this.lblOriginalName = new System.Windows.Forms.Label();
             this.lblArrow = new System.Windows.Forms.Label();
@@ -70,11 +70,11 @@ namespace BatchFileRenamer
             this.gbFiles.SuspendLayout();
             this.gbSource.SuspendLayout();
             this.gbRules.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSeparator_1)).BeginInit();
             this.pRule_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelRenameResultExample.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             this.SuspendLayout();
@@ -137,6 +137,7 @@ namespace BatchFileRenamer
             this.gbRules.Controls.Add(this.lblRule_0_example);
             this.gbRules.Controls.Add(this.txtRule_0_pattern);
             this.gbRules.Controls.Add(this.lblRule_0_pattern);
+            this.gbRules.Controls.Add(this.panel1);
             this.gbRules.Controls.Add(this.rbRule_0_after);
             this.gbRules.Controls.Add(this.rbRule_0_before);
             this.gbRules.Controls.Add(this.cbRule_0_Numbers);
@@ -166,88 +167,20 @@ namespace BatchFileRenamer
             resources.ApplyResources(this.lblRule_0_pattern, "lblRule_0_pattern");
             this.lblRule_0_pattern.Name = "lblRule_0_pattern";
             // 
-            // rbRule_0_after
-            // 
-            resources.ApplyResources(this.rbRule_0_after, "rbRule_0_after");
-            this.rbRule_0_after.Name = "rbRule_0_after";
-            this.rbRule_0_after.UseVisualStyleBackColor = true;
-            this.rbRule_0_after.CheckedChanged += new System.EventHandler(this.rbRule_0_after_CheckedChanged);
-            // 
-            // rbRule_0_before
-            // 
-            resources.ApplyResources(this.rbRule_0_before, "rbRule_0_before");
-            this.rbRule_0_before.Checked = true;
-            this.rbRule_0_before.Name = "rbRule_0_before";
-            this.rbRule_0_before.TabStop = true;
-            this.rbRule_0_before.UseVisualStyleBackColor = true;
-            // 
-            // cbRule_0_Numbers
-            // 
-            resources.ApplyResources(this.cbRule_0_Numbers, "cbRule_0_Numbers");
-            this.cbRule_0_Numbers.Name = "cbRule_0_Numbers";
-            this.cbRule_0_Numbers.UseVisualStyleBackColor = true;
-            this.cbRule_0_Numbers.CheckedChanged += new System.EventHandler(this.cbRule_0_Numbers_CheckedChanged);
-            // 
-            // pbSeparator_1
-            // 
-            resources.ApplyResources(this.pbSeparator_1, "pbSeparator_1");
-            this.pbSeparator_1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pbSeparator_1.Name = "pbSeparator_1";
-            this.pbSeparator_1.TabStop = false;
-            // 
-            // pRule_1
-            // 
-            resources.ApplyResources(this.pRule_1, "pRule_1");
-            this.pRule_1.Controls.Add(this.pictureBox1);
-            this.pRule_1.Controls.Add(this.lblRule_1_ReplaceLbl);
-            this.pRule_1.Controls.Add(this.txtRule_1_Replace);
-            this.pRule_1.Controls.Add(this.lblRule_1_SearchLbl);
-            this.pRule_1.Controls.Add(this.txtRule_1_Search);
-            this.pRule_1.Name = "pRule_1";
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblRule_1_ReplaceLbl
-            // 
-            resources.ApplyResources(this.lblRule_1_ReplaceLbl, "lblRule_1_ReplaceLbl");
-            this.lblRule_1_ReplaceLbl.Name = "lblRule_1_ReplaceLbl";
-            // 
-            // txtRule_1_Replace
-            // 
-            resources.ApplyResources(this.txtRule_1_Replace, "txtRule_1_Replace");
-            this.txtRule_1_Replace.Name = "txtRule_1_Replace";
-            this.txtRule_1_Replace.TextChanged += new System.EventHandler(this.txtRule_1_Replace_TextChanged);
-            // 
-            // lblRule_1_SearchLbl
-            // 
-            resources.ApplyResources(this.lblRule_1_SearchLbl, "lblRule_1_SearchLbl");
-            this.lblRule_1_SearchLbl.Name = "lblRule_1_SearchLbl";
-            // 
-            // txtRule_1_Search
-            // 
-            resources.ApplyResources(this.txtRule_1_Search, "txtRule_1_Search");
-            this.txtRule_1_Search.Name = "txtRule_1_Search";
-            this.txtRule_1_Search.TextChanged += new System.EventHandler(this.txtRule_1_Search_TextChanged);
-            // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtRule_2_Replace);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtRule_2_Search);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // pictureBox2
             // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
@@ -273,6 +206,74 @@ namespace BatchFileRenamer
             resources.ApplyResources(this.txtRule_2_Search, "txtRule_2_Search");
             this.txtRule_2_Search.Name = "txtRule_2_Search";
             this.txtRule_2_Search.TextChanged += new System.EventHandler(this.txtRule_2_Search_TextChanged);
+            // 
+            // rbRule_0_after
+            // 
+            resources.ApplyResources(this.rbRule_0_after, "rbRule_0_after");
+            this.rbRule_0_after.Name = "rbRule_0_after";
+            this.rbRule_0_after.UseVisualStyleBackColor = true;
+            this.rbRule_0_after.CheckedChanged += new System.EventHandler(this.rbRule_0_after_CheckedChanged);
+            // 
+            // rbRule_0_before
+            // 
+            resources.ApplyResources(this.rbRule_0_before, "rbRule_0_before");
+            this.rbRule_0_before.Checked = true;
+            this.rbRule_0_before.Name = "rbRule_0_before";
+            this.rbRule_0_before.TabStop = true;
+            this.rbRule_0_before.UseVisualStyleBackColor = true;
+            // 
+            // cbRule_0_Numbers
+            // 
+            resources.ApplyResources(this.cbRule_0_Numbers, "cbRule_0_Numbers");
+            this.cbRule_0_Numbers.Name = "cbRule_0_Numbers";
+            this.cbRule_0_Numbers.UseVisualStyleBackColor = true;
+            this.cbRule_0_Numbers.CheckedChanged += new System.EventHandler(this.cbRule_0_Numbers_CheckedChanged);
+            // 
+            // pbSeparator_1
+            // 
+            this.pbSeparator_1.BackColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.pbSeparator_1, "pbSeparator_1");
+            this.pbSeparator_1.Name = "pbSeparator_1";
+            this.pbSeparator_1.TabStop = false;
+            // 
+            // pRule_1
+            // 
+            this.pRule_1.Controls.Add(this.pictureBox1);
+            this.pRule_1.Controls.Add(this.lblRule_1_ReplaceLbl);
+            this.pRule_1.Controls.Add(this.txtRule_1_Replace);
+            this.pRule_1.Controls.Add(this.lblRule_1_SearchLbl);
+            this.pRule_1.Controls.Add(this.txtRule_1_Search);
+            resources.ApplyResources(this.pRule_1, "pRule_1");
+            this.pRule_1.Name = "pRule_1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblRule_1_ReplaceLbl
+            // 
+            resources.ApplyResources(this.lblRule_1_ReplaceLbl, "lblRule_1_ReplaceLbl");
+            this.lblRule_1_ReplaceLbl.Name = "lblRule_1_ReplaceLbl";
+            // 
+            // txtRule_1_Replace
+            // 
+            resources.ApplyResources(this.txtRule_1_Replace, "txtRule_1_Replace");
+            this.txtRule_1_Replace.Name = "txtRule_1_Replace";
+            this.txtRule_1_Replace.TextChanged += new System.EventHandler(this.txtRule_1_Replace_TextChanged);
+            // 
+            // lblRule_1_SearchLbl
+            // 
+            resources.ApplyResources(this.lblRule_1_SearchLbl, "lblRule_1_SearchLbl");
+            this.lblRule_1_SearchLbl.Name = "lblRule_1_SearchLbl";
+            // 
+            // txtRule_1_Search
+            // 
+            resources.ApplyResources(this.txtRule_1_Search, "txtRule_1_Search");
+            this.txtRule_1_Search.Name = "txtRule_1_Search";
+            this.txtRule_1_Search.TextChanged += new System.EventHandler(this.txtRule_1_Search_TextChanged);
             // 
             // panelRenameResultExample
             // 
@@ -335,7 +336,6 @@ namespace BatchFileRenamer
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.panelRenameResultExample);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbRules);
             this.Controls.Add(this.gbSource);
             this.Controls.Add(this.gbFiles);
@@ -345,13 +345,13 @@ namespace BatchFileRenamer
             this.gbSource.PerformLayout();
             this.gbRules.ResumeLayout(false);
             this.gbRules.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSeparator_1)).EndInit();
             this.pRule_1.ResumeLayout(false);
             this.pRule_1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelRenameResultExample.ResumeLayout(false);
             this.panelRenameResultExample.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
