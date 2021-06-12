@@ -145,7 +145,7 @@
     <value>gbSource</value>
   </data>
   <data name="&gt;&gt;btnSearchPath.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txtPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -172,7 +172,7 @@
     <value>gbSource</value>
   </data>
   <data name="&gt;&gt;txtPath.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="listBoxFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -234,11 +234,83 @@
   <data name="gbSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="cbFileending.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFileending.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="cbFileending.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
+  </data>
+  <data name="cbFileending.TabIndex" type="System.Int32, mscorlib">
+    <value>101</value>
+  </data>
+  <data name="cbFileending.Text" xml:space="preserve">
+    <value>Endung</value>
+  </data>
+  <data name="&gt;&gt;cbFileending.Name" xml:space="preserve">
+    <value>cbFileending</value>
+  </data>
+  <data name="&gt;&gt;cbFileending.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFileending.Parent" xml:space="preserve">
+    <value>pFileending</value>
+  </data>
+  <data name="&gt;&gt;cbFileending.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtFiletype.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 2</value>
+  </data>
+  <data name="txtFiletype.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 22</value>
+  </data>
+  <data name="txtFiletype.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="&gt;&gt;txtFiletype.Name" xml:space="preserve">
+    <value>txtFiletype</value>
+  </data>
+  <data name="&gt;&gt;txtFiletype.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFiletype.Parent" xml:space="preserve">
+    <value>pFileending</value>
+  </data>
+  <data name="&gt;&gt;txtFiletype.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pFileending.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 54</value>
+  </data>
+  <data name="pFileending.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 27</value>
+  </data>
+  <data name="pFileending.TabIndex" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="pFileending.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pFileending.Name" xml:space="preserve">
+    <value>pFileending</value>
+  </data>
+  <data name="&gt;&gt;pFileending.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pFileending.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;pFileending.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="rbDirs.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="rbDirs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>99, 55</value>
+    <value>15, 55</value>
   </data>
   <data name="rbDirs.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 20</value>
@@ -259,13 +331,13 @@
     <value>gbSource</value>
   </data>
   <data name="&gt;&gt;rbDirs.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="rbFiles.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="rbFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 55</value>
+    <value>131, 56</value>
   </data>
   <data name="rbFiles.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 20</value>
@@ -286,7 +358,7 @@
     <value>gbSource</value>
   </data>
   <data name="&gt;&gt;rbFiles.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="gbSource.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>

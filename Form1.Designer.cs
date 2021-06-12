@@ -37,6 +37,9 @@ namespace BatchFileRenamer
             this.listBoxFiles = new System.Windows.Forms.ListBox();
             this.gbFiles = new System.Windows.Forms.GroupBox();
             this.gbSource = new System.Windows.Forms.GroupBox();
+            this.pFileending = new System.Windows.Forms.Panel();
+            this.cbFileending = new System.Windows.Forms.CheckBox();
+            this.txtFiletype = new System.Windows.Forms.TextBox();
             this.rbDirs = new System.Windows.Forms.RadioButton();
             this.rbFiles = new System.Windows.Forms.RadioButton();
             this.gbRules = new System.Windows.Forms.GroupBox();
@@ -69,6 +72,7 @@ namespace BatchFileRenamer
             this.btnSettings = new System.Windows.Forms.PictureBox();
             this.gbFiles.SuspendLayout();
             this.gbSource.SuspendLayout();
+            this.pFileending.SuspendLayout();
             this.gbRules.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -108,6 +112,7 @@ namespace BatchFileRenamer
             // gbSource
             // 
             resources.ApplyResources(this.gbSource, "gbSource");
+            this.gbSource.Controls.Add(this.pFileending);
             this.gbSource.Controls.Add(this.rbDirs);
             this.gbSource.Controls.Add(this.rbFiles);
             this.gbSource.Controls.Add(this.txtPath);
@@ -115,18 +120,39 @@ namespace BatchFileRenamer
             this.gbSource.Name = "gbSource";
             this.gbSource.TabStop = false;
             // 
+            // pFileending
+            // 
+            this.pFileending.Controls.Add(this.cbFileending);
+            this.pFileending.Controls.Add(this.txtFiletype);
+            resources.ApplyResources(this.pFileending, "pFileending");
+            this.pFileending.Name = "pFileending";
+            // 
+            // cbFileending
+            // 
+            resources.ApplyResources(this.cbFileending, "cbFileending");
+            this.cbFileending.Name = "cbFileending";
+            this.cbFileending.UseVisualStyleBackColor = true;
+            this.cbFileending.CheckedChanged += new System.EventHandler(this.cbFileending_CheckedChanged);
+            // 
+            // txtFiletype
+            // 
+            resources.ApplyResources(this.txtFiletype, "txtFiletype");
+            this.txtFiletype.Name = "txtFiletype";
+            this.txtFiletype.TextChanged += new System.EventHandler(this.txtFiletype_TextChanged);
+            this.txtFiletype.Leave += new System.EventHandler(this.txtFiletype_Leave);
+            // 
             // rbDirs
             // 
             resources.ApplyResources(this.rbDirs, "rbDirs");
+            this.rbDirs.Checked = true;
             this.rbDirs.Name = "rbDirs";
+            this.rbDirs.TabStop = true;
             this.rbDirs.UseVisualStyleBackColor = true;
             // 
             // rbFiles
             // 
             resources.ApplyResources(this.rbFiles, "rbFiles");
-            this.rbFiles.Checked = true;
             this.rbFiles.Name = "rbFiles";
-            this.rbFiles.TabStop = true;
             this.rbFiles.UseVisualStyleBackColor = true;
             this.rbFiles.CheckedChanged += new System.EventHandler(this.rbFiles_CheckedChanged);
             // 
@@ -343,6 +369,8 @@ namespace BatchFileRenamer
             this.gbFiles.ResumeLayout(false);
             this.gbSource.ResumeLayout(false);
             this.gbSource.PerformLayout();
+            this.pFileending.ResumeLayout(false);
+            this.pFileending.PerformLayout();
             this.gbRules.ResumeLayout(false);
             this.gbRules.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -397,6 +425,9 @@ namespace BatchFileRenamer
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox btnSettings;
+        private System.Windows.Forms.Panel pFileending;
+        private System.Windows.Forms.CheckBox cbFileending;
+        private System.Windows.Forms.TextBox txtFiletype;
     }
 }
 

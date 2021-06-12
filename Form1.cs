@@ -47,6 +47,10 @@ namespace BatchFileRenamer
             tEN.Add("rename_sure", " will be renamed!\nProceed ? ");
             tDE.Add("rename_sure_title", "Sicher ? ");
             tEN.Add("rename_sure_title", "Sure ? ");
+            tDE.Add("rename_nothingtodo", "Durch die gesetzten Regeln gibt es nichts umzubenennen.");
+            tEN.Add("rename_nothingtodo", "By the rules set there is nothing to rename.");
+            tDE.Add("rename_nothingtodo_title", "Nichts zu tun!");
+            tEN.Add("rename_nothingtodo_title", "Nothing to do!");
 
             translations.Add("de", tDE);
             translations.Add("en", tEN);
@@ -81,9 +85,11 @@ namespace BatchFileRenamer
             if(rbFiles.Checked == true)
             {
                 lblRuleExplanation.Text = getLocStr(Properties.Settings.Default.language, "lblRuleExplanationTextFile");
+                pFileending.Visible = true;
             } else
             {
                 lblRuleExplanation.Text = getLocStr(Properties.Settings.Default.language, "lblRuleExplanationTextDir");
+                pFileending.Visible = false;
             }
         }
 
@@ -107,7 +113,23 @@ namespace BatchFileRenamer
                 FileInfo[] Files = dinfo.GetFiles(FileType);
                 foreach (FileInfo file in Files)
                 {
-                    lsb.Items.Add(file.Name);
+                    if (cbFileending.Checked == true && txtFiletype.Text.Contains("*."))
+                    {
+                        // handle file endings
+                        string[] endings = txtFiletype.Text.Split(',');
+                        foreach (var ending in endings)
+                        {
+                            if (file.Name.EndsWith(ending.Replace("*","")))
+                            {
+                                lsb.Items.Add(file.Name);
+                                itemsCount++;
+                            }
+                        }
+                    } else
+                    {
+                        lsb.Items.Add(file.Name);
+                        itemsCount++;
+                    }
                 }
 
             } else if(rbDirs.Checked == true)
@@ -301,10 +323,18 @@ namespace BatchFileRenamer
             if (rbDirs.Checked) {
                 itemType = getLocStr(Properties.Settings.Default.language, "dirs");
             }
-            DialogResult res = MessageBox.Show(countRenameItems().ToString() + itemType + getLocStr(Properties.Settings.Default.language,"rename_sure"), getLocStr(Properties.Settings.Default.language, "rename_sure_title"), MessageBoxButtons.YesNo);
-            if(res == DialogResult.Yes)
+            int itemCount = countRenameItems();
+            if(itemCount == 0)
             {
-                startRenaming();
+                // no items to rename
+                MessageBox.Show(getLocStr(Properties.Settings.Default.language, "rename_nothingtodo"), getLocStr(Properties.Settings.Default.language, "rename_nothingtodo_title"), MessageBoxButtons.OK);
+            } else
+            {
+                DialogResult res = MessageBox.Show(itemCount.ToString() + itemType + getLocStr(Properties.Settings.Default.language, "rename_sure"), getLocStr(Properties.Settings.Default.language, "rename_sure_title"), MessageBoxButtons.YesNo);
+                if (res == DialogResult.Yes)
+                {
+                    startRenaming();
+                }
             }
         }
 
@@ -320,6 +350,28 @@ namespace BatchFileRenamer
                 int i = 1;
                 foreach (FileInfo file in Files)
                 {
+                    bool skipFile = true;
+                    if (cbFileending.Checked == true && txtFiletype.Text.Contains("*."))
+                    {
+                        // handle file endings
+                        string[] endings = txtFiletype.Text.Split(',');
+                        foreach (var ending in endings)
+                        {
+                            if (file.Name.EndsWith(ending.Replace("*", "")))
+                            {
+                                skipFile = false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        skipFile = false;
+                    }
+                    if(skipFile)
+                    {
+                        continue;
+                    }
+
                     string oldFilename = file.Name;
                     string newFilename = getRuledItemName(file.Name, i);
                     if (oldFilename != newFilename)
@@ -364,6 +416,26 @@ namespace BatchFileRenamer
                 int i = 1;
                 foreach (FileInfo file in Files)
                 {
+                    bool skipFile = true;
+                    if (cbFileending.Checked == true && txtFiletype.Text.Contains("*."))
+                    {
+                        // handle file endings
+                        string[] endings = txtFiletype.Text.Split(',');
+                        foreach (var ending in endings)
+                        {
+                            if (file.Name.EndsWith(ending.Replace("*", "")))
+                            {
+                                skipFile = false;
+                            }
+                        }
+                    } else
+                    {
+                        skipFile = false;
+                    }
+                    if(skipFile)
+                    {
+                        continue;  // if filetype is not in filter
+                    }
                     string oldFilename = file.Name;
                     string newFilename = getRuledItemName(file.Name, i);
                     if(oldFilename != newFilename)
@@ -467,6 +539,43 @@ namespace BatchFileRenamer
 
                     Thread.CurrentThread.CurrentUICulture = value;
                 }
+            }
+        }
+
+        private void txtFiletype_Leave(object sender, EventArgs e)
+        {
+            refreshFileList();
+        }
+
+        private void cbFileending_CheckedChanged(object sender, EventArgs e)
+        {
+            refreshFileList();
+        }
+
+        private void refreshFileList()
+        {
+            if (txtPath.Text.Length > 0 && pathIsValid())
+            {
+                PopulateListBox(listBoxFiles, txtPath.Text, "*.*");
+            }
+            setExampleRuleText();
+            if (rbFiles.Checked == true)
+            {
+                lblRuleExplanation.Text = getLocStr(Properties.Settings.Default.language, "lblRuleExplanationTextFile");
+                pFileending.Visible = true;
+            }
+            else
+            {
+                lblRuleExplanation.Text = getLocStr(Properties.Settings.Default.language, "lblRuleExplanationTextDir");
+                pFileending.Visible = false;
+            }
+        }
+
+        private void txtFiletype_TextChanged(object sender, EventArgs e)
+        {
+            if(txtFiletype.Text.Length > 0 && cbFileending.Checked == false)
+            {
+                cbFileending.Checked = true;
             }
         }
     }
