@@ -26,10 +26,11 @@ namespace BatchFileRenamer
             clearExampleLabels();
             setTranslations();
             setButtonTooltip();
-            // if called from context menu set path of selected folder
             if(args.Length >= 1)
             {
+                // if called from context menu set path of selected folder
                 txtPath.Text = args[0].ToString();
+                btnStart.Enabled = true;
             }
         }
 
