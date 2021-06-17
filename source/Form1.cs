@@ -268,7 +268,7 @@ namespace BatchFileRenamer
                 string numberCharCountStr = txtRule_0_pattern.Text.Replace("%nnnnn", "5").Replace("%nnnn", "4").Replace("%nnn", "3").Replace("%nn", "2").Replace("%n", "1");
 
                 int i = getNumberPatternStartIndex();
-                if(i > 0)
+                if (i > 0)
                 {
                     string afterNumberStr = txtRule_0_pattern.Text.Substring(txtRule_0_pattern.Text.IndexOf("%n") + i + 1);
                     string beforeNumberStr = txtRule_0_pattern.Text.Substring(0, txtRule_0_pattern.Text.Length - (afterNumberStr.Length + i + 1));
@@ -283,6 +283,24 @@ namespace BatchFileRenamer
                     {
                         // nach
                         resultName = resultName + txtRule_0_pattern.Text.Replace("%nnnnn", number).Replace("%nnnn", number).Replace("%nnn", number).Replace("%nn", number).Replace("%n", number);
+                    }
+                }
+                else
+                {
+                    if(txtRule_0_pattern.Text.Length > 0)
+                    {
+                        // no numbering but append/prepend string anyways
+                        // (we allow this bug using/feature as a clever hack to prepend/append a str)
+                        if (rbRule_0_before.Checked)
+                        {
+                            // vor
+                            resultName = txtRule_0_pattern.Text + resultName;
+                        }
+                        else
+                        {
+                            // nach
+                            resultName = resultName + txtRule_0_pattern.Text;
+                        }
                     }
                 }
             }
@@ -574,6 +592,33 @@ namespace BatchFileRenamer
 
         private void txtFiletype_Leave(object sender, EventArgs e)
         {
+            string[] filetypes = txtFiletype.Text.Split(',');
+            if (filetypes.Count() > 0)
+            {
+                // > 1 filetypes given
+                for (int k = 0; k < filetypes.Count(); k++)
+                {
+                    string s = "*." + filetypes[k].Replace(".", String.Empty).Replace("*", String.Empty).Trim();
+                    filetypes[k] = s;
+                }
+                txtFiletype.Text = String.Join(",", filetypes);
+            }
+            else
+            {
+                // 0-1 filetypes given
+                if (txtFiletype.Text.Length > 0)
+                {
+                    string filetypeStr = txtFiletype.Text.Replace(".", String.Empty).Replace("*", String.Empty).Trim();
+                    if (filetypeStr.Length > 0)
+                    {
+                        txtFiletype.Text = "*." + filetypeStr;  // ensure correct format "*.txt"
+                    }
+                    else
+                    {
+                        txtFiletype.Text = "";  // no filetype given
+                    }
+                }
+            }
             refreshFileList();
         }
 

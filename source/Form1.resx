@@ -261,17 +261,20 @@
   <data name="cbFileending.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="cbFileending.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
   <data name="cbFileending.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
   <data name="cbFileending.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
+    <value>83, 19</value>
   </data>
   <data name="cbFileending.TabIndex" type="System.Int32, mscorlib">
     <value>101</value>
   </data>
   <data name="cbFileending.Text" xml:space="preserve">
-    <value>Endung</value>
+    <value>Endungen</value>
   </data>
   <data name="&gt;&gt;cbFileending.Name" xml:space="preserve">
     <value>cbFileending</value>
@@ -286,10 +289,10 @@
     <value>0</value>
   </data>
   <data name="txtFiletype.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 2</value>
+    <value>92, 2</value>
   </data>
   <data name="txtFiletype.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 22</value>
+    <value>145, 22</value>
   </data>
   <data name="txtFiletype.TabIndex" type="System.Int32, mscorlib">
     <value>100</value>
@@ -310,7 +313,7 @@
     <value>213, 54</value>
   </data>
   <data name="pFileending.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 27</value>
+    <value>240, 27</value>
   </data>
   <data name="pFileending.TabIndex" type="System.Int32, mscorlib">
     <value>102</value>
