@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -41,6 +42,16 @@ namespace BatchFileRenamer
             cbContextIntegration.Checked = Properties.Settings.Default.explorer_context;
 
             initHelpTooltip();
+            initVersionLabels();
+        }
+
+        private void initVersionLabels()
+        {
+            lblVersion.Text = "Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            ToolTip vtt = new ToolTip();
+            vtt.SetToolTip(lblVersion, mainFrm.getLocStr(Properties.Settings.Default.language, "lblVersion_tooltip"));
+            ToolTip ctt = new ToolTip();
+            ctt.SetToolTip(lblCreator, mainFrm.getLocStr(Properties.Settings.Default.language, "lblCreator_tooltip"));
         }
 
         private void initHelpTooltip()
@@ -139,6 +150,18 @@ namespace BatchFileRenamer
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://github.com/xcy7e/Batch-FileRenamer");
+            Process.Start(sInfo);
+        }
+
+        private void lblCreator_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("http://www.xcy7e.de");
+            Process.Start(sInfo);
         }
     }
 }

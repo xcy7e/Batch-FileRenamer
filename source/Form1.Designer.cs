@@ -44,15 +44,20 @@ namespace BatchFileRenamer
             this.rbDirs = new System.Windows.Forms.RadioButton();
             this.rbFiles = new System.Windows.Forms.RadioButton();
             this.gbRules = new System.Windows.Forms.GroupBox();
-            this.lblRuleExplanation = new System.Windows.Forms.Label();
+            this.pRule_3 = new System.Windows.Forms.Panel();
+            this.lblRule_3_Explanation = new System.Windows.Forms.Label();
+            this.labellblRule_3_Append = new System.Windows.Forms.Label();
+            this.txtRule_3_Append = new System.Windows.Forms.TextBox();
+            this.lblRule_3_Prepend = new System.Windows.Forms.Label();
+            this.txtRule_3_Prepend = new System.Windows.Forms.TextBox();
             this.lblRule_0_example = new System.Windows.Forms.Label();
             this.txtRule_0_pattern = new System.Windows.Forms.TextBox();
             this.lblRule_0_pattern = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pRule_2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblRule_2_ReplaceLbl = new System.Windows.Forms.Label();
             this.txtRule_2_Replace = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblRule_2_SearchLbl = new System.Windows.Forms.Label();
             this.txtRule_2_Search = new System.Windows.Forms.TextBox();
             this.rbRule_0_after = new System.Windows.Forms.RadioButton();
             this.rbRule_0_before = new System.Windows.Forms.RadioButton();
@@ -76,7 +81,8 @@ namespace BatchFileRenamer
             ((System.ComponentModel.ISupportInitialize)(this.btnOpenDir)).BeginInit();
             this.pFileending.SuspendLayout();
             this.gbRules.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pRule_3.SuspendLayout();
+            this.pRule_2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSeparator_1)).BeginInit();
             this.pRule_1.SuspendLayout();
@@ -126,11 +132,11 @@ namespace BatchFileRenamer
             // 
             // btnOpenDir
             // 
+            resources.ApplyResources(this.btnOpenDir, "btnOpenDir");
             this.btnOpenDir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnOpenDir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnOpenDir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOpenDir.Image = global::BatchFileRenamer.Properties.Resources.shell32_319;
-            resources.ApplyResources(this.btnOpenDir, "btnOpenDir");
             this.btnOpenDir.Name = "btnOpenDir";
             this.btnOpenDir.TabStop = false;
             this.btnOpenDir.Click += new System.EventHandler(this.btnOpenDir_Click);
@@ -139,9 +145,9 @@ namespace BatchFileRenamer
             // 
             // pFileending
             // 
+            resources.ApplyResources(this.pFileending, "pFileending");
             this.pFileending.Controls.Add(this.cbFileending);
             this.pFileending.Controls.Add(this.txtFiletype);
-            resources.ApplyResources(this.pFileending, "pFileending");
             this.pFileending.Name = "pFileending";
             // 
             // cbFileending
@@ -176,11 +182,11 @@ namespace BatchFileRenamer
             // gbRules
             // 
             resources.ApplyResources(this.gbRules, "gbRules");
-            this.gbRules.Controls.Add(this.lblRuleExplanation);
+            this.gbRules.Controls.Add(this.pRule_3);
             this.gbRules.Controls.Add(this.lblRule_0_example);
             this.gbRules.Controls.Add(this.txtRule_0_pattern);
             this.gbRules.Controls.Add(this.lblRule_0_pattern);
-            this.gbRules.Controls.Add(this.panel1);
+            this.gbRules.Controls.Add(this.pRule_2);
             this.gbRules.Controls.Add(this.rbRule_0_after);
             this.gbRules.Controls.Add(this.rbRule_0_before);
             this.gbRules.Controls.Add(this.cbRule_0_Numbers);
@@ -189,10 +195,45 @@ namespace BatchFileRenamer
             this.gbRules.Name = "gbRules";
             this.gbRules.TabStop = false;
             // 
-            // lblRuleExplanation
+            // pRule_3
             // 
-            resources.ApplyResources(this.lblRuleExplanation, "lblRuleExplanation");
-            this.lblRuleExplanation.Name = "lblRuleExplanation";
+            resources.ApplyResources(this.pRule_3, "pRule_3");
+            this.pRule_3.Controls.Add(this.lblRule_3_Explanation);
+            this.pRule_3.Controls.Add(this.labellblRule_3_Append);
+            this.pRule_3.Controls.Add(this.txtRule_3_Append);
+            this.pRule_3.Controls.Add(this.lblRule_3_Prepend);
+            this.pRule_3.Controls.Add(this.txtRule_3_Prepend);
+            this.pRule_3.Name = "pRule_3";
+            // 
+            // lblRule_3_Explanation
+            // 
+            resources.ApplyResources(this.lblRule_3_Explanation, "lblRule_3_Explanation");
+            this.lblRule_3_Explanation.CausesValidation = false;
+            this.lblRule_3_Explanation.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblRule_3_Explanation.Name = "lblRule_3_Explanation";
+            // 
+            // labellblRule_3_Append
+            // 
+            resources.ApplyResources(this.labellblRule_3_Append, "labellblRule_3_Append");
+            this.labellblRule_3_Append.CausesValidation = false;
+            this.labellblRule_3_Append.Name = "labellblRule_3_Append";
+            // 
+            // txtRule_3_Append
+            // 
+            resources.ApplyResources(this.txtRule_3_Append, "txtRule_3_Append");
+            this.txtRule_3_Append.Name = "txtRule_3_Append";
+            this.txtRule_3_Append.TextChanged += new System.EventHandler(this.txtRule_3_Append_TextChanged);
+            // 
+            // lblRule_3_Prepend
+            // 
+            resources.ApplyResources(this.lblRule_3_Prepend, "lblRule_3_Prepend");
+            this.lblRule_3_Prepend.Name = "lblRule_3_Prepend";
+            // 
+            // txtRule_3_Prepend
+            // 
+            resources.ApplyResources(this.txtRule_3_Prepend, "txtRule_3_Prepend");
+            this.txtRule_3_Prepend.Name = "txtRule_3_Prepend";
+            this.txtRule_3_Prepend.TextChanged += new System.EventHandler(this.txtRule_3_Prepend_TextChanged);
             // 
             // lblRule_0_example
             // 
@@ -210,28 +251,28 @@ namespace BatchFileRenamer
             resources.ApplyResources(this.lblRule_0_pattern, "lblRule_0_pattern");
             this.lblRule_0_pattern.Name = "lblRule_0_pattern";
             // 
-            // panel1
+            // pRule_2
             // 
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtRule_2_Replace);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtRule_2_Search);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            resources.ApplyResources(this.pRule_2, "pRule_2");
+            this.pRule_2.Controls.Add(this.pictureBox2);
+            this.pRule_2.Controls.Add(this.lblRule_2_ReplaceLbl);
+            this.pRule_2.Controls.Add(this.txtRule_2_Replace);
+            this.pRule_2.Controls.Add(this.lblRule_2_SearchLbl);
+            this.pRule_2.Controls.Add(this.txtRule_2_Search);
+            this.pRule_2.Name = "pRule_2";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
-            // label1
+            // lblRule_2_ReplaceLbl
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.CausesValidation = false;
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.lblRule_2_ReplaceLbl, "lblRule_2_ReplaceLbl");
+            this.lblRule_2_ReplaceLbl.CausesValidation = false;
+            this.lblRule_2_ReplaceLbl.Name = "lblRule_2_ReplaceLbl";
             // 
             // txtRule_2_Replace
             // 
@@ -239,10 +280,10 @@ namespace BatchFileRenamer
             this.txtRule_2_Replace.Name = "txtRule_2_Replace";
             this.txtRule_2_Replace.TextChanged += new System.EventHandler(this.txtRule_2_Replace_TextChanged);
             // 
-            // label2
+            // lblRule_2_SearchLbl
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.lblRule_2_SearchLbl, "lblRule_2_SearchLbl");
+            this.lblRule_2_SearchLbl.Name = "lblRule_2_SearchLbl";
             // 
             // txtRule_2_Search
             // 
@@ -274,25 +315,25 @@ namespace BatchFileRenamer
             // 
             // pbSeparator_1
             // 
-            this.pbSeparator_1.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.pbSeparator_1, "pbSeparator_1");
+            this.pbSeparator_1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pbSeparator_1.Name = "pbSeparator_1";
             this.pbSeparator_1.TabStop = false;
             // 
             // pRule_1
             // 
+            resources.ApplyResources(this.pRule_1, "pRule_1");
             this.pRule_1.Controls.Add(this.pictureBox1);
             this.pRule_1.Controls.Add(this.lblRule_1_ReplaceLbl);
             this.pRule_1.Controls.Add(this.txtRule_1_Replace);
             this.pRule_1.Controls.Add(this.lblRule_1_SearchLbl);
             this.pRule_1.Controls.Add(this.txtRule_1_Search);
-            resources.ApplyResources(this.pRule_1, "pRule_1");
             this.pRule_1.Name = "pRule_1";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
@@ -391,8 +432,10 @@ namespace BatchFileRenamer
             this.pFileending.PerformLayout();
             this.gbRules.ResumeLayout(false);
             this.gbRules.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pRule_3.ResumeLayout(false);
+            this.pRule_3.PerformLayout();
+            this.pRule_2.ResumeLayout(false);
+            this.pRule_2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSeparator_1)).EndInit();
             this.pRule_1.ResumeLayout(false);
@@ -429,13 +472,12 @@ namespace BatchFileRenamer
         private System.Windows.Forms.TextBox txtRule_1_Replace;
         private System.Windows.Forms.Label lblRule_1_SearchLbl;
         private System.Windows.Forms.TextBox txtRule_1_Search;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pRule_2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblRule_2_ReplaceLbl;
         private System.Windows.Forms.TextBox txtRule_2_Replace;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRule_2_SearchLbl;
         private System.Windows.Forms.TextBox txtRule_2_Search;
-        private System.Windows.Forms.Label lblRuleExplanation;
         private System.Windows.Forms.FlowLayoutPanel panelRenameResultExample;
         private System.Windows.Forms.Label lblOriginalName;
         private System.Windows.Forms.Label lblArrow;
@@ -447,6 +489,12 @@ namespace BatchFileRenamer
         private System.Windows.Forms.CheckBox cbFileending;
         private System.Windows.Forms.TextBox txtFiletype;
         private System.Windows.Forms.PictureBox btnOpenDir;
+        private System.Windows.Forms.Panel pRule_3;
+        private System.Windows.Forms.Label labellblRule_3_Append;
+        private System.Windows.Forms.TextBox txtRule_3_Append;
+        private System.Windows.Forms.Label lblRule_3_Prepend;
+        private System.Windows.Forms.TextBox txtRule_3_Prepend;
+        private System.Windows.Forms.Label lblRule_3_Explanation;
     }
 }
 

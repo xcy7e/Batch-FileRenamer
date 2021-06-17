@@ -38,10 +38,6 @@ namespace BatchFileRenamer
         {
             Dictionary<string, string> tDE = new Dictionary<string, string>();
             Dictionary<string, string> tEN = new Dictionary<string, string>();
-            tDE.Add("lblRuleExplanationTextFile", "Klicke auf eine Datei um die angewendeten Regeln zu testen");
-            tEN.Add("lblRuleExplanationTextFile", "Click on a file to test the rules applied");
-            tDE.Add("lblRuleExplanationTextDir", "Klicke auf einen Ordner um die angewendeten Regeln zu testen");
-            tEN.Add("lblRuleExplanationTextDir", "Click on a directory to test the rules applied");
             tDE.Add("typFilename", "Dateiname");
             tEN.Add("typFilename", "Filename");
             tDE.Add("typDirname", "Ordnername");
@@ -64,11 +60,19 @@ namespace BatchFileRenamer
             tEN.Add("rename_nothingtodo_title", "Nothing to do!");
             tDE.Add("btnOpenDir_tooltip", "Verzeichnis im Explorer öffnen");
             tEN.Add("btnOpenDir_tooltip", "Open directory in explorer");
+            tDE.Add("label_rule3_explanation_dir", "Füge einen Text an jedes Verzeichnis");
+            tEN.Add("label_rule3_explanation_dir", "Add text to every directory");
+            tDE.Add("label_rule3_explanation_file", "Füge einen Text an jede Datei");
+            tEN.Add("label_rule3_explanation_file", "Add text to every file");
 
             tDE.Add("settings_helpContextIntegration", "Fügt eine Funktion im Windows-Explorer Rechtsklickmenü ein,\num Batch FileRenamer vom jeweiligen Pfad auszuführen.");
             tEN.Add("settings_helpContextIntegration", "Adds an entry in windows-explorer rightclick menu,\nto start Batch FileRenamer from a respective location.");
             tDE.Add("context_menu_label", "Batch FileRenamer starten");
             tEN.Add("context_menu_label", "start batch fileRenamer");
+            tDE.Add("lblVersion_tooltip", "Öffne Github-Repository");
+            tEN.Add("lblVersion_tooltip", "Open Github-Repository");
+            tDE.Add("lblCreator_tooltip", "Öffne Entwickler Webseite");
+            tEN.Add("lblCreator_tooltip", "Open Developer Website");
 
             translations.Add("de", tDE);
             translations.Add("en", tEN);
@@ -78,6 +82,18 @@ namespace BatchFileRenamer
         {
             ToolTip t = new ToolTip();
             t.SetToolTip(btnOpenDir, getLocStr(Properties.Settings.Default.language, "btnOpenDir_tooltip"));
+        }
+
+        private void setLabelText()
+        {
+            if (rbFiles.Checked == true)
+            {
+                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_file");
+            }
+            else
+            {
+                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_dir");
+            }
         }
 
         public string getLocStr(string lang, string key)
@@ -108,11 +124,11 @@ namespace BatchFileRenamer
             setExampleRuleText();
             if(rbFiles.Checked == true)
             {
-                lblRuleExplanation.Text = getLocStr(Properties.Settings.Default.language, "lblRuleExplanationTextFile");
+                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_file");
                 pFileending.Visible = true;
             } else
             {
-                lblRuleExplanation.Text = getLocStr(Properties.Settings.Default.language, "lblRuleExplanationTextDir");
+                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_dir");
                 pFileending.Visible = false;
             }
         }
@@ -304,6 +320,14 @@ namespace BatchFileRenamer
                     }
                 }
             }
+            if(txtRule_3_Prepend.Text.Length > 0)
+            {
+                resultName = txtRule_3_Prepend.Text + resultName;
+            }
+            if (txtRule_3_Append.Text.Length > 0)
+            {
+                resultName = resultName + txtRule_3_Append.Text;
+            }
             return resultName;
         }
 
@@ -348,6 +372,16 @@ namespace BatchFileRenamer
         }
 
         private void txtRule_2_Replace_TextChanged(object sender, EventArgs e)
+        {
+            updateResultExample();
+        }
+
+        private void txtRule_3_Prepend_TextChanged(object sender, EventArgs e)
+        {
+            updateResultExample();
+        }
+
+        private void txtRule_3_Append_TextChanged(object sender, EventArgs e)
         {
             updateResultExample();
         }
@@ -570,7 +604,10 @@ namespace BatchFileRenamer
         public void updateLanguage()
         {
             GlobalUICulture = CultureInfo.GetCultureInfo(Properties.Settings.Default.language);
+            clearExampleLabels();
             setButtonTooltip();
+            setLabelText();
+            refreshFileList();
         }
 
         public static CultureInfo GlobalUICulture
@@ -636,12 +673,12 @@ namespace BatchFileRenamer
             setExampleRuleText();
             if (rbFiles.Checked == true)
             {
-                lblRuleExplanation.Text = getLocStr(Properties.Settings.Default.language, "lblRuleExplanationTextFile");
+                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_file");
                 pFileending.Visible = true;
             }
             else
             {
-                lblRuleExplanation.Text = getLocStr(Properties.Settings.Default.language, "lblRuleExplanationTextDir");
+                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_dir");
                 pFileending.Visible = false;
             }
         }

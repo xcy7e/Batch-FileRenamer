@@ -26,8 +26,8 @@
     <ErrorReportUrl>http://www.xcy7e.de</ErrorReportUrl>
     <ProductName>Batch FileRenamer</ProductName>
     <PublisherName>Jonathan Riedmair</PublisherName>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.6.1.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.7.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>

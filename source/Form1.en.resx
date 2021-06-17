@@ -130,9 +130,6 @@
   <data name="btnOpenDir.Location" type="System.Drawing.Point, System.Drawing">
     <value>611, 23</value>
   </data>
-  <data name="cbFileending.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
   <data name="cbFileending.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 19</value>
   </data>
@@ -160,8 +157,20 @@
   <data name="gbSource.Text" xml:space="preserve">
     <value> Source </value>
   </data>
-  <data name="lblRuleExplanation.Text" xml:space="preserve">
-    <value>Click on a file to test the applied rules</value>
+  <data name="lblRule_3_Explanation.Text" xml:space="preserve">
+    <value>Add text to every directory</value>
+  </data>
+  <data name="labellblRule_3_Append.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 15</value>
+  </data>
+  <data name="labellblRule_3_Append.Text" xml:space="preserve">
+    <value>After</value>
+  </data>
+  <data name="lblRule_3_Prepend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 15</value>
+  </data>
+  <data name="lblRule_3_Prepend.Text" xml:space="preserve">
+    <value>Before</value>
   </data>
   <data name="lblRule_0_example.Text" xml:space="preserve">
     <value>01-Filename</value>
@@ -172,20 +181,17 @@
   <data name="lblRule_0_pattern.Text" xml:space="preserve">
     <value>Pattern</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblRule_2_ReplaceLbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 15</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
+  <data name="lblRule_2_ReplaceLbl.Text" xml:space="preserve">
     <value>Replace</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblRule_2_SearchLbl.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 15</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
+  <data name="lblRule_2_SearchLbl.Text" xml:space="preserve">
     <value>Search</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 182</value>
   </data>
   <data name="rbRule_0_after.Location" type="System.Drawing.Point, System.Drawing">
     <value>231, 22</value>
@@ -221,7 +227,7 @@
     <value>Search</value>
   </data>
   <data name="gbRules.Text" xml:space="preserve">
-    <value> Rules (optional) </value>
+    <value> Rules </value>
   </data>
   <data name="btnStart.Text" xml:space="preserve">
     <value>Start</value>

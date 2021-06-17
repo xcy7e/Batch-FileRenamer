@@ -118,1084 +118,637 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnSearchPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="labellblRule_3_Append.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnSearchPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>483, 22</value>
-  </data>
-  <data name="btnSearchPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 26</value>
+  <data name="panelRenameResultExample.Size" type="System.Drawing.Size, System.Drawing">
+    <value>668, 37</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnSearchPath.TabIndex" type="System.Int32, mscorlib">
-    <value>99</value>
-  </data>
-  <data name="btnSearchPath.Text" xml:space="preserve">
-    <value>Ordner wählen</value>
-  </data>
-  <data name="&gt;&gt;btnSearchPath.Name" xml:space="preserve">
-    <value>btnSearchPath</value>
-  </data>
-  <data name="&gt;&gt;btnSearchPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSearchPath.Parent" xml:space="preserve">
-    <value>gbSource</value>
-  </data>
-  <data name="&gt;&gt;btnSearchPath.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="txtPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="txtPath.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="txtPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 23</value>
-  </data>
-  <data name="txtPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>462, 24</value>
-  </data>
-  <data name="txtPath.TabIndex" type="System.Int32, mscorlib">
-    <value>99</value>
-  </data>
-  <data name="&gt;&gt;txtPath.Name" xml:space="preserve">
-    <value>txtPath</value>
-  </data>
-  <data name="&gt;&gt;txtPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPath.Parent" xml:space="preserve">
-    <value>gbSource</value>
-  </data>
-  <data name="&gt;&gt;txtPath.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="listBoxFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="listBoxFiles.ItemHeight" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="listBoxFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 21</value>
-  </data>
-  <data name="listBoxFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 260</value>
-  </data>
-  <data name="listBoxFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>99</value>
-  </data>
-  <data name="&gt;&gt;listBoxFiles.Name" xml:space="preserve">
-    <value>listBoxFiles</value>
-  </data>
-  <data name="&gt;&gt;listBoxFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listBoxFiles.Parent" xml:space="preserve">
-    <value>gbFiles</value>
-  </data>
-  <data name="&gt;&gt;listBoxFiles.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="gbFiles.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="gbFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 105</value>
-  </data>
-  <data name="gbFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 296</value>
-  </data>
-  <data name="gbFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="gbFiles.Text" xml:space="preserve">
-    <value> Inhalt </value>
-  </data>
-  <data name="&gt;&gt;gbFiles.Name" xml:space="preserve">
-    <value>gbFiles</value>
-  </data>
-  <data name="&gt;&gt;gbFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbFiles.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbFiles.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="gbSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="btnOpenDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>604, 23</value>
-  </data>
-  <data name="btnOpenDir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 24</value>
-  </data>
-  <data name="btnOpenDir.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="btnOpenDir.TabIndex" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="&gt;&gt;btnOpenDir.Name" xml:space="preserve">
-    <value>btnOpenDir</value>
-  </data>
-  <data name="&gt;&gt;btnOpenDir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnOpenDir.Parent" xml:space="preserve">
-    <value>gbSource</value>
-  </data>
-  <data name="&gt;&gt;btnOpenDir.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="cbFileending.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbFileending.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="cbFileending.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="cbFileending.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 19</value>
-  </data>
-  <data name="cbFileending.TabIndex" type="System.Int32, mscorlib">
-    <value>101</value>
-  </data>
-  <data name="cbFileending.Text" xml:space="preserve">
-    <value>Endungen</value>
-  </data>
-  <data name="&gt;&gt;cbFileending.Name" xml:space="preserve">
-    <value>cbFileending</value>
-  </data>
-  <data name="&gt;&gt;cbFileending.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbFileending.Parent" xml:space="preserve">
-    <value>pFileending</value>
-  </data>
-  <data name="&gt;&gt;cbFileending.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="txtFiletype.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 2</value>
-  </data>
-  <data name="txtFiletype.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 22</value>
-  </data>
-  <data name="txtFiletype.TabIndex" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="&gt;&gt;txtFiletype.Name" xml:space="preserve">
-    <value>txtFiletype</value>
-  </data>
-  <data name="&gt;&gt;txtFiletype.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtFiletype.Parent" xml:space="preserve">
-    <value>pFileending</value>
-  </data>
-  <data name="&gt;&gt;txtFiletype.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="pFileending.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 54</value>
-  </data>
-  <data name="pFileending.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 27</value>
-  </data>
-  <data name="pFileending.TabIndex" type="System.Int32, mscorlib">
-    <value>102</value>
-  </data>
   <data name="pFileending.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;pFileending.Name" xml:space="preserve">
-    <value>pFileending</value>
-  </data>
-  <data name="&gt;&gt;pFileending.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pFileending.Parent" xml:space="preserve">
-    <value>gbSource</value>
-  </data>
-  <data name="&gt;&gt;pFileending.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="rbDirs.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbDirs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 55</value>
-  </data>
-  <data name="rbDirs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 20</value>
-  </data>
-  <data name="rbDirs.TabIndex" type="System.Int32, mscorlib">
-    <value>99</value>
-  </data>
-  <data name="rbDirs.Text" xml:space="preserve">
-    <value>Verzeichnisse</value>
-  </data>
-  <data name="&gt;&gt;rbDirs.Name" xml:space="preserve">
-    <value>rbDirs</value>
-  </data>
-  <data name="&gt;&gt;rbDirs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbDirs.Parent" xml:space="preserve">
-    <value>gbSource</value>
-  </data>
-  <data name="&gt;&gt;rbDirs.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="rbFiles.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 56</value>
-  </data>
-  <data name="rbFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
-  </data>
-  <data name="rbFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>99</value>
-  </data>
-  <data name="rbFiles.Text" xml:space="preserve">
-    <value>Dateien</value>
-  </data>
-  <data name="&gt;&gt;rbFiles.Name" xml:space="preserve">
-    <value>rbFiles</value>
-  </data>
-  <data name="&gt;&gt;rbFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbFiles.Parent" xml:space="preserve">
-    <value>gbSource</value>
-  </data>
-  <data name="&gt;&gt;rbFiles.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="gbSource.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="gbSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 12</value>
-  </data>
-  <data name="gbSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>667, 87</value>
-  </data>
-  <data name="gbSource.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value> Quelle </value>
-  </data>
-  <data name="&gt;&gt;gbSource.Name" xml:space="preserve">
-    <value>gbSource</value>
-  </data>
-  <data name="&gt;&gt;gbSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbSource.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbSource.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="gbRules.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="lblRuleExplanation.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt, style=Italic</value>
-  </data>
-  <data name="lblRuleExplanation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 255</value>
-  </data>
-  <data name="lblRuleExplanation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 37</value>
-  </data>
-  <data name="lblRuleExplanation.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="lblRuleExplanation.Text" xml:space="preserve">
-    <value>Klicke auf eine Datei um die angewendeten Regeln zu testen</value>
-  </data>
-  <data name="&gt;&gt;lblRuleExplanation.Name" xml:space="preserve">
-    <value>lblRuleExplanation</value>
-  </data>
-  <data name="&gt;&gt;lblRuleExplanation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRuleExplanation.Parent" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;lblRuleExplanation.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblRule_0_example.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblRule_0_example.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
-  </data>
-  <data name="lblRule_0_example.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 51</value>
-  </data>
-  <data name="lblRule_0_example.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 19</value>
-  </data>
-  <data name="lblRule_0_example.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lblRule_0_example.Text" xml:space="preserve">
-    <value>01-Dateiname</value>
-  </data>
-  <data name="&gt;&gt;lblRule_0_example.Name" xml:space="preserve">
-    <value>lblRule_0_example</value>
-  </data>
-  <data name="&gt;&gt;lblRule_0_example.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRule_0_example.Parent" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;lblRule_0_example.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtRule_0_pattern.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="txtRule_0_pattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 48</value>
-  </data>
-  <data name="txtRule_0_pattern.MaxLength" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="txtRule_0_pattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
-  </data>
-  <data name="txtRule_0_pattern.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txtRule_0_pattern.Text" xml:space="preserve">
-    <value>%nn-</value>
-  </data>
-  <data name="&gt;&gt;txtRule_0_pattern.Name" xml:space="preserve">
-    <value>txtRule_0_pattern</value>
-  </data>
-  <data name="&gt;&gt;txtRule_0_pattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtRule_0_pattern.Parent" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;txtRule_0_pattern.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblRule_0_pattern.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRule_0_pattern.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lblRule_0_pattern.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="lblRule_0_pattern.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 51</value>
-  </data>
-  <data name="lblRule_0_pattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 15</value>
-  </data>
-  <data name="lblRule_0_pattern.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblRule_0_pattern.Text" xml:space="preserve">
-    <value>Muster</value>
-  </data>
-  <data name="&gt;&gt;lblRule_0_pattern.Name" xml:space="preserve">
-    <value>lblRule_0_pattern</value>
-  </data>
-  <data name="&gt;&gt;lblRule_0_pattern.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRule_0_pattern.Parent" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;lblRule_0_pattern.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 61</value>
-  </data>
-  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 1</value>
-  </data>
-  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
-    <value>pictureBox2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 33</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 15</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Ersetze</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtRule_2_Replace.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="txtRule_2_Replace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 30</value>
-  </data>
-  <data name="txtRule_2_Replace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 21</value>
-  </data>
-  <data name="txtRule_2_Replace.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txtRule_2_Replace.Name" xml:space="preserve">
-    <value>txtRule_2_Replace</value>
-  </data>
-  <data name="&gt;&gt;txtRule_2_Replace.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtRule_2_Replace.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;txtRule_2_Replace.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 6</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 15</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Suche</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtRule_2_Search.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="txtRule_2_Search.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 3</value>
-  </data>
-  <data name="txtRule_2_Search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 21</value>
-  </data>
-  <data name="txtRule_2_Search.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;txtRule_2_Search.Name" xml:space="preserve">
-    <value>txtRule_2_Search</value>
-  </data>
-  <data name="&gt;&gt;txtRule_2_Search.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtRule_2_Search.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;txtRule_2_Search.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 178</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 64</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="rbRule_0_after.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbRule_0_after.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="rbRule_0_after.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="rbRule_0_after.Location" type="System.Drawing.Point, System.Drawing">
-    <value>204, 21</value>
-  </data>
-  <data name="rbRule_0_after.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 19</value>
-  </data>
-  <data name="rbRule_0_after.TabIndex" type="System.Int32, mscorlib">
-    <value>99</value>
-  </data>
-  <data name="rbRule_0_after.Text" xml:space="preserve">
-    <value>Nach</value>
-  </data>
-  <data name="&gt;&gt;rbRule_0_after.Name" xml:space="preserve">
-    <value>rbRule_0_after</value>
-  </data>
-  <data name="&gt;&gt;rbRule_0_after.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbRule_0_after.Parent" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;rbRule_0_after.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="rbRule_0_before.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="rbRule_0_before.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="rbRule_0_before.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="rbRule_0_before.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 21</value>
-  </data>
-  <data name="rbRule_0_before.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 19</value>
-  </data>
-  <data name="rbRule_0_before.TabIndex" type="System.Int32, mscorlib">
-    <value>99</value>
-  </data>
-  <data name="rbRule_0_before.Text" xml:space="preserve">
-    <value>Vor</value>
-  </data>
-  <data name="&gt;&gt;rbRule_0_before.Name" xml:space="preserve">
-    <value>rbRule_0_before</value>
-  </data>
-  <data name="&gt;&gt;rbRule_0_before.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;rbRule_0_before.Parent" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;rbRule_0_before.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="cbRule_0_Numbers.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="cbRule_0_Numbers.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="cbRule_0_Numbers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 22</value>
-  </data>
-  <data name="cbRule_0_Numbers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 19</value>
-  </data>
-  <data name="cbRule_0_Numbers.TabIndex" type="System.Int32, mscorlib">
-    <value>99</value>
-  </data>
-  <data name="cbRule_0_Numbers.Text" xml:space="preserve">
-    <value>Numerieren</value>
-  </data>
-  <data name="&gt;&gt;cbRule_0_Numbers.Name" xml:space="preserve">
-    <value>cbRule_0_Numbers</value>
-  </data>
-  <data name="&gt;&gt;cbRule_0_Numbers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cbRule_0_Numbers.Parent" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;cbRule_0_Numbers.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="pbSeparator_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 97</value>
-  </data>
-  <data name="pbSeparator_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 1</value>
-  </data>
-  <data name="pbSeparator_1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pbSeparator_1.Name" xml:space="preserve">
-    <value>pbSeparator_1</value>
-  </data>
-  <data name="&gt;&gt;pbSeparator_1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pbSeparator_1.Parent" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;pbSeparator_1.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 61</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 1</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
     <value>pRule_1</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblRule_1_ReplaceLbl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRule_1_ReplaceLbl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="lblRule_1_ReplaceLbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 33</value>
-  </data>
-  <data name="lblRule_1_ReplaceLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 15</value>
-  </data>
-  <data name="lblRule_1_ReplaceLbl.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="lblRule_1_ReplaceLbl.Text" xml:space="preserve">
-    <value>Ersetze</value>
-  </data>
-  <data name="&gt;&gt;lblRule_1_ReplaceLbl.Name" xml:space="preserve">
-    <value>lblRule_1_ReplaceLbl</value>
-  </data>
-  <data name="&gt;&gt;lblRule_1_ReplaceLbl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRule_1_ReplaceLbl.Parent" xml:space="preserve">
-    <value>pRule_1</value>
-  </data>
-  <data name="&gt;&gt;lblRule_1_ReplaceLbl.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="txtRule_1_Replace.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="txtRule_1_Replace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 30</value>
-  </data>
-  <data name="txtRule_1_Replace.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 21</value>
-  </data>
-  <data name="txtRule_1_Replace.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtRule_1_Replace.Name" xml:space="preserve">
-    <value>txtRule_1_Replace</value>
-  </data>
-  <data name="&gt;&gt;txtRule_1_Replace.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtRule_1_Replace.Parent" xml:space="preserve">
-    <value>pRule_1</value>
-  </data>
-  <data name="&gt;&gt;txtRule_1_Replace.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblRule_1_SearchLbl.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRule_1_SearchLbl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="lblRule_1_SearchLbl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 6</value>
-  </data>
-  <data name="lblRule_1_SearchLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 15</value>
-  </data>
-  <data name="lblRule_1_SearchLbl.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblRule_1_SearchLbl.Text" xml:space="preserve">
-    <value>Suche</value>
-  </data>
-  <data name="&gt;&gt;lblRule_1_SearchLbl.Name" xml:space="preserve">
-    <value>lblRule_1_SearchLbl</value>
-  </data>
-  <data name="&gt;&gt;lblRule_1_SearchLbl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRule_1_SearchLbl.Parent" xml:space="preserve">
-    <value>pRule_1</value>
-  </data>
-  <data name="&gt;&gt;lblRule_1_SearchLbl.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtRule_1_Search.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="txtRule_1_Search.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 3</value>
-  </data>
-  <data name="txtRule_1_Search.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 21</value>
-  </data>
-  <data name="txtRule_1_Search.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtRule_1_Search.Name" xml:space="preserve">
-    <value>txtRule_1_Search</value>
-  </data>
-  <data name="&gt;&gt;txtRule_1_Search.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtRule_1_Search.Parent" xml:space="preserve">
-    <value>pRule_1</value>
-  </data>
-  <data name="&gt;&gt;txtRule_1_Search.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="pRule_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 107</value>
-  </data>
-  <data name="pRule_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 64</value>
-  </data>
-  <data name="pRule_1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;pRule_1.Name" xml:space="preserve">
-    <value>pRule_1</value>
-  </data>
-  <data name="&gt;&gt;pRule_1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pRule_1.Parent" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;pRule_1.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="gbRules.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="gbRules.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 106</value>
-  </data>
-  <data name="gbRules.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 295</value>
-  </data>
-  <data name="gbRules.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="gbRules.Text" xml:space="preserve">
-    <value> Regeln (optional) </value>
-  </data>
-  <data name="&gt;&gt;gbRules.Name" xml:space="preserve">
-    <value>gbRules</value>
-  </data>
-  <data name="&gt;&gt;gbRules.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbRules.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbRules.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="panelRenameResultExample.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="lblOriginalName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblOriginalName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="lblOriginalName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="lblOriginalName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 13</value>
-  </data>
-  <data name="lblOriginalName.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="lblOriginalName.Text" xml:space="preserve">
-    <value>OrdnerABC_P2P_x</value>
-  </data>
-  <data name="&gt;&gt;lblOriginalName.Name" xml:space="preserve">
-    <value>lblOriginalName</value>
-  </data>
-  <data name="&gt;&gt;lblOriginalName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblOriginalName.Parent" xml:space="preserve">
-    <value>panelRenameResultExample</value>
-  </data>
-  <data name="&gt;&gt;lblOriginalName.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblArrow.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblArrow.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="lblArrow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 0</value>
-  </data>
-  <data name="lblArrow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 13</value>
-  </data>
-  <data name="lblArrow.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="lblArrow.Text" xml:space="preserve">
-    <value>=&gt;</value>
-  </data>
-  <data name="&gt;&gt;lblArrow.Name" xml:space="preserve">
-    <value>lblArrow</value>
-  </data>
-  <data name="&gt;&gt;lblArrow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblArrow.Parent" xml:space="preserve">
-    <value>panelRenameResultExample</value>
-  </data>
-  <data name="&gt;&gt;lblArrow.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblResultingName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblResultingName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="lblResultingName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 0</value>
-  </data>
-  <data name="lblResultingName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="lblResultingName.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="lblResultingName.Text" xml:space="preserve">
-    <value>01-Ordner_ABC</value>
+  <data name="gbFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>345, 296</value>
   </data>
   <data name="&gt;&gt;lblResultingName.Name" xml:space="preserve">
     <value>lblResultingName</value>
   </data>
-  <data name="&gt;&gt;lblResultingName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblResultingName.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblArrow.Parent" xml:space="preserve">
     <value>panelRenameResultExample</value>
   </data>
-  <data name="&gt;&gt;lblResultingName.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;txtRule_0_pattern.Parent" xml:space="preserve">
+    <value>gbRules</value>
   </data>
-  <data name="panelRenameResultExample.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 414</value>
-  </data>
-  <data name="panelRenameResultExample.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 21</value>
-  </data>
-  <data name="panelRenameResultExample.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;panelRenameResultExample.Name" xml:space="preserve">
-    <value>panelRenameResultExample</value>
-  </data>
-  <data name="&gt;&gt;panelRenameResultExample.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelRenameResultExample.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panelRenameResultExample.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnStart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="btnStart.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnStart.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="btnStart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>326, 446</value>
-  </data>
-  <data name="btnStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 33</value>
+  <data name="txtRule_1_Search.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="btnStart.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="btnStart.Text" xml:space="preserve">
-    <value>Starten</value>
+  <data name="&gt;&gt;txtRule_1_Search.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnStart.Name" xml:space="preserve">
-    <value>btnStart</value>
+  <data name="&gt;&gt;txtFiletype.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnStart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtRule_2_Replace.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
   </data>
-  <data name="&gt;&gt;btnStart.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnStart.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="linkLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblArrow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="linkLabel1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
+  <data name="&gt;&gt;rbFiles.Parent" xml:space="preserve">
+    <value>gbSource</value>
   </data>
-  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 474</value>
+  <data name="lblRule_0_example.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 17</value>
+  <data name="lblRule_3_Prepend.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="&gt;&gt;txtRule_1_Search.Name" xml:space="preserve">
+    <value>txtRule_1_Search</value>
   </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>by xcy7e</value>
+  <data name="&gt;&gt;gbFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
-    <value>linkLabel1</value>
+  <data name="&gt;&gt;txtRule_1_Search.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pRule_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 64</value>
   </data>
-  <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;txtRule_2_Replace.Name" xml:space="preserve">
+    <value>txtRule_2_Replace</value>
   </data>
-  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRule_1_ReplaceLbl.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="txtRule_3_Append.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="lblRule_2_SearchLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 15</value>
+  </data>
+  <data name="&gt;&gt;lblRule_2_SearchLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblRule_1_ReplaceLbl.Text" xml:space="preserve">
+    <value>Ersetze</value>
+  </data>
+  <data name="txtRule_1_Search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 21</value>
+  </data>
+  <data name="txtRule_1_Replace.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="pictureBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblRule_0_pattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 15</value>
+  </data>
+  <data name="&gt;&gt;lblRule_1_SearchLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labellblRule_3_Append.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;rbFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblRule_2_ReplaceLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 15</value>
+  </data>
+  <data name="rbRule_0_before.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="btnStart.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="txtFiletype.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 22</value>
+  </data>
+  <data name="txtRule_2_Search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 21</value>
+  </data>
+  <data name="rbRule_0_before.Text" xml:space="preserve">
+    <value>Vor</value>
+  </data>
+  <data name="&gt;&gt;lblRule_0_pattern.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="rbFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
+  </data>
+  <data name="gbSource.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="txtRule_1_Search.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="&gt;&gt;rbRule_0_before.Parent" xml:space="preserve">
+    <value>gbRules</value>
+  </data>
+  <data name="&gt;&gt;txtFiletype.Parent" xml:space="preserve">
+    <value>pFileending</value>
+  </data>
+  <data name="txtPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 23</value>
+  </data>
+  <data name="gbRules.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="lblRule_3_Explanation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 16</value>
+  </data>
+  <data name="lblRule_3_Prepend.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblRule_3_Prepend.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="&gt;&gt;btnSearchPath.Name" xml:space="preserve">
+    <value>btnSearchPath</value>
+  </data>
+  <data name="&gt;&gt;lblRule_2_SearchLbl.Parent" xml:space="preserve">
+    <value>pRule_2</value>
+  </data>
+  <data name="&gt;&gt;txtRule_3_Prepend.Parent" xml:space="preserve">
+    <value>pRule_3</value>
+  </data>
+  <data name="txtRule_2_Search.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="lblResultingName.Text" xml:space="preserve">
+    <value>01-Ordner_ABC</value>
+  </data>
+  <data name="&gt;&gt;pRule_3.Name" xml:space="preserve">
+    <value>pRule_3</value>
+  </data>
+  <data name="lblResultingName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtRule_2_Search.Name" xml:space="preserve">
+    <value>txtRule_2_Search</value>
+  </data>
+  <data name="rbRule_0_before.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
+    <value>pRule_2</value>
+  </data>
+  <data name="lblRule_3_Explanation.Text" xml:space="preserve">
+    <value>Füge einen Text an jedes Verzeichnis</value>
+  </data>
+  <data name="cbFileending.Text" xml:space="preserve">
+    <value>Endungen</value>
   </data>
   <data name="btnSettings.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="btnSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>674, 460</value>
+  <data name="listBoxFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 21</value>
+  </data>
+  <data name="&gt;&gt;rbDirs.Name" xml:space="preserve">
+    <value>rbDirs</value>
+  </data>
+  <data name="cbRule_0_Numbers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 22</value>
+  </data>
+  <data name="&gt;&gt;pRule_2.Name" xml:space="preserve">
+    <value>pRule_2</value>
+  </data>
+  <data name="txtRule_0_pattern.Text" xml:space="preserve">
+    <value>%nn-</value>
+  </data>
+  <data name="&gt;&gt;pbSeparator_1.Parent" xml:space="preserve">
+    <value>gbRules</value>
+  </data>
+  <data name="&gt;&gt;lblRule_0_pattern.Name" xml:space="preserve">
+    <value>lblRule_0_pattern</value>
+  </data>
+  <data name="&gt;&gt;lblRule_0_example.Name" xml:space="preserve">
+    <value>lblRule_0_example</value>
+  </data>
+  <data name="&gt;&gt;txtRule_1_Replace.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnStart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtRule_3_Append.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="txtFiletype.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="btnSearchPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 26</value>
+  </data>
+  <data name="txtRule_1_Replace.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cbRule_0_Numbers.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="&gt;&gt;pRule_1.Name" xml:space="preserve">
+    <value>pRule_1</value>
+  </data>
+  <data name="&gt;&gt;labellblRule_3_Append.Name" xml:space="preserve">
+    <value>labellblRule_3_Append</value>
+  </data>
+  <data name="btnStart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 33</value>
+  </data>
+  <data name="pFileending.TabIndex" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>by xcy7e</value>
+  </data>
+  <data name="txtRule_0_pattern.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;listBoxFiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtRule_3_Prepend.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblRule_2_SearchLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRule_1_ReplaceLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 38</value>
+  </data>
+  <data name="pRule_1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbFileending.Name" xml:space="preserve">
+    <value>cbFileending</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="rbRule_0_after.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gbFiles.Text" xml:space="preserve">
+    <value> Inhalt </value>
   </data>
   <data name="btnSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>28, 28</value>
   </data>
-  <data name="btnSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="labellblRule_3_Append.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;labellblRule_3_Append.Parent" xml:space="preserve">
+    <value>pRule_3</value>
+  </data>
+  <data name="&gt;&gt;cbRule_0_Numbers.Name" xml:space="preserve">
+    <value>cbRule_0_Numbers</value>
+  </data>
+  <data name="rbRule_0_before.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 19</value>
+  </data>
+  <data name="&gt;&gt;lblRule_3_Explanation.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnOpenDir.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="&gt;&gt;lblResultingName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblRule_1_SearchLbl.Parent" xml:space="preserve">
+    <value>pRule_1</value>
+  </data>
+  <data name="lblRule_0_example.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 19</value>
+  </data>
+  <data name="&gt;&gt;lblOriginalName.Parent" xml:space="preserve">
+    <value>panelRenameResultExample</value>
+  </data>
+  <data name="btnStart.Text" xml:space="preserve">
+    <value>Starten</value>
+  </data>
+  <data name="txtRule_1_Search.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 8</value>
+  </data>
+  <data name="cbRule_0_Numbers.Text" xml:space="preserve">
+    <value>Numerieren</value>
+  </data>
+  <data name="pFileending.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 54</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>BatchFileRenamer.LocalizedForm, BatchFileRenamer, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;lblRule_0_pattern.Parent" xml:space="preserve">
+    <value>gbRules</value>
+  </data>
+  <data name="&gt;&gt;btnOpenDir.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnOpenDir.Name" xml:space="preserve">
+    <value>btnOpenDir</value>
+  </data>
+  <data name="&gt;&gt;rbRule_0_after.Parent" xml:space="preserve">
+    <value>gbRules</value>
+  </data>
+  <data name="txtRule_3_Append.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 21</value>
+  </data>
+  <data name="panelRenameResultExample.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblRule_1_SearchLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="txtRule_2_Replace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 32</value>
+  </data>
+  <data name="txtPath.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="lblRule_3_Explanation.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="lblRule_3_Prepend.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRule_1_SearchLbl.Text" xml:space="preserve">
+    <value>Suche</value>
+  </data>
+  <data name="listBoxFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="lblRule_0_pattern.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 51</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRule_2_ReplaceLbl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pbSeparator_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 79</value>
+  </data>
+  <data name="txtPath.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="&gt;&gt;rbDirs.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gbSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 12</value>
+  </data>
+  <data name="&gt;&gt;btnSearchPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pbSeparator_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 1</value>
+  </data>
+  <data name="lblRule_2_SearchLbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="rbDirs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 55</value>
+  </data>
+  <data name="lblRule_1_SearchLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbFiles.Text" xml:space="preserve">
+    <value>Dateien</value>
   </data>
   <data name="&gt;&gt;btnSettings.Name" xml:space="preserve">
     <value>btnSettings</value>
   </data>
-  <data name="&gt;&gt;btnSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="rbRule_0_before.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 21</value>
   </data>
-  <data name="&gt;&gt;btnSettings.Parent" xml:space="preserve">
+  <data name="lblRule_1_ReplaceLbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>730, 539</value>
+  </data>
+  <data name="&gt;&gt;lblRule_3_Prepend.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtRule_0_pattern.MaxLength" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;rbRule_0_after.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbFileending.Parent" xml:space="preserve">
+    <value>pFileending</value>
+  </data>
+  <data name="lblRule_2_ReplaceLbl.Text" xml:space="preserve">
+    <value>Ersetze</value>
+  </data>
+  <data name="btnStart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>326, 459</value>
+  </data>
+  <data name="&gt;&gt;lblOriginalName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtPath.Name" xml:space="preserve">
+    <value>txtPath</value>
+  </data>
+  <data name="txtRule_2_Replace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 21</value>
+  </data>
+  <data name="&gt;&gt;btnStart.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;gbRules.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtRule_1_Replace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 21</value>
+  </data>
+  <data name="btnSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="labellblRule_3_Append.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="lblOriginalName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="listBoxFiles.ItemHeight" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;rbFiles.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="gbFiles.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="listBoxFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;lblRule_0_example.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;panelRenameResultExample.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnSettings.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txtRule_3_Prepend.Name" xml:space="preserve">
+    <value>txtRule_3_Prepend</value>
+  </data>
+  <data name="cbRule_0_Numbers.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="&gt;&gt;lblRule_0_example.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbRule_0_after.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pbSeparator_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 17</value>
+  </data>
+  <data name="&gt;&gt;rbDirs.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblRule_2_SearchLbl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;gbRules.Name" xml:space="preserve">
+    <value>gbRules</value>
+  </data>
+  <data name="gbSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="rbRule_0_after.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 19</value>
+  </data>
+  <data name="lblRule_2_ReplaceLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblRule_3_Explanation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblRule_0_pattern.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cbFileending.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 19</value>
+  </data>
+  <data name="&gt;&gt;txtRule_0_pattern.Name" xml:space="preserve">
+    <value>txtRule_0_pattern</value>
+  </data>
+  <data name="&gt;&gt;gbRules.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRule_2_ReplaceLbl.Parent" xml:space="preserve">
+    <value>pRule_2</value>
+  </data>
+  <data name="gbFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnOpenDir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 24</value>
+  </data>
+  <data name="rbRule_0_after.Location" type="System.Drawing.Point, System.Drawing">
+    <value>204, 21</value>
+  </data>
+  <data name="panelRenameResultExample.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;rbRule_0_before.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="labellblRule_3_Append.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 55</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>714, 500</value>
+  <data name="&gt;&gt;pRule_3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblArrow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gbRules.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 106</value>
+  </data>
+  <data name="&gt;&gt;lblRule_1_SearchLbl.Name" xml:space="preserve">
+    <value>lblRule_1_SearchLbl</value>
+  </data>
+  <data name="&gt;&gt;lblRule_0_example.Parent" xml:space="preserve">
+    <value>gbRules</value>
+  </data>
+  <data name="lblArrow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 13</value>
+  </data>
+  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblRule_2_ReplaceLbl.Name" xml:space="preserve">
+    <value>lblRule_2_ReplaceLbl</value>
+  </data>
+  <data name="lblRule_3_Prepend.Text" xml:space="preserve">
+    <value>Davor</value>
+  </data>
+  <data name="lblOriginalName.Text" xml:space="preserve">
+    <value>OrdnerABC_P2P_x</value>
+  </data>
+  <data name="&gt;&gt;lblRule_1_SearchLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pFileending.Name" xml:space="preserve">
+    <value>pFileending</value>
+  </data>
+  <data name="&gt;&gt;txtRule_2_Replace.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pRule_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 81</value>
+  </data>
+  <data name="&gt;&gt;pRule_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pRule_2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblResultingName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="&gt;&gt;lblOriginalName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSearchPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1423,16 +976,607 @@
         /wD//4AAAf//AP//8AAP//8A////w////wA=
 </value>
   </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>730, 539</value>
+  <data name="&gt;&gt;txtRule_1_Replace.Parent" xml:space="preserve">
+    <value>pRule_1</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="&gt;&gt;lblOriginalName.Name" xml:space="preserve">
+    <value>lblOriginalName</value>
+  </data>
+  <data name="lblRule_0_example.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;gbSource.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblRule_3_Explanation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pRule_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pRule_2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblRule_0_pattern.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;rbRule_0_before.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblRule_0_pattern.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="&gt;&gt;pRule_1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
+  </data>
+  <data name="txtRule_3_Prepend.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;labellblRule_3_Append.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbDirs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 20</value>
+  </data>
+  <data name="&gt;&gt;txtFiletype.Name" xml:space="preserve">
+    <value>txtFiletype</value>
+  </data>
+  <data name="gbRules.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;txtRule_3_Append.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblRule_1_ReplaceLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 15</value>
+  </data>
+  <data name="lblRule_0_example.Text" xml:space="preserve">
+    <value>01-Dateiname</value>
+  </data>
+  <data name="lblRule_1_ReplaceLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pRule_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pRule_3.Parent" xml:space="preserve">
+    <value>gbRules</value>
+  </data>
+  <data name="gbSource.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cbRule_0_Numbers.Parent" xml:space="preserve">
+    <value>gbRules</value>
+  </data>
+  <data name="lblRule_3_Prepend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 28</value>
+  </data>
+  <data name="&gt;&gt;lblRule_1_ReplaceLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="btnSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>674, 460</value>
+  </data>
+  <data name="&gt;&gt;btnOpenDir.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="rbFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 474</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnOpenDir.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="&gt;&gt;lblRule_3_Prepend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pRule_2.Parent" xml:space="preserve">
+    <value>gbRules</value>
+  </data>
+  <data name="cbRule_0_Numbers.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pRule_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 64</value>
+  </data>
+  <data name="cbFileending.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value> Quelle </value>
+  </data>
+  <data name="&gt;&gt;btnSearchPath.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblRule_2_ReplaceLbl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblRule_0_example.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblRule_1_SearchLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 11</value>
+  </data>
+  <data name="rbRule_0_after.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblRule_1_ReplaceLbl.Parent" xml:space="preserve">
+    <value>pRule_1</value>
+  </data>
+  <data name="&gt;&gt;cbFileending.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;gbFiles.Name" xml:space="preserve">
+    <value>gbFiles</value>
+  </data>
+  <data name="&gt;&gt;txtRule_3_Prepend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labellblRule_3_Append.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtRule_3_Prepend.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="&gt;&gt;pRule_1.Parent" xml:space="preserve">
+    <value>gbRules</value>
+  </data>
+  <data name="txtRule_0_pattern.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 48</value>
+  </data>
+  <data name="lblArrow.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="txtPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="lblRule_2_ReplaceLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnSearchPath.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="pRule_3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>313, 77</value>
+  </data>
+  <data name="&gt;&gt;gbSource.Name" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="labellblRule_3_Append.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 15</value>
+  </data>
+  <data name="&gt;&gt;btnOpenDir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtRule_2_Search.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;listBoxFiles.Name" xml:space="preserve">
+    <value>listBoxFiles</value>
+  </data>
+  <data name="listBoxFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 260</value>
+  </data>
+  <data name="lblRule_2_ReplaceLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 35</value>
+  </data>
+  <data name="&gt;&gt;txtFiletype.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnStart.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rbDirs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rbDirs.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="labellblRule_3_Append.Text" xml:space="preserve">
+    <value>Danach</value>
+  </data>
+  <data name="&gt;&gt;txtRule_0_pattern.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblResultingName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 0</value>
+  </data>
+  <data name="lblRule_1_ReplaceLbl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gbRules.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 295</value>
+  </data>
+  <data name="&gt;&gt;pFileending.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="lblArrow.Text" xml:space="preserve">
+    <value>=&gt;</value>
+  </data>
+  <data name="&gt;&gt;pFileending.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblRule_3_Explanation.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="txtPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 24</value>
+  </data>
+  <data name="&gt;&gt;txtPath.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblOriginalName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 13</value>
+  </data>
+  <data name="&gt;&gt;txtRule_3_Append.Parent" xml:space="preserve">
+    <value>pRule_3</value>
+  </data>
+  <data name="rbRule_0_before.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblRule_3_Prepend.Parent" xml:space="preserve">
+    <value>pRule_3</value>
+  </data>
+  <data name="rbDirs.Text" xml:space="preserve">
+    <value>Verzeichnisse</value>
+  </data>
+  <data name="&gt;&gt;txtRule_0_pattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblOriginalName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;rbRule_0_before.Name" xml:space="preserve">
+    <value>rbRule_0_before</value>
+  </data>
+  <data name="txtRule_3_Append.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 52</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbRule_0_Numbers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 19</value>
+  </data>
+  <data name="pRule_3.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="txtRule_2_Search.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 5</value>
+  </data>
+  <data name="btnStart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="&gt;&gt;lblRule_3_Explanation.Name" xml:space="preserve">
+    <value>lblRule_3_Explanation</value>
+  </data>
+  <data name="lblRule_2_SearchLbl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 8</value>
+  </data>
+  <data name="pFileending.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 27</value>
+  </data>
+  <data name="btnOpenDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>604, 23</value>
+  </data>
+  <data name="lblRule_1_SearchLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 15</value>
+  </data>
+  <data name="&gt;&gt;gbSource.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblRule_0_pattern.Text" xml:space="preserve">
+    <value>Muster</value>
+  </data>
+  <data name="rbDirs.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblArrow.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtRule_1_Replace.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 61</value>
+  </data>
+  <data name="cbFileending.TabIndex" type="System.Int32, mscorlib">
+    <value>101</value>
+  </data>
+  <data name="txtRule_3_Prepend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 25</value>
+  </data>
+  <data name="&gt;&gt;rbFiles.Name" xml:space="preserve">
+    <value>rbFiles</value>
+  </data>
+  <data name="&gt;&gt;panelRenameResultExample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rbFiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;pbSeparator_1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="rbRule_0_after.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="pRule_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 147</value>
+  </data>
+  <data name="&gt;&gt;cbFileending.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblResultingName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="gbFiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;panelRenameResultExample.Name" xml:space="preserve">
+    <value>panelRenameResultExample</value>
+  </data>
+  <data name="btnSearchPath.Text" xml:space="preserve">
+    <value>Ordner wählen</value>
+  </data>
+  <data name="lblArrow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 0</value>
+  </data>
+  <data name="&gt;&gt;txtRule_1_Replace.Name" xml:space="preserve">
+    <value>txtRule_1_Replace</value>
+  </data>
+  <data name="linkLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="lblRule_3_Explanation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 2</value>
+  </data>
+  <data name="lblOriginalName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="&gt;&gt;txtRule_3_Append.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblRule_0_example.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 51</value>
+  </data>
+  <data name="lblArrow.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblRule_3_Explanation.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;btnStart.Name" xml:space="preserve">
+    <value>btnStart</value>
+  </data>
+  <data name="&gt;&gt;panelRenameResultExample.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;listBoxFiles.Parent" xml:space="preserve">
+    <value>gbFiles</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>BatchFileRenamer.LocalizedForm, BatchFileRenamer, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="txtFiletype.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 2</value>
   </data>
+  <data name="rbRule_0_after.Text" xml:space="preserve">
+    <value>Nach</value>
+  </data>
+  <data name="&gt;&gt;lblRule_1_ReplaceLbl.Name" xml:space="preserve">
+    <value>lblRule_1_ReplaceLbl</value>
+  </data>
+  <data name="&gt;&gt;lblRule_0_pattern.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtRule_0_pattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="&gt;&gt;txtRule_2_Replace.Parent" xml:space="preserve">
+    <value>pRule_2</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblRule_2_SearchLbl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 56</value>
+  </data>
+  <data name="gbFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 105</value>
+  </data>
+  <data name="&gt;&gt;lblRule_3_Prepend.Name" xml:space="preserve">
+    <value>lblRule_3_Prepend</value>
+  </data>
+  <data name="&gt;&gt;lblRule_3_Explanation.Parent" xml:space="preserve">
+    <value>pRule_3</value>
+  </data>
+  <data name="&gt;&gt;lblRule_2_SearchLbl.Name" xml:space="preserve">
+    <value>lblRule_2_SearchLbl</value>
+  </data>
+  <data name="&gt;&gt;txtRule_2_Search.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>714, 500</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 1</value>
+  </data>
+  <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 1</value>
+  </data>
+  <data name="btnSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblRule_2_SearchLbl.Text" xml:space="preserve">
+    <value>Suche</value>
+  </data>
+  <data name="txtRule_1_Replace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 35</value>
+  </data>
+  <data name="panelRenameResultExample.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 414</value>
+  </data>
+  <data name="lblRule_2_ReplaceLbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="lblRule_0_pattern.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="txtRule_3_Prepend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 21</value>
+  </data>
+  <data name="btnStart.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtRule_2_Search.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbRule_0_Numbers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cbFileending.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="txtRule_2_Replace.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;gbRules.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblResultingName.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;gbFiles.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pFileending.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rbRule_0_before.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;txtRule_1_Search.Parent" xml:space="preserve">
+    <value>pRule_1</value>
+  </data>
+  <data name="rbRule_0_after.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="lblOriginalName.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="gbSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>667, 87</value>
+  </data>
+  <data name="linkLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;txtPath.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
+    <value>linkLabel1</value>
+  </data>
+  <data name="&gt;&gt;pbSeparator_1.Name" xml:space="preserve">
+    <value>pbSeparator_1</value>
+  </data>
+  <data name="&gt;&gt;lblArrow.Name" xml:space="preserve">
+    <value>lblArrow</value>
+  </data>
+  <data name="txtRule_0_pattern.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="lblRule_1_SearchLbl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="btnSearchPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>483, 22</value>
+  </data>
+  <data name="cbFileending.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblResultingName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblRule_3_Prepend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 15</value>
+  </data>
+  <data name="&gt;&gt;lblResultingName.Parent" xml:space="preserve">
+    <value>panelRenameResultExample</value>
+  </data>
+  <data name="&gt;&gt;listBoxFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pbSeparator_1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="pRule_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 212</value>
+  </data>
+  <data name="&gt;&gt;gbFiles.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtRule_2_Replace.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtRule_3_Append.Name" xml:space="preserve">
+    <value>txtRule_3_Append</value>
+  </data>
+  <data name="&gt;&gt;btnSearchPath.Parent" xml:space="preserve">
+    <value>gbSource</value>
+  </data>
+  <data name="gbRules.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 61</value>
+  </data>
+  <data name="gbRules.Text" xml:space="preserve">
+    <value> Regeln </value>
+  </data>
+  <data name="&gt;&gt;rbRule_0_after.Name" xml:space="preserve">
+    <value>rbRule_0_after</value>
+  </data>
+  <data name="&gt;&gt;cbRule_0_Numbers.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtRule_2_Search.Parent" xml:space="preserve">
+    <value>pRule_2</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>en</value>
+  </metadata>
 </root>
