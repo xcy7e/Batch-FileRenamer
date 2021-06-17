@@ -12,3 +12,12 @@ D:\Development\Desktop Applications\BatchFileRenamer\bin\Debug\BatchFileRenamer.
 D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\BatchFileRenamer.TrustInfo.xml
 D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\BatchFileRenamer.exe.manifest
 D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\BatchFileRenamer.application
+D:\Development\Desktop Applications\BatchFileRenamer\bin\Debug\BatchFileRenamer.exe.config
+D:\Development\Desktop Applications\BatchFileRenamer\bin\Debug\de\BatchFileRenamer.resources.dll
+D:\Development\Desktop Applications\BatchFileRenamer\bin\Debug\en\BatchFileRenamer.resources.dll
+D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\BatchFileRenamer.Settings.resources
+D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\BatchFileRenamer.Form1.de.resources
+D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\BatchFileRenamer.Form1.en.resources
+D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\de\BatchFileRenamer.resources.dll
+D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\en\BatchFileRenamer.resources.dll
+D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\BatchFileRenamer.Settings.de.resources

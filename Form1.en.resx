@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnSearchPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 25</value>
+    <value>122, 26</value>
   </data>
   <data name="btnSearchPath.Text" xml:space="preserve">
     <value>Choose directory</value>
@@ -127,12 +127,11 @@
   <data name="gbFiles.Text" xml:space="preserve">
     <value> Content </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="gbSource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="gbSource.Text" xml:space="preserve">
     <value> Source </value>
+  </data>
+  <data name="btnOpenDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>611, 23</value>
   </data>
   <data name="rbDirs.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 20</value>
@@ -145,9 +144,6 @@
   </data>
   <data name="rbFiles.Text" xml:space="preserve">
     <value>Files</value>
-  </data>
-  <data name="gbRules.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
   </data>
   <data name="gbRules.Text" xml:space="preserve">
     <value> Rules (optional) </value>
@@ -163,6 +159,21 @@
   </data>
   <data name="lblRule_0_pattern.Text" xml:space="preserve">
     <value>Pattern</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 182</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 15</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 15</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Search</value>
   </data>
   <data name="rbRule_0_after.Location" type="System.Drawing.Point, System.Drawing">
     <value>231, 22</value>
@@ -197,56 +208,8 @@
   <data name="lblRule_1_SearchLbl.Text" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 182</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 15</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Replace</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 15</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="panelRenameResultExample.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="lblOriginalName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="lblOriginalName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 13</value>
-  </data>
-  <data name="lblArrow.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="lblArrow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 0</value>
-  </data>
-  <data name="lblArrow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 13</value>
-  </data>
-  <data name="lblResultingName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="lblResultingName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>131, 0</value>
-  </data>
-  <data name="lblResultingName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="btnStart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
   <data name="btnStart.Text" xml:space="preserve">
     <value>Start</value>
-  </data>
-  <data name="btnSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

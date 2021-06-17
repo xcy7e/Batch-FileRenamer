@@ -37,6 +37,7 @@ namespace BatchFileRenamer
             this.listBoxFiles = new System.Windows.Forms.ListBox();
             this.gbFiles = new System.Windows.Forms.GroupBox();
             this.gbSource = new System.Windows.Forms.GroupBox();
+            this.btnOpenDir = new System.Windows.Forms.PictureBox();
             this.pFileending = new System.Windows.Forms.Panel();
             this.cbFileending = new System.Windows.Forms.CheckBox();
             this.txtFiletype = new System.Windows.Forms.TextBox();
@@ -72,6 +73,7 @@ namespace BatchFileRenamer
             this.btnSettings = new System.Windows.Forms.PictureBox();
             this.gbFiles.SuspendLayout();
             this.gbSource.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnOpenDir)).BeginInit();
             this.pFileending.SuspendLayout();
             this.gbRules.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -94,6 +96,7 @@ namespace BatchFileRenamer
             // 
             resources.ApplyResources(this.txtPath, "txtPath");
             this.txtPath.Name = "txtPath";
+            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             // 
             // listBoxFiles
             // 
@@ -112,6 +115,7 @@ namespace BatchFileRenamer
             // gbSource
             // 
             resources.ApplyResources(this.gbSource, "gbSource");
+            this.gbSource.Controls.Add(this.btnOpenDir);
             this.gbSource.Controls.Add(this.pFileending);
             this.gbSource.Controls.Add(this.rbDirs);
             this.gbSource.Controls.Add(this.rbFiles);
@@ -119,6 +123,19 @@ namespace BatchFileRenamer
             this.gbSource.Controls.Add(this.btnSearchPath);
             this.gbSource.Name = "gbSource";
             this.gbSource.TabStop = false;
+            // 
+            // btnOpenDir
+            // 
+            this.btnOpenDir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnOpenDir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnOpenDir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenDir.Image = global::BatchFileRenamer.Properties.Resources.shell32_319;
+            resources.ApplyResources(this.btnOpenDir, "btnOpenDir");
+            this.btnOpenDir.Name = "btnOpenDir";
+            this.btnOpenDir.TabStop = false;
+            this.btnOpenDir.Click += new System.EventHandler(this.btnOpenDir_Click);
+            this.btnOpenDir.MouseEnter += new System.EventHandler(this.btnOpenDir_MouseEnter);
+            this.btnOpenDir.MouseLeave += new System.EventHandler(this.btnOpenDir_MouseLeave);
             // 
             // pFileending
             // 
@@ -369,6 +386,7 @@ namespace BatchFileRenamer
             this.gbFiles.ResumeLayout(false);
             this.gbSource.ResumeLayout(false);
             this.gbSource.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnOpenDir)).EndInit();
             this.pFileending.ResumeLayout(false);
             this.pFileending.PerformLayout();
             this.gbRules.ResumeLayout(false);
@@ -428,6 +446,7 @@ namespace BatchFileRenamer
         private System.Windows.Forms.Panel pFileending;
         private System.Windows.Forms.CheckBox cbFileending;
         private System.Windows.Forms.TextBox txtFiletype;
+        private System.Windows.Forms.PictureBox btnOpenDir;
     }
 }
 

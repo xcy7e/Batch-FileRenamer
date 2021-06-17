@@ -25,6 +25,7 @@ namespace BatchFileRenamer
             InitializeComponent();
             clearExampleLabels();
             setTranslations();
+            setButtonTooltip();
         }
 
         private void setTranslations()
@@ -43,6 +44,10 @@ namespace BatchFileRenamer
             tEN.Add("files", " files");
             tDE.Add("dirs", " Verzeichnisse");
             tEN.Add("dirs", " directories");
+            tDE.Add("error", "Fehler");
+            tEN.Add("error", "Error");
+            tDE.Add("error_pathnotexist", "Dieses Verzeichnis existiert nicht!");
+            tEN.Add("error_pathnotexist", "This directory does not exist!");
             tDE.Add("rename_sure", " werden umbenannt!\nWirklich fortfahren ? ");
             tEN.Add("rename_sure", " will be renamed!\nProceed ? ");
             tDE.Add("rename_sure_title", "Sicher ? ");
@@ -51,9 +56,17 @@ namespace BatchFileRenamer
             tEN.Add("rename_nothingtodo", "By the rules set there is nothing to rename.");
             tDE.Add("rename_nothingtodo_title", "Nichts zu tun!");
             tEN.Add("rename_nothingtodo_title", "Nothing to do!");
+            tDE.Add("btnOpenDir_tooltip", "Verzeichnis im Explorer öffnen");
+            tEN.Add("btnOpenDir_tooltip", "Open directory in explorer");
 
             translations.Add("de", tDE);
             translations.Add("en", tEN);
+        }
+
+        private void setButtonTooltip()
+        {
+            ToolTip t = new ToolTip();
+            t.SetToolTip(btnOpenDir, getLocStr(Properties.Settings.Default.language, "btnOpenDir_tooltip"));
         }
 
         public string getLocStr(string lang, string key)
@@ -319,6 +332,11 @@ namespace BatchFileRenamer
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if (!Directory.Exists(txtPath.Text))
+            {
+                MessageBox.Show(getLocStr(Properties.Settings.Default.language, "error_pathnotexist"), getLocStr(Properties.Settings.Default.language, "error"), MessageBoxButtons.OK);
+                return;
+            }
             string itemType = getLocStr(Properties.Settings.Default.language, "files");
             if (rbDirs.Checked) {
                 itemType = getLocStr(Properties.Settings.Default.language, "dirs");
@@ -523,6 +541,7 @@ namespace BatchFileRenamer
         public void updateLanguage()
         {
             GlobalUICulture = CultureInfo.GetCultureInfo(Properties.Settings.Default.language);
+            setButtonTooltip();
         }
 
         public static CultureInfo GlobalUICulture
@@ -576,6 +595,49 @@ namespace BatchFileRenamer
             if(txtFiletype.Text.Length > 0 && cbFileending.Checked == false)
             {
                 cbFileending.Checked = true;
+            }
+        }
+
+        private void btnOpenDir_MouseEnter(object sender, EventArgs e)
+        {
+            if(txtPath.Text.Length == 0)
+            {
+                btnOpenDir.Cursor = Cursors.Default;
+            } else
+            {
+                btnOpenDir.Cursor = Cursors.Hand;
+                btnOpenDir.BackColor = Color.FromArgb(200, 200, 200);
+            }
+        }
+
+        private void btnOpenDir_MouseLeave(object sender, EventArgs e)
+        {
+            btnOpenDir.BackColor = Color.FromArgb(224, 224, 224);
+        }
+
+        private void btnOpenDir_Click(object sender, EventArgs e)
+        {
+            if(txtPath.Text.Length > 0)
+            {
+                if(Directory.Exists(txtPath.Text))
+                {
+                    Process.Start(txtPath.Text);
+                } else
+                {
+                    MessageBox.Show(getLocStr(Properties.Settings.Default.language, "error_pathnotexist"), getLocStr(Properties.Settings.Default.language, "error"), MessageBoxButtons.OK);
+                }
+            }
+        }
+
+        private void txtPath_TextChanged(object sender, EventArgs e)
+        {
+            if (Directory.Exists(txtPath.Text))
+            {
+                PopulateListBox(listBoxFiles, txtPath.Text, "*.*");
+            } else
+            {
+                // clear list
+                listBoxFiles.Items.Clear();
             }
         }
     }
