@@ -36,6 +36,6 @@
 <h1 align="center">How to install</h1>
 <p align="center">
 To install this application, download and extract the latest zip file:</p>
-<h3 align="center"><a href="https://github.com/xcy7e/Batch-FileRenamer/blob/master/BatchFileRenamer_v1.6.0.1.zip">BatchFileRenamer_v1.6.0.1.zip</a></h3>
+<h3 align="center"><a href="https://github.com/xcy7e/Batch-FileRenamer/blob/master/BatchFileRenamer_v1.6.1.2.zip">BatchFileRenamer_v1.6.1.2.zip</a></h3>
 <p align="center">(<i>Extract & run setup.exe</i>)</p>
 <br><br>
