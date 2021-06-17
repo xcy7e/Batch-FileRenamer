@@ -1,6 +1,6 @@
 <h1 align="center"># BatchFileRenamer</h1>
 <br>
-<p  align="center">Rename multiple files/directories at once<br>apply filters & automatic numbering</p>
+<p  align="center">Rename multiple files or directories at once<br>apply filters & perform automatic numbering</p>
 
 <h2 align="center">Easy to use user interface</h2>
 
