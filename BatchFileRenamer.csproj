@@ -27,7 +27,7 @@
     <ProductName>Batch FileRenamer</ProductName>
     <PublisherName>Jonathan Riedmair</PublisherName>
     <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.5.0.%2a</ApplicationVersion>
+    <ApplicationVersion>1.6.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -158,6 +158,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Properties\icons\flag_en.png" />
+    <None Include="Properties\icons\flag_de.png" />
     <None Include="Properties\icons\shell32_16826.png" />
     <None Include="Properties\icons\shell32_16803.png" />
     <None Include="Properties\icons\shell32_16802.png" />

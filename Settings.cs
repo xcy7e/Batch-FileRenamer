@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,6 +38,15 @@ namespace BatchFileRenamer
                     break;
             }
             cbLanguage.SelectedIndex = preselLang;
+            cbContextIntegration.Checked = Properties.Settings.Default.explorer_context;
+
+            initHelpTooltip();
+        }
+
+        private void initHelpTooltip()
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(helpContextSetting, mainFrm.getLocStr(Properties.Settings.Default.language, "settings_helpContextIntegration"));
         }
 
         private void saveSettings()
@@ -51,15 +61,84 @@ namespace BatchFileRenamer
                 default:
                     Properties.Settings.Default.language = "en";
                     break;
-            }
+            }    
+            setContextIntegration(cbContextIntegration.Checked);
 
             mainFrm.updateLanguage();
             this.Close();
         }
 
+        private void setContextIntegration(bool status)
+        {
+            RegistryKey regmenu = null;
+            RegistryKey regcmd = null;
+
+            string menuEntry = "Folder\\shell\\startBatchFileRenamer";
+            string menuCommand = menuEntry + "\\command";
+            string menuCmdExecutable = System.Reflection.Assembly.GetEntryAssembly().Location+ " \"%1\"";
+            string labelText = mainFrm.getLocStr(Properties.Settings.Default.language, "context_menu_label");
+
+            if (status) 
+            {
+                // enable
+                try
+                {
+                    regmenu = Registry.ClassesRoot.CreateSubKey(menuEntry);
+                    if (regmenu != null)
+                        regmenu.SetValue("", labelText);
+                    regcmd = Registry.ClassesRoot.CreateSubKey(menuCommand);
+                    if (regcmd != null)
+                        regcmd.SetValue("", menuCmdExecutable);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, ex.ToString());
+                }
+                finally
+                {
+                    if (regmenu != null)
+                        regmenu.Close();
+                    if (regcmd != null)
+                        regcmd.Close();
+
+                    Properties.Settings.Default.explorer_context = true;
+                }
+            }
+            else
+            {
+                // disable
+                try
+                {
+                    RegistryKey reg = Registry.ClassesRoot.OpenSubKey(menuCommand);
+                    if (reg != null)
+                    {
+                        reg.Close();
+                        Registry.ClassesRoot.DeleteSubKey(menuCommand);
+                    }
+                    reg = Registry.ClassesRoot.OpenSubKey(menuEntry);
+                    if (reg != null)
+                    {
+                        reg.Close();
+                        Registry.ClassesRoot.DeleteSubKey(menuEntry);
+                    }
+
+                    Properties.Settings.Default.explorer_context = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, ex.ToString());
+                }
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             saveSettings();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

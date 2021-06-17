@@ -19,13 +19,18 @@ namespace BatchFileRenamer
 
         public Dictionary<string, Dictionary<string, string>> translations = new Dictionary<string, Dictionary<string, string>>();
 
-        public Form1()
+        public Form1(string[] args)
         {
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(Properties.Settings.Default.language);
             InitializeComponent();
             clearExampleLabels();
             setTranslations();
             setButtonTooltip();
+            // if called from context menu set path of selected folder
+            if(args.Length >= 1)
+            {
+                txtPath.Text = args[0].ToString();
+            }
         }
 
         private void setTranslations()
@@ -58,6 +63,11 @@ namespace BatchFileRenamer
             tEN.Add("rename_nothingtodo_title", "Nothing to do!");
             tDE.Add("btnOpenDir_tooltip", "Verzeichnis im Explorer öffnen");
             tEN.Add("btnOpenDir_tooltip", "Open directory in explorer");
+
+            tDE.Add("settings_helpContextIntegration", "Fügt eine Funktion im Windows-Explorer Rechtsklickmenü ein,\num Batch FileRenamer vom jeweiligen Pfad auszuführen.");
+            tEN.Add("settings_helpContextIntegration", "Adds an entry in windows-explorer rightclick menu,\nto start Batch FileRenamer from a respective location.");
+            tDE.Add("context_menu_label", "Batch FileRenamer starten");
+            tEN.Add("context_menu_label", "start batch fileRenamer");
 
             translations.Add("de", tDE);
             translations.Add("en", tEN);

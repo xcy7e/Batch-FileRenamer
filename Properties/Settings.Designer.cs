@@ -34,5 +34,17 @@ namespace BatchFileRenamer.Properties {
                 this["language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool explorer_context {
+            get {
+                return ((bool)(this["explorer_context"]));
+            }
+            set {
+                this["explorer_context"] = value;
+            }
+        }
     }
 }
