@@ -12,4 +12,4 @@
 <hr>
 
 ## How to install
-If you just want to install this application, simply download and extract the latest .zip file *BatchFileRenamer_v1.5.0.1.zip*.<br>This archive contains the *setup.exe*. 
+If you just want to install this application, simply download and extract the latest .zip file <a href="https://github.com/xcy7e/Batch-FileRenamer/blob/master/BatchFileRenamer_v1.5.0.1.zip">BatchFileRenamer_v1.5.0.1.zip</a>.<br>This archive contains the *setup.exe*. 
