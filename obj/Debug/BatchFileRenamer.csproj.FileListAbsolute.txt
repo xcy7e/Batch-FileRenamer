@@ -21,3 +21,4 @@ D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\BatchFileRenamer.
 D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\de\BatchFileRenamer.resources.dll
 D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\en\BatchFileRenamer.resources.dll
 D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\BatchFileRenamer.Settings.de.resources
+D:\Development\Desktop Applications\BatchFileRenamer\obj\Debug\BatchFileRenamer.Log.en.resources
