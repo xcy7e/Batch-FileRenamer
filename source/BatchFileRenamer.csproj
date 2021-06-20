@@ -26,8 +26,8 @@
     <ErrorReportUrl>http://www.xcy7e.de</ErrorReportUrl>
     <ProductName>Batch FileRenamer</ProductName>
     <PublisherName>Jonathan Riedmair</PublisherName>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.7.0.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>2.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -95,14 +95,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Localization.cs" />
     <Compile Include="LocalizedForm.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Log.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Log.Designer.cs">
-      <DependentUpon>Log.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,14 +113,11 @@
     <EmbeddedResource Include="Form1.en.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Form1.fr.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Log.en.resx">
-      <DependentUpon>Log.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Log.resx">
-      <DependentUpon>Log.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,6 +130,12 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Settings.de.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.en.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.fr.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
@@ -158,6 +156,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Properties\icons\flag_fr.png" />
+    <None Include="Properties\icons\shell32_16803_disabled.png" />
     <None Include="Properties\icons\flag_en.png" />
     <None Include="Properties\icons\flag_de.png" />
     <None Include="Properties\icons\shell32_16826.png" />

@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -16,15 +12,21 @@ namespace BatchFileRenamer
 {
     public partial class Form1 : LocalizedForm
     {
+        public Localization Loc = new Localization();
 
-        public Dictionary<string, Dictionary<string, string>> translations = new Dictionary<string, Dictionary<string, string>>();
+        public bool renamingCompleted = false;
+        private bool rulesChanged = true;
+        private bool simulateRename = false; // true = do not change any file/dir names
+
+        private Dictionary<string, string> lastRules = new Dictionary<string, string>();
+        private Dictionary<int, Dictionary<string, string>> renamedFiles = new Dictionary<int, Dictionary<string, string>>();
+        private string renamedItemType;
 
         public Form1(string[] args)
         {
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(Properties.Settings.Default.language);
             InitializeComponent();
-            clearExampleLabels();
-            setTranslations();
+            resizeContentList();
             setButtonTooltip();
             if(args.Length >= 1)
             {
@@ -34,71 +36,41 @@ namespace BatchFileRenamer
             }
         }
 
-        private void setTranslations()
-        {
-            Dictionary<string, string> tDE = new Dictionary<string, string>();
-            Dictionary<string, string> tEN = new Dictionary<string, string>();
-            tDE.Add("typFilename", "Dateiname");
-            tEN.Add("typFilename", "Filename");
-            tDE.Add("typDirname", "Ordnername");
-            tEN.Add("typDirname", "Directoryname");
-            tDE.Add("files", " Dateien");
-            tEN.Add("files", " files");
-            tDE.Add("dirs", " Verzeichnisse");
-            tEN.Add("dirs", " directories");
-            tDE.Add("error", "Fehler");
-            tEN.Add("error", "Error");
-            tDE.Add("error_pathnotexist", "Dieses Verzeichnis existiert nicht!");
-            tEN.Add("error_pathnotexist", "This directory does not exist!");
-            tDE.Add("rename_sure", " werden umbenannt!\nWirklich fortfahren ? ");
-            tEN.Add("rename_sure", " will be renamed!\nProceed ? ");
-            tDE.Add("rename_sure_title", "Sicher ? ");
-            tEN.Add("rename_sure_title", "Sure ? ");
-            tDE.Add("rename_nothingtodo", "Durch die gesetzten Regeln gibt es nichts umzubenennen.");
-            tEN.Add("rename_nothingtodo", "By the rules set there is nothing to rename.");
-            tDE.Add("rename_nothingtodo_title", "Nichts zu tun!");
-            tEN.Add("rename_nothingtodo_title", "Nothing to do!");
-            tDE.Add("btnOpenDir_tooltip", "Verzeichnis im Explorer öffnen");
-            tEN.Add("btnOpenDir_tooltip", "Open directory in explorer");
-            tDE.Add("label_rule3_explanation_dir", "Füge einen Text an jedes Verzeichnis");
-            tEN.Add("label_rule3_explanation_dir", "Add text to every directory");
-            tDE.Add("label_rule3_explanation_file", "Füge einen Text an jede Datei");
-            tEN.Add("label_rule3_explanation_file", "Add text to every file");
-
-            tDE.Add("settings_helpContextIntegration", "Fügt eine Funktion im Windows-Explorer Rechtsklickmenü ein,\num Batch FileRenamer vom jeweiligen Pfad auszuführen.");
-            tEN.Add("settings_helpContextIntegration", "Adds an entry in windows-explorer rightclick menu,\nto start Batch FileRenamer from a respective location.");
-            tDE.Add("context_menu_label", "Batch FileRenamer starten");
-            tEN.Add("context_menu_label", "start batch fileRenamer");
-            tDE.Add("lblVersion_tooltip", "Öffne Github-Repository");
-            tEN.Add("lblVersion_tooltip", "Open Github-Repository");
-            tDE.Add("lblCreator_tooltip", "Öffne Entwickler Webseite");
-            tEN.Add("lblCreator_tooltip", "Open Developer Website");
-
-            translations.Add("de", tDE);
-            translations.Add("en", tEN);
-        }
-
         private void setButtonTooltip()
         {
             ToolTip t = new ToolTip();
-            t.SetToolTip(btnOpenDir, getLocStr(Properties.Settings.Default.language, "btnOpenDir_tooltip"));
+            ToolTip t2 = new ToolTip();
+            t.SetToolTip(btnOpenDir, null);
+            t2.SetToolTip(btnRevert, null);
+            t.SetToolTip(btnOpenDir, getLocStr("btnOpenDir_tooltip"));
+            if (rbDirs.Checked)
+            {
+                // dirs
+                t2.SetToolTip(btnRevert, getLocStr("btnRevert_dirs_tt"));
+            } else
+            {
+                // files
+                t2.SetToolTip(btnRevert, getLocStr("btnRevert_files_tt"));
+            }
         }
 
         private void setLabelText()
         {
             if (rbFiles.Checked == true)
             {
-                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_file");
+                lblRule_3_Explanation.Text = getLocStr("label_rule3_explanation_file");
             }
             else
             {
-                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_dir");
+                lblRule_3_Explanation.Text = getLocStr("label_rule3_explanation_dir");
             }
+            listViewContent.Columns[0].Text = getLocStr("list_col_before");
+            listViewContent.Columns[1].Text = getLocStr("list_col_after");
         }
 
-        public string getLocStr(string lang, string key)
+        public string getLocStr(string key, string lang = null)
         {
-            return translations[lang][key];
+            return Loc.getLocStr(key, lang);
         }
 
         private void btnSearchPath_Click(object sender, EventArgs e)
@@ -110,7 +82,7 @@ namespace BatchFileRenamer
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
                     txtPath.Text = fbd.SelectedPath;
-                    PopulateListBox(listBoxFiles, fbd.SelectedPath, "*.*");
+                    PopulateListView(listViewContent, fbd.SelectedPath, "*.*");
                 }
             }
         }
@@ -119,17 +91,23 @@ namespace BatchFileRenamer
         {
             if(txtPath.Text.Length > 0 && pathIsValid())
             {
-                PopulateListBox(listBoxFiles, txtPath.Text, "*.*");
+                PopulateListView(listViewContent, txtPath.Text, "*.*");
             }
             setExampleRuleText();
             if(rbFiles.Checked == true)
             {
-                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_file");
+                lblRule_3_Explanation.Text = getLocStr("label_rule3_explanation_file");
                 pFileending.Visible = true;
+                ToolTip t = new ToolTip();
+                t.SetToolTip(btnRevert, null);
+                t.SetToolTip(btnRevert, getLocStr("btnRevert_files_tt"));
             } else
             {
-                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_dir");
+                lblRule_3_Explanation.Text = getLocStr("label_rule3_explanation_dir");
                 pFileending.Visible = false;
+                ToolTip t = new ToolTip();
+                t.SetToolTip(btnRevert, null);
+                t.SetToolTip(btnRevert, getLocStr("btnRevert_dirs_tt"));
             }
         }
 
@@ -138,19 +116,23 @@ namespace BatchFileRenamer
             return Directory.Exists(txtPath.Text);
         }
 
-        private void PopulateListBox(ListBox lsb, string Folder, string FileType)
+
+        private void PopulateListView(ListView list, string dir, string fileTypes)
         {
-            listBoxFiles.Items.Clear();
-            clearExampleLabels();
+            if(renamingCompleted || dir.Length == 0)
+            {
+                return;
+            }
+            list.Items.Clear();
             int itemsCount = 0;
 
-            DirectoryInfo dinfo = new DirectoryInfo(Folder);
-            
-            if(rbFiles.Checked == true)
-            {
-                string[] files = Directory.GetFiles(Folder);
+            DirectoryInfo dinfo = new DirectoryInfo(dir);
 
-                FileInfo[] Files = dinfo.GetFiles(FileType);
+            if (rbFiles.Checked == true)
+            {
+                string[] files = Directory.GetFiles(dir);
+
+                FileInfo[] Files = dinfo.GetFiles(fileTypes);
                 foreach (FileInfo file in Files)
                 {
                     if (cbFileending.Checked == true && txtFiletype.Text.Contains("*."))
@@ -159,37 +141,83 @@ namespace BatchFileRenamer
                         string[] endings = txtFiletype.Text.Split(',');
                         foreach (var ending in endings)
                         {
-                            if (file.Name.EndsWith(ending.Replace("*","")))
+                            if (file.Name.EndsWith(ending.Replace("*", "")))
                             {
-                                lsb.Items.Add(file.Name);
+                                string oldFilename = file.Name;
+                                string newFilename = applyRules(file.Name, itemsCount + 1);
+                                ListViewItem itemListRow = new ListViewItem(oldFilename);
+                                itemListRow.UseItemStyleForSubItems = false;
+                                itemListRow.SubItems.Add(newFilename);
+                                if(oldFilename == newFilename)
+                                {
+                                    // not affected by renaming
+                                    itemListRow.SubItems[1].ForeColor = Color.Gray;
+                                } else
+                                {
+                                    // IS affected by renaming
+                                    itemListRow.SubItems[1].ForeColor = Color.Blue;
+                                }
+                                list.Items.Add(itemListRow);
                                 itemsCount++;
                             }
                         }
-                    } else
+                    }
+                    else
                     {
-                        lsb.Items.Add(file.Name);
+                        string oldFilename = file.Name;
+                        string newFilename = applyRules(file.Name, itemsCount + 1);
+                        ListViewItem itemListRow = new ListViewItem(oldFilename);
+                        itemListRow.UseItemStyleForSubItems = false;
+                        itemListRow.SubItems.Add(newFilename);
+                        if(oldFilename == newFilename)
+                        {
+                            // not affected by renaming
+                            itemListRow.SubItems[1].ForeColor = Color.Gray;
+                        } else
+                        {
+                            // IS affected by renaming
+                            itemListRow.SubItems[1].ForeColor = Color.Blue;
+                        }
+                        list.Items.Add(itemListRow);
                         itemsCount++;
                     }
                 }
 
-            } else if(rbDirs.Checked == true)
+            }
+            else if (rbDirs.Checked == true)
             {
-                string[] directories = Directory.GetDirectories(Folder);
+                string[] directories = Directory.GetDirectories(dir);
 
                 DirectoryInfo[] Dirs = dinfo.GetDirectories();
-                foreach(DirectoryInfo dir in Dirs)
+                foreach (DirectoryInfo d in Dirs)
                 {
-                    lsb.Items.Add(dir.Name);
+                    string oldDirname = d.Name;
+                    string newDirname = applyRules(d.Name, itemsCount + 1);
+                    ListViewItem itemListRow = new ListViewItem(oldDirname);
+                    itemListRow.UseItemStyleForSubItems = false;
+                    itemListRow.SubItems.Add(newDirname);
+                    if(oldDirname == newDirname)
+                    {
+                        // not affected by renaming
+                        itemListRow.SubItems[1].ForeColor = Color.Gray;
+                    } else
+                    {
+                        // IS affected by renaming#
+                        itemListRow.SubItems[1].ForeColor = Color.Blue;
+                    }
+                    list.Items.Add(itemListRow);
                     itemsCount++;
                 }
             }
-            if(itemsCount > 0)
+            if (itemsCount > 0)
             {
                 btnStart.Enabled = true;
-            } else
+            }
+            else
             {
                 btnStart.Enabled = false;
             }
+            this.Cursor = Cursors.Default;
         }
 
         private void cbRule_0_Numbers_CheckedChanged(object sender, EventArgs e)
@@ -226,10 +254,10 @@ namespace BatchFileRenamer
         {
             string exampleStr = "";
             string pattern = txtRule_0_pattern.Text;
-            string itemName = getLocStr(Properties.Settings.Default.language, "typFilename");
+            string itemName = getLocStr("typFilename");
             if(rbDirs.Checked == true)
             {
-                itemName = getLocStr(Properties.Settings.Default.language, "typDirname");
+                itemName = getLocStr("typDirname");
             }
             exampleStr = txtRule_0_pattern.Text.Replace("%nnnnn", "00001").Replace("%nnnn", "0001").Replace("%nnn", "001").Replace("%nn", "01").Replace("%n", "1");
             if(before)
@@ -240,6 +268,91 @@ namespace BatchFileRenamer
                 exampleStr = itemName + exampleStr;
             }
             return exampleStr;
+        }
+
+        private string applyRules(string itemName, int itemPos)
+        {
+            string newName = itemName;
+            // 1. Numbering
+            if(cbRule_0_Numbers.Checked)
+            {
+                int padDigits = 1;
+                if(txtRule_0_pattern.Text.Contains("%nnnnn"))
+                {
+                    padDigits = 5;
+                } else if(txtRule_0_pattern.Text.Contains("%nnnn"))
+                {
+                    padDigits = 4;
+                } else if(txtRule_0_pattern.Text.Contains("%nnn"))
+                {
+                    padDigits = 3;
+                } else if(txtRule_0_pattern.Text.Contains("%nn"))
+                {
+                    padDigits = 2;
+                } else
+                {
+                    padDigits = 1;
+                }
+                string nNbr = pad_an_int(itemPos, padDigits);
+                string nTxt = txtRule_0_pattern.Text.Replace("%nnnnn", nNbr).Replace("%nnnn",nNbr).Replace("%nnn",nNbr).Replace("%nn",nNbr).Replace("%n",nNbr);
+                if (rbRule_0_before.Checked)
+                {
+                    newName = nTxt + newName;   // prepend
+                } else
+                {
+                    if(rbFiles.Checked)
+                    {
+                        // do append numbering before filetype
+                        string ftypeN = Path.GetExtension(newName);
+                        newName = replaceLastOccurrence(newName, ftypeN, "") + nTxt + ftypeN;   // append
+                    } else
+                    {
+                        newName = newName + nTxt;
+                    }
+                }
+            }
+            // 2. Search Replace #1
+            if(txtRule_1_Search.Text.Length > 0)
+            {
+                newName = newName.Replace(txtRule_1_Search.Text, txtRule_1_Replace.Text);
+            }
+            // 3. Search Replace #2
+            if(txtRule_2_Search.Text.Length > 0)
+            {
+                newName = newName.Replace(txtRule_2_Search.Text, txtRule_2_Replace.Text);
+            }
+            // 4. Prepend
+            newName = txtRule_3_Prepend.Text + newName;
+            // 5. Append
+            if (rbFiles.Checked)
+            {
+                // append before filetype 
+                string ftype = Path.GetExtension(newName);
+                newName = replaceLastOccurrence(newName, ftype, "") + txtRule_3_Append.Text + ftype;
+            } else
+            {
+                newName = newName + txtRule_3_Append.Text;
+            }
+            return newName;
+        }
+        static string replaceLastOccurrence(string Source, string Find, string Replace)
+        {
+            int place = Source.LastIndexOf(Find);
+
+            if (place == -1)
+                return Source;
+
+            string result = Source.Remove(place, Find.Length).Insert(place, Replace);
+            return result;
+        }
+        static string pad_an_int(int number, int digits)
+        {
+            string s = "";
+            for (int i = 0; i < digits; i++)
+            {
+                s += "0";
+            }
+            return number.ToString(s);
         }
 
         private void txtRule_0_pattern_TextChanged(object sender, EventArgs e)
@@ -255,81 +368,18 @@ namespace BatchFileRenamer
 
         private void updateResultExample()
         {
-            ListBox listbox = listBoxFiles;
-            if (listbox.SelectedIndex > -1)
+            rulesChanged = true;
+            btnResetRules.Image = Properties.Resources.shell32_16803;
+            btnResetRules.Cursor = Cursors.Hand;
+            ToolTip brrtt = new ToolTip();
+            brrtt.SetToolTip(btnResetRules, null);
+            brrtt.SetToolTip(btnResetRules, getLocStr("btnResetRules_tt"));
+            if (!renamingCompleted)
             {
-                lblOriginalName.Text = listbox.SelectedItem.ToString();
-                lblArrow.Text = "=>";
-                lblResultingName.Text = getRuledItemName(listbox.SelectedItem.ToString(), listbox.SelectedIndex);
+                PopulateListView(listViewContent, txtPath.Text, "*.*");
             }
         }
-
-        private string getRuledItemName(string originItemName, int originItemIndex)
-        {
-            string resultName = originItemName;
-            // replace text
-            if (txtRule_1_Search.Text.Length > 0)
-            {
-                resultName = resultName.Replace(txtRule_1_Search.Text, txtRule_1_Replace.Text);
-            }
-            if(txtRule_2_Search.Text.Length > 0)
-            {
-                resultName = resultName.Replace(txtRule_2_Search.Text, txtRule_2_Replace.Text);
-            }
-            
-            // numbers
-            if(cbRule_0_Numbers.Checked)
-            {
-                string number = (originItemIndex+1).ToString();
-                string numberCharCountStr = txtRule_0_pattern.Text.Replace("%nnnnn", "5").Replace("%nnnn", "4").Replace("%nnn", "3").Replace("%nn", "2").Replace("%n", "1");
-
-                int i = getNumberPatternStartIndex();
-                if (i > 0)
-                {
-                    string afterNumberStr = txtRule_0_pattern.Text.Substring(txtRule_0_pattern.Text.IndexOf("%n") + i + 1);
-                    string beforeNumberStr = txtRule_0_pattern.Text.Substring(0, txtRule_0_pattern.Text.Length - (afterNumberStr.Length + i + 1));
-                    int numberCharCount = i;
-                    number = number.ToString().PadLeft(numberCharCount, '0');
-                    if (rbRule_0_before.Checked)
-                    {
-                        // vor
-                        resultName = txtRule_0_pattern.Text.Replace("%nnnnn", number).Replace("%nnnn", number).Replace("%nnn", number).Replace("%nn", number).Replace("%n", number) + resultName;
-                    }
-                    else
-                    {
-                        // nach
-                        resultName = resultName + txtRule_0_pattern.Text.Replace("%nnnnn", number).Replace("%nnnn", number).Replace("%nnn", number).Replace("%nn", number).Replace("%n", number);
-                    }
-                }
-                else
-                {
-                    if(txtRule_0_pattern.Text.Length > 0)
-                    {
-                        // no numbering but append/prepend string anyways
-                        // (we allow this bug using/feature as a clever hack to prepend/append a str)
-                        if (rbRule_0_before.Checked)
-                        {
-                            // vor
-                            resultName = txtRule_0_pattern.Text + resultName;
-                        }
-                        else
-                        {
-                            // nach
-                            resultName = resultName + txtRule_0_pattern.Text;
-                        }
-                    }
-                }
-            }
-            if(txtRule_3_Prepend.Text.Length > 0)
-            {
-                resultName = txtRule_3_Prepend.Text + resultName;
-            }
-            if (txtRule_3_Append.Text.Length > 0)
-            {
-                resultName = resultName + txtRule_3_Append.Text;
-            }
-            return resultName;
-        }
+    
 
         private int getNumberPatternStartIndex()
         {
@@ -386,32 +436,26 @@ namespace BatchFileRenamer
             updateResultExample();
         }
 
-        private void clearExampleLabels()
-        {
-            lblOriginalName.Text = "";
-            lblArrow.Text = "";
-            lblResultingName.Text = "";
-        }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             if (!Directory.Exists(txtPath.Text))
             {
-                MessageBox.Show(getLocStr(Properties.Settings.Default.language, "error_pathnotexist"), getLocStr(Properties.Settings.Default.language, "error"), MessageBoxButtons.OK);
+                MessageBox.Show(getLocStr("error_pathnotexist"), getLocStr("error"), MessageBoxButtons.OK);
                 return;
             }
-            string itemType = getLocStr(Properties.Settings.Default.language, "files");
+            string itemType = getLocStr("files");
             if (rbDirs.Checked) {
-                itemType = getLocStr(Properties.Settings.Default.language, "dirs");
+                itemType = getLocStr("dirs");
             }
             int itemCount = countRenameItems();
             if(itemCount == 0)
             {
                 // no items to rename
-                MessageBox.Show(getLocStr(Properties.Settings.Default.language, "rename_nothingtodo"), getLocStr(Properties.Settings.Default.language, "rename_nothingtodo_title"), MessageBoxButtons.OK);
+                MessageBox.Show(getLocStr("rename_nothingtodo"), getLocStr("rename_nothingtodo_title"), MessageBoxButtons.OK);
             } else
             {
-                DialogResult res = MessageBox.Show(itemCount.ToString() + itemType + getLocStr(Properties.Settings.Default.language, "rename_sure"), getLocStr(Properties.Settings.Default.language, "rename_sure_title"), MessageBoxButtons.YesNo);
+                DialogResult res = MessageBox.Show(itemCount.ToString() + itemType + getLocStr("rename_sure"), getLocStr("rename_sure_title"), MessageBoxButtons.YesNo);
                 if (res == DialogResult.Yes)
                 {
                     startRenaming();
@@ -454,7 +498,7 @@ namespace BatchFileRenamer
                     }
 
                     string oldFilename = file.Name;
-                    string newFilename = getRuledItemName(file.Name, i);
+                    string newFilename = applyRules(file.Name, i);
                     if (oldFilename != newFilename)
                     {
                         renameItemsCount++;
@@ -468,7 +512,7 @@ namespace BatchFileRenamer
                 foreach (DirectoryInfo dir in Dirs)
                 {
                     string oldDirname = dir.Name;
-                    string newDirname = getRuledItemName(dir.Name, i);
+                    string newDirname = applyRules(dir.Name, i);
                     if (oldDirname != newDirname)
                     {
                         renameItemsCount++;
@@ -482,11 +526,8 @@ namespace BatchFileRenamer
         /** magic happens here: */
         private void startRenaming()
         {
-            Log log = new Log();
-            log.Show();
-
-            ListView logList = getLogList(log);
-
+            listViewContent.Items.Clear();
+            renamedFiles.Clear();
             DirectoryInfo dinfo = new DirectoryInfo(txtPath.Text);
 
             if (rbFiles.Checked == true)
@@ -515,22 +556,44 @@ namespace BatchFileRenamer
                     }
                     if(skipFile)
                     {
-                        continue;  // if filetype is not in filter
+                        // if filetype is not in filter
+                        continue; 
                     }
                     string oldFilename = file.Name;
-                    string newFilename = getRuledItemName(file.Name, i);
-                    if(oldFilename != newFilename)
+                    string newFilename = applyRules(file.Name, i);
+                    string oldFilenameFullPath = txtPath.Text + "\\" + oldFilename;
+                    string newFilenameFullPath = txtPath.Text + "\\" + newFilename;
+                    if (oldFilename != newFilename)
                     {
                         // RENAME
-                        System.IO.File.Move(txtPath.Text + "\\" + oldFilename, txtPath.Text + "\\" + newFilename);
-                        // add protocoll entry
-                        ListViewItem logEntry = new ListViewItem(oldFilename);
-                        logEntry.SubItems.Add(newFilename);
-                        logList.Items.Add(logEntry);
+                        if(simulateRename==false)
+                        {
+                            System.IO.File.Move(oldFilenameFullPath, newFilenameFullPath);
+                        }
+                        // add list entry
+                        ListViewItem itemListRow = new ListViewItem(oldFilename);
+                        itemListRow.UseItemStyleForSubItems = false;
+                        itemListRow.SubItems.Add(newFilename);
+                        itemListRow.SubItems[1].ForeColor = Color.Green;
+                        listViewContent.Items.Add(itemListRow);
+
+                        // store entry for possible reverting
+                        Dictionary<string, string> renamedFile = new Dictionary<string, string>();
+                        renamedFile.Add(oldFilenameFullPath, newFilenameFullPath);
+                        renamedFiles.Add(i, renamedFile);
+
                         i++;
+                    } else
+                    {
+                        // add list entry
+                        ListViewItem itemListRow = new ListViewItem(file.Name);
+                        itemListRow.UseItemStyleForSubItems = false;
+                        itemListRow.SubItems.Add(file.Name);
+                        itemListRow.SubItems[1].ForeColor = Color.Black;
+                        listViewContent.Items.Add(itemListRow);
                     }
                 }
-
+                renamedItemType = "files";
             }
             else if (rbDirs.Checked == true)
             {
@@ -541,25 +604,50 @@ namespace BatchFileRenamer
                 foreach (DirectoryInfo dir in Dirs)
                 {
                     string oldDirname = dir.Name;
-                    string newDirname = getRuledItemName(dir.Name, i);
+                    string newDirname = applyRules(dir.Name, i);
+                    string oldDirnameFullPath = txtPath.Text + "\\" + oldDirname;
+                    string newDirnameFullPath = txtPath.Text + "\\" + newDirname;
                     if(oldDirname != newDirname)
                     {
                         // RENAME
-                        System.IO.Directory.Move(txtPath.Text + "\\" + oldDirname, txtPath.Text + "\\" + newDirname);
+                        if (simulateRename==false)
+                        {
+                            System.IO.Directory.Move(oldDirnameFullPath, newDirnameFullPath);
+                        }
                         // add protocoll entry
-                        logList.Items.Add(new ListViewItem(new[] { oldDirname, newDirname }));
+                        ListViewItem itemListRow = new ListViewItem(oldDirname);
+                        itemListRow.UseItemStyleForSubItems = false;
+                        itemListRow.SubItems.Add(newDirname);
+                        itemListRow.SubItems[1].ForeColor = Color.Green;
+                        listViewContent.Items.Add(itemListRow);
+
+                        // store entry for possible reverting
+                        Dictionary<string, string> renamedDir = new Dictionary<string, string>();
+                        renamedDir.Add(oldDirnameFullPath, newDirnameFullPath);
+                        renamedFiles.Add(i, renamedDir);
+
                         i++;
+                    } else
+                    {
+                        // add list entry
+                        ListViewItem itemListRow = new ListViewItem(dir.Name);
+                        itemListRow.UseItemStyleForSubItems = false;
+                        itemListRow.SubItems.Add(dir.Name);
+                        itemListRow.SubItems[1].ForeColor = Color.Black;
+                        listViewContent.Items.Add(itemListRow);
                     }
                 }
+                renamedItemType = "dirs";
             }
-
-
+            saveRules();
             finish();
         }
 
         private void finish()
         {
-            if(rbFiles.Checked)
+            renamingCompleted = true;   // limit view resetting
+            // trigger view reset
+            if (rbFiles.Checked)
             {
                 rbDirs.Checked = true;
                 rbFiles.Checked = true;
@@ -575,19 +663,53 @@ namespace BatchFileRenamer
             txtRule_2_Search.Text = "";
             txtRule_2_Replace.Text = "";
             txtRule_0_pattern.Text = "%nn-";
+            btnRevert.Enabled = true;
+            renamingCompleted = false;
         }
 
-        private ListView getLogList(Form log)
+        private void saveRules()
         {
-            foreach (Control c in log.Controls)
+            lastRules.Clear();
+            lastRules["numbering"] = cbRule_0_Numbers.Checked.ToString();
+            if(rbRule_0_before.Checked)
             {
-                if (c.Name == "listDone")
-                {
-                    return (ListView) c;
-                }
+                lastRules["numbering_pos"] = "before";
+            } else
+            {
+                lastRules["numbering_pos"] = "after";
             }
-            return new ListView();
+            lastRules["numbering_pattern"] = txtRule_0_pattern.Text;
+            lastRules["rule_1_search"] = txtRule_1_Search.Text;
+            lastRules["rule_1_replace"] = txtRule_1_Replace.Text;
+            lastRules["rule_2_search"] = txtRule_2_Search.Text;
+            lastRules["rule_2_replace"] = txtRule_2_Replace.Text;
+            lastRules["rule_3_prepend"] = txtRule_3_Prepend.Text;
+            lastRules["rule_3_append"] = txtRule_3_Append.Text;
         }
+
+        private void resetRules()
+        {
+            renamingCompleted = true;
+
+            txtRule_1_Search.Text = "";
+            txtRule_1_Replace.Text = "";
+            txtRule_2_Search.Text = "";
+            txtRule_2_Replace.Text = "";
+            txtRule_0_pattern.Text = "%nn-";
+            cbRule_0_Numbers.Checked = false;
+            rbRule_0_before.Checked = true;
+            lblRule_0_example.Text = "";
+            setExampleRuleText();
+
+            btnResetRules.Image = Properties.Resources.shell32_16803_disabled;
+            btnResetRules.Cursor = Cursors.Default;
+            ToolTip brrtt = new ToolTip();
+            brrtt.SetToolTip(btnResetRules, null);
+            brrtt.SetToolTip(btnResetRules, "");
+
+            renamingCompleted = false;
+        }
+
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -604,7 +726,6 @@ namespace BatchFileRenamer
         public void updateLanguage()
         {
             GlobalUICulture = CultureInfo.GetCultureInfo(Properties.Settings.Default.language);
-            clearExampleLabels();
             setButtonTooltip();
             setLabelText();
             refreshFileList();
@@ -668,17 +789,17 @@ namespace BatchFileRenamer
         {
             if (txtPath.Text.Length > 0 && pathIsValid())
             {
-                PopulateListBox(listBoxFiles, txtPath.Text, "*.*");
+                PopulateListView(listViewContent, txtPath.Text, "*.*");
             }
             setExampleRuleText();
             if (rbFiles.Checked == true)
             {
-                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_file");
+                lblRule_3_Explanation.Text = getLocStr("label_rule3_explanation_file");
                 pFileending.Visible = true;
             }
             else
             {
-                lblRule_3_Explanation.Text = getLocStr(Properties.Settings.Default.language, "label_rule3_explanation_dir");
+                lblRule_3_Explanation.Text = getLocStr("label_rule3_explanation_dir");
                 pFileending.Visible = false;
             }
         }
@@ -717,20 +838,112 @@ namespace BatchFileRenamer
                     Process.Start(txtPath.Text);
                 } else
                 {
-                    MessageBox.Show(getLocStr(Properties.Settings.Default.language, "error_pathnotexist"), getLocStr(Properties.Settings.Default.language, "error"), MessageBoxButtons.OK);
+                    MessageBox.Show(getLocStr("error_pathnotexist"), getLocStr("error"), MessageBoxButtons.OK);
                 }
             }
         }
 
         private void txtPath_TextChanged(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
             if (Directory.Exists(txtPath.Text))
             {
-                PopulateListBox(listBoxFiles, txtPath.Text, "*.*");
+                PopulateListView(listViewContent, txtPath.Text, "*.*");
             } else
             {
                 // clear list
-                listBoxFiles.Items.Clear();
+                listViewContent.Items.Clear();
+            }
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            resizeContentList();
+        }
+
+        private void resizeContentList()
+        {
+            if (listViewContent.Width % 2 != 0)
+            {
+                this.Width = this.Width + 1;
+            }
+            if (listViewContent.Width % 2 == 0)
+            {
+                listViewContent.Columns[0].Width = listViewContent.Width / 2 - 4;
+                listViewContent.Columns[1].Width = listViewContent.Width / 2 - 4;
+            }
+        }
+
+        private void btnResetRules_Click(object sender, EventArgs e)
+        {
+            if(rulesChanged)
+            {
+                resetRules();
+            }
+        }
+
+        private void btnRevert_Click(object sender, EventArgs e)
+        {
+            revertRenaming();
+        }
+
+        private void revertRenaming()
+        {
+            DialogResult r = MessageBox.Show(getLocStr("revert_rename_dialog_msg").Replace("%n", renamedFiles.Count.ToString()), getLocStr("rename_sure_title"), MessageBoxButtons.YesNoCancel);
+            if(r == DialogResult.Yes)
+            {
+                int i = 1;
+                // revert renamed files
+                try
+                {
+                    int changedFiles = 0;
+                    foreach (Dictionary<string, string> item in renamedFiles.Values)
+                    {
+                        // RENAME
+                        if (simulateRename == false)
+                        {
+                            string originalName = item.Keys.First();
+                            string renamedName = item.Values.First();
+                            if(renamedItemType == "files")
+                            {
+                                System.IO.File.Move(renamedName, originalName);
+                            } else
+                            {
+                                System.IO.Directory.Move(renamedName, originalName);
+                            }
+                            replaceListItem(renamedName, originalName);
+                            changedFiles++;
+                            i++;
+                        }
+                    }
+                    MessageBox.Show(getLocStr("revert_rename_dialog_success_msg").Replace("%n", changedFiles.ToString()).Replace("%e", getLocStr(renamedItemType)), "OK", MessageBoxButtons.OK);
+                    // has EVERYTHING been reverted?
+                    if(changedFiles < renamedFiles.Count)
+                    {
+                        // no!
+                        MessageBox.Show(getLocStr("revert_rename_dialog_error_msg").Replace("%n", (renamedFiles.Count-changedFiles).ToString()).Replace("%e", getLocStr(renamedItemType)), getLocStr("error"), MessageBoxButtons.OK);
+                    }
+                } catch (Exception e)
+                {
+                    MessageBox.Show(e.Message, getLocStr("error"), MessageBoxButtons.OK);
+                }
+                btnRevert.Enabled = false;
+            }
+        }
+
+        private void replaceListItem(string rightName, string leftName)
+        {
+            foreach(ListViewItem row in listViewContent.Items)
+            {
+                string newFileName = leftName.Replace(txtPath.Text, "").Replace(@"\", "");
+                string oldFileName = rightName.Replace(txtPath.Text, "").Replace(@"\", "");
+                if (row.SubItems[0].Text == newFileName)
+                {
+                    row.SubItems[0].Text = oldFileName;
+                    row.SubItems[0].ForeColor = Color.Green;
+                    row.SubItems[1].Text = newFileName;
+                    row.SubItems[1].ForeColor = Color.Black;
+                }
             }
         }
     }

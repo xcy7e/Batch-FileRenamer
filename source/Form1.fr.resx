@@ -117,15 +117,190 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="colAfter.Text" xml:space="preserve">
-    <value>Danach</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txtFiletype.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 2</value>
+  <data name="btnSearchPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>779, 22</value>
+  </data>
+  <data name="btnSearchPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 26</value>
+  </data>
+  <data name="btnSearchPath.Text" xml:space="preserve">
+    <value>Sélectionner le dossier</value>
+  </data>
+  <data name="txtPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>758, 24</value>
+  </data>
+  <data name="colBefore.Text" xml:space="preserve">
+    <value>Devant</value>
+  </data>
+  <data name="colAfter.Text" xml:space="preserve">
+    <value>Après</value>
+  </data>
+  <data name="gbFiles.Text" xml:space="preserve">
+    <value> Contenu </value>
+  </data>
+  <data name="btnOpenDir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>941, 23</value>
+  </data>
+  <data name="cbFileending.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 19</value>
+  </data>
+  <data name="cbFileending.Text" xml:space="preserve">
+    <value>Extensions</value>
   </data>
   <data name="txtFiletype.Size" type="System.Drawing.Size, System.Drawing">
-    <value>352, 22</value>
+    <value>364, 22</value>
+  </data>
+  <data name="pFileending.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 54</value>
+  </data>
+  <data name="pFileending.Size" type="System.Drawing.Size, System.Drawing">
+    <value>469, 27</value>
+  </data>
+  <data name="rbDirs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="rbDirs.Text" xml:space="preserve">
+    <value>Dossiers</value>
+  </data>
+  <data name="rbFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 56</value>
+  </data>
+  <data name="rbFiles.Text" xml:space="preserve">
+    <value>Fichiers</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>La source</value>
+  </data>
+  <data name="lblRule_3_Explanation.Text" xml:space="preserve">
+    <value>Ajouter un texte à chaque dossier</value>
+  </data>
+  <data name="labellblRule_3_Append.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 15</value>
+  </data>
+  <data name="labellblRule_3_Append.Text" xml:space="preserve">
+    <value>Après</value>
+  </data>
+  <data name="txtRule_3_Append.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 52</value>
+  </data>
+  <data name="txtRule_3_Append.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 21</value>
+  </data>
+  <data name="lblRule_3_Prepend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 15</value>
+  </data>
+  <data name="lblRule_3_Prepend.Text" xml:space="preserve">
+    <value>Devant</value>
+  </data>
+  <data name="txtRule_3_Prepend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 25</value>
+  </data>
+  <data name="txtRule_3_Prepend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 21</value>
+  </data>
+  <data name="lblRule_0_example.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 51</value>
+  </data>
+  <data name="lblRule_0_example.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 19</value>
+  </data>
+  <data name="lblRule_0_example.Text" xml:space="preserve">
+    <value>01-Nomdefichier</value>
+  </data>
+  <data name="txtRule_0_pattern.Location" type="System.Drawing.Point, System.Drawing">
+    <value>62, 48</value>
+  </data>
+  <data name="txtRule_0_pattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 22</value>
+  </data>
+  <data name="lblRule_0_pattern.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 15</value>
+  </data>
+  <data name="lblRule_0_pattern.Text" xml:space="preserve">
+    <value>Schéma</value>
+  </data>
+  <data name="lblRule_2_ReplaceLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 15</value>
+  </data>
+  <data name="lblRule_2_ReplaceLbl.Text" xml:space="preserve">
+    <value>Remplacer</value>
+  </data>
+  <data name="txtRule_2_Replace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 32</value>
+  </data>
+  <data name="txtRule_2_Replace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 21</value>
+  </data>
+  <data name="lblRule_2_SearchLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 15</value>
+  </data>
+  <data name="lblRule_2_SearchLbl.Text" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="txtRule_2_Search.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 5</value>
+  </data>
+  <data name="txtRule_2_Search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 21</value>
+  </data>
+  <data name="rbRule_0_after.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 19</value>
+  </data>
+  <data name="rbRule_0_after.Text" xml:space="preserve">
+    <value>Après</value>
+  </data>
+  <data name="rbRule_0_before.Location" type="System.Drawing.Point, System.Drawing">
+    <value>135, 20</value>
+  </data>
+  <data name="rbRule_0_before.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 19</value>
+  </data>
+  <data name="rbRule_0_before.Text" xml:space="preserve">
+    <value>Devant</value>
+  </data>
+  <data name="cbRule_0_Numbers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 19</value>
+  </data>
+  <data name="cbRule_0_Numbers.Text" xml:space="preserve">
+    <value>Numérotage</value>
+  </data>
+  <data name="lblRule_1_ReplaceLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 15</value>
+  </data>
+  <data name="lblRule_1_ReplaceLbl.Text" xml:space="preserve">
+    <value>Remplacer</value>
+  </data>
+  <data name="txtRule_1_Replace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 35</value>
+  </data>
+  <data name="txtRule_1_Replace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 21</value>
+  </data>
+  <data name="lblRule_1_SearchLbl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 15</value>
+  </data>
+  <data name="lblRule_1_SearchLbl.Text" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="txtRule_1_Search.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 8</value>
+  </data>
+  <data name="txtRule_1_Search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 21</value>
+  </data>
+  <data name="gbRules.Text" xml:space="preserve">
+    <value> Réglementer </value>
+  </data>
+  <data name="btnStart.Text" xml:space="preserve">
+    <value>Commencer</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnRevert.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRevert.Text" xml:space="preserve">
+    <value>Revenir</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -352,8 +527,5 @@
         AAAAAD8A/gAAAAAAfwD/AAAAAAD/AP+AAAAAAf8A/8AAAAAD/wD/8AAAAA//AP/4AAAAH/8A//4AAAB/
         /wD//4AAAf//AP//8AAP//8A////w////wA=
 </value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Batch File Renamer</value>
   </data>
 </root>

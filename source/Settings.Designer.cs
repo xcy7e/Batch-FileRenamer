@@ -40,22 +40,25 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.helpContextSetting = new System.Windows.Forms.LinkLabel();
             this.cbContextIntegration = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cbLanguage
             // 
-            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.FormattingEnabled = true;
             this.cbLanguage.Items.AddRange(new object[] {
             resources.GetString("cbLanguage.Items"),
-            resources.GetString("cbLanguage.Items1")});
+            resources.GetString("cbLanguage.Items1"),
+            resources.GetString("cbLanguage.Items2")});
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
             this.cbLanguage.Name = "cbLanguage";
             // 
             // btnSave
@@ -109,24 +112,24 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbLanguage);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.helpContextSetting);
             this.groupBox2.Controls.Add(this.cbContextIntegration);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
             // helpContextSetting
             // 
-            resources.ApplyResources(this.helpContextSetting, "helpContextSetting");
             this.helpContextSetting.ActiveLinkColor = System.Drawing.Color.Blue;
+            resources.ApplyResources(this.helpContextSetting, "helpContextSetting");
             this.helpContextSetting.Cursor = System.Windows.Forms.Cursors.Help;
             this.helpContextSetting.Name = "helpContextSetting";
             this.helpContextSetting.TabStop = true;
@@ -137,27 +140,35 @@
             this.cbContextIntegration.Name = "cbContextIntegration";
             this.cbContextIntegration.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pictureBox3
             // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::BatchFileRenamer.Properties.Resources.flag_en;
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::BatchFileRenamer.Properties.Resources.flag_de;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::BatchFileRenamer.Properties.Resources.flag_en;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // Settings
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
@@ -174,8 +185,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +207,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.LinkLabel lblVersion;
         private System.Windows.Forms.LinkLabel lblCreator;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

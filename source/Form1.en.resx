@@ -127,8 +127,17 @@
   <data name="gbFiles.Text" xml:space="preserve">
     <value> Content </value>
   </data>
+  <data name="colBefore.Text" xml:space="preserve">
+    <value>Before</value>
+  </data>
+  <data name="colAfter.Text" xml:space="preserve">
+    <value>After</value>
+  </data>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value> Source </value>
+  </data>
   <data name="btnOpenDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>611, 23</value>
+    <value>949, 23</value>
   </data>
   <data name="cbFileending.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 19</value>
@@ -140,7 +149,7 @@
     <value>85, 2</value>
   </data>
   <data name="txtFiletype.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>354, 22</value>
   </data>
   <data name="rbDirs.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 20</value>
@@ -154,8 +163,8 @@
   <data name="rbFiles.Text" xml:space="preserve">
     <value>Files</value>
   </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value> Source </value>
+  <data name="gbRules.Text" xml:space="preserve">
+    <value> Rules </value>
   </data>
   <data name="lblRule_3_Explanation.Text" xml:space="preserve">
     <value>Add text to every directory</value>
@@ -226,11 +235,11 @@
   <data name="lblRule_1_SearchLbl.Text" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="gbRules.Text" xml:space="preserve">
-    <value> Rules </value>
-  </data>
   <data name="btnStart.Text" xml:space="preserve">
-    <value>Start</value>
+    <value>begin</value>
+  </data>
+  <data name="btnRevert.Text" xml:space="preserve">
+    <value>revert</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

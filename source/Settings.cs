@@ -1,15 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace BatchFileRenamer
@@ -23,6 +14,7 @@ namespace BatchFileRenamer
         {
             mainFrm = form;
             InitializeComponent();
+            cbLanguage.Focus();
         }
 
         private void Settings_Load(object sender, EventArgs e)
@@ -30,6 +22,9 @@ namespace BatchFileRenamer
             int preselLang = 0;
             switch (Properties.Settings.Default.language)
             {
+                case "fr":
+                    preselLang = 2;
+                    break;
                 case "de":
                     preselLang = 1;
                     break;
@@ -40,7 +35,6 @@ namespace BatchFileRenamer
             }
             cbLanguage.SelectedIndex = preselLang;
             cbContextIntegration.Checked = Properties.Settings.Default.explorer_context;
-
             initHelpTooltip();
             initVersionLabels();
         }
@@ -49,15 +43,18 @@ namespace BatchFileRenamer
         {
             lblVersion.Text = "Version " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             ToolTip vtt = new ToolTip();
-            vtt.SetToolTip(lblVersion, mainFrm.getLocStr(Properties.Settings.Default.language, "lblVersion_tooltip"));
+            vtt.SetToolTip(lblVersion, null);
+            vtt.SetToolTip(lblVersion, mainFrm.getLocStr("lblVersion_tooltip"));
             ToolTip ctt = new ToolTip();
-            ctt.SetToolTip(lblCreator, mainFrm.getLocStr(Properties.Settings.Default.language, "lblCreator_tooltip"));
+            ctt.SetToolTip(lblCreator, null);
+            ctt.SetToolTip(lblCreator, mainFrm.getLocStr("lblCreator_tooltip"));
         }
 
         private void initHelpTooltip()
         {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(helpContextSetting, mainFrm.getLocStr(Properties.Settings.Default.language, "settings_helpContextIntegration"));
+            tt.SetToolTip(helpContextSetting, null);
+            tt.SetToolTip(helpContextSetting, mainFrm.getLocStr("settings_helpContextIntegration"));
         }
 
         private void saveSettings()
@@ -65,6 +62,9 @@ namespace BatchFileRenamer
 
             switch (cbLanguage.SelectedIndex)
             {
+                case 2:
+                    Properties.Settings.Default.language = "fr";
+                    break;
                 case 1:
                     Properties.Settings.Default.language = "de";
                     break;
@@ -87,7 +87,7 @@ namespace BatchFileRenamer
             string menuEntry = "Folder\\shell\\startBatchFileRenamer";
             string menuCommand = menuEntry + "\\command";
             string menuCmdExecutable = System.Reflection.Assembly.GetEntryAssembly().Location+ " \"%1\"";
-            string labelText = mainFrm.getLocStr(Properties.Settings.Default.language, "context_menu_label");
+            string labelText = mainFrm.getLocStr("context_menu_label");
 
             if (status) 
             {
