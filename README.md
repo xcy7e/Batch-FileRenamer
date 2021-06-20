@@ -1,4 +1,4 @@
-<h1 align="center"># BatchFileRenamer</h1>
+<h1 align="center"># Batch-FileRenamer</h1>
 <br>
 <p  align="center">Rename multiple files or directories at once<br>apply filters & perform automatic numbering</p>
 
