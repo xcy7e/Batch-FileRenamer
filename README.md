@@ -1,6 +1,6 @@
 <h1 align="center"># Batch-FileRenamer</h1>
 <br>
-<p  align="center">Rename multiple files or directories at once<br>apply filters & perform automatic numbering</p>
+<p  align="center">Rename multiple files or directories at once<br>apply filters & perform automatic numbering<br>revert your rename action</p>
 
 <h2 align="center">Easy to use user interface</h2>
 
@@ -10,9 +10,11 @@
 <br>
 
 ## Features:
-* English & German language translations!
+* English, German & French language translations!
 
 * Handles files & directories!
+
+* Revert your action after renaming
 
 * Files can be limited by one or multiple filetypes!
 
@@ -23,7 +25,7 @@
 
 * Windows Explorer context menu integration (enable in settings)
 
-* Final protocol to see what has changed through the renaming process
+* See your changes colorized in a handy item list
 
 * Extremely intuitive UI
 
