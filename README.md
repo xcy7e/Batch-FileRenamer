@@ -5,7 +5,7 @@
 <h2 align="center">Easy to use user interface</h2>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/5656573/122369804-d0aff500-cf5e-11eb-87b9-25adf240ddc9.png" alt="BatchFileRenamer UI"/>
+  <img src="https://user-images.githubusercontent.com/5656573/122681404-7760f380-d1f4-11eb-9bb6-98d74b6a2b9f.png" alt="BatchFileRenamer UI"/>
 </p>
 <br>
 
@@ -36,6 +36,6 @@
 <h1 align="center">How to install</h1>
 <p align="center">
 To install this application, download and extract the latest zip file:</p>
-<h3 align="center"><a href="https://github.com/xcy7e/Batch-FileRenamer/blob/master/BatchFileRenamer_v1.6.0.1.zip">BatchFileRenamer_v1.6.0.1.zip</a></h3>
+<h3 align="center"><a href="https://github.com/xcy7e/Batch-FileRenamer/blob/master/BatchFileRenamer_v2.0.1.1.zip">BatchFileRenamer_v2.0.1.1.zip</a></h3>
 <p align="center">(<i>Extract & run setup.exe</i>)</p>
 <br><br>
