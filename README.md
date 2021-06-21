@@ -10,7 +10,7 @@
 <br>
 
 ## Features:
-* English, German & French language translations!
+* English, German & French interface language!
 
 * Handles files & directories!
 
