@@ -61,6 +61,16 @@ namespace BatchFileRenamer.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
+        /// </summary>
+        internal static byte[] contexicon {
+            get {
+                object obj = ResourceManager.GetObject("contexicon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap flag_de {
@@ -86,6 +96,26 @@ namespace BatchFileRenamer.Properties {
         internal static System.Drawing.Bitmap flag_fr {
             get {
                 object obj = ResourceManager.GetObject("flag_fr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon {
+            get {
+                object obj = ResourceManager.GetObject("icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconbg {
+            get {
+                object obj = ResourceManager.GetObject("iconbg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

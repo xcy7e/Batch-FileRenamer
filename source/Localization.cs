@@ -79,9 +79,9 @@ namespace BatchFileRenamer
             tDE.Add("settings_helpContextIntegration", "Fügt eine Funktion im Windows-Explorer Rechtsklickmenü ein,\num Batch FileRenamer vom jeweiligen Pfad auszuführen.");
             tEN.Add("settings_helpContextIntegration", "Adds an entry in windows-explorer rightclick menu,\nto start Batch FileRenamer from a respective location.");
             tFR.Add("settings_helpContextIntegration", "Ajoute une entrée dans le menu contextuel de l'explorateur Windows,\ne pas démarrer Batch File Renamer à partir d'un emplacement respectif.");
-            tDE.Add("context_menu_label", "Batch FileRenamer starten");
-            tEN.Add("context_menu_label", "start batch fileRenamer");
-            tFR.Add("context_menu_label", "commencer batch fileRenamer");
+            tDE.Add("context_menu_label", "BatchFileRenamer starten");
+            tEN.Add("context_menu_label", "BatchFileRenamer start");
+            tFR.Add("context_menu_label", "BatchFileRenamer commencer");
             tDE.Add("lblVersion_tooltip", "Öffne Github-Repository");
             tEN.Add("lblVersion_tooltip", "Open Github-Repository");
             tFR.Add("lblVersion_tooltip", "Ouvrir Github-Repository");

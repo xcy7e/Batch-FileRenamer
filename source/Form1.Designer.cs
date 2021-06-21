@@ -39,6 +39,7 @@ namespace BatchFileRenamer
             this.colBefore = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colAfter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gbSource = new System.Windows.Forms.GroupBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnOpenDir = new System.Windows.Forms.PictureBox();
             this.pFileending = new System.Windows.Forms.Panel();
             this.cbFileending = new System.Windows.Forms.CheckBox();
@@ -46,6 +47,8 @@ namespace BatchFileRenamer
             this.rbDirs = new System.Windows.Forms.RadioButton();
             this.rbFiles = new System.Windows.Forms.RadioButton();
             this.gbRules = new System.Windows.Forms.GroupBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnResetRules = new System.Windows.Forms.PictureBox();
             this.pRule_3 = new System.Windows.Forms.Panel();
             this.lblRule_3_Explanation = new System.Windows.Forms.Label();
@@ -67,7 +70,6 @@ namespace BatchFileRenamer
             this.cbRule_0_Numbers = new System.Windows.Forms.CheckBox();
             this.pbSeparator_1 = new System.Windows.Forms.PictureBox();
             this.pRule_1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblRule_1_ReplaceLbl = new System.Windows.Forms.Label();
             this.txtRule_1_Replace = new System.Windows.Forms.TextBox();
             this.lblRule_1_SearchLbl = new System.Windows.Forms.Label();
@@ -80,16 +82,18 @@ namespace BatchFileRenamer
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.gbFiles.SuspendLayout();
             this.gbSource.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOpenDir)).BeginInit();
             this.pFileending.SuspendLayout();
             this.gbRules.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnResetRules)).BeginInit();
             this.pRule_3.SuspendLayout();
             this.pRule_2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSeparator_1)).BeginInit();
             this.pRule_1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -139,6 +143,7 @@ namespace BatchFileRenamer
             // gbSource
             // 
             resources.ApplyResources(this.gbSource, "gbSource");
+            this.gbSource.Controls.Add(this.pictureBox4);
             this.gbSource.Controls.Add(this.btnOpenDir);
             this.gbSource.Controls.Add(this.pFileending);
             this.gbSource.Controls.Add(this.rbDirs);
@@ -147,6 +152,14 @@ namespace BatchFileRenamer
             this.gbSource.Controls.Add(this.btnSearchPath);
             this.gbSource.Name = "gbSource";
             this.gbSource.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::BatchFileRenamer.Properties.Resources.iconbg;
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.TabStop = false;
             // 
             // btnOpenDir
             // 
@@ -163,9 +176,9 @@ namespace BatchFileRenamer
             // 
             // pFileending
             // 
+            resources.ApplyResources(this.pFileending, "pFileending");
             this.pFileending.Controls.Add(this.cbFileending);
             this.pFileending.Controls.Add(this.txtFiletype);
-            resources.ApplyResources(this.pFileending, "pFileending");
             this.pFileending.Name = "pFileending";
             // 
             // cbFileending
@@ -200,6 +213,8 @@ namespace BatchFileRenamer
             // gbRules
             // 
             resources.ApplyResources(this.gbRules, "gbRules");
+            this.gbRules.Controls.Add(this.pictureBox5);
+            this.gbRules.Controls.Add(this.pictureBox1);
             this.gbRules.Controls.Add(this.btnResetRules);
             this.gbRules.Controls.Add(this.pRule_3);
             this.gbRules.Controls.Add(this.lblRule_0_example);
@@ -214,30 +229,44 @@ namespace BatchFileRenamer
             this.gbRules.Name = "gbRules";
             this.gbRules.TabStop = false;
             // 
+            // pictureBox5
+            // 
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // btnResetRules
             // 
-            this.btnResetRules.Image = global::BatchFileRenamer.Properties.Resources.shell32_16803_disabled;
             resources.ApplyResources(this.btnResetRules, "btnResetRules");
+            this.btnResetRules.Image = global::BatchFileRenamer.Properties.Resources.shell32_16803_disabled;
             this.btnResetRules.Name = "btnResetRules";
             this.btnResetRules.TabStop = false;
             this.btnResetRules.Click += new System.EventHandler(this.btnResetRules_Click);
             // 
             // pRule_3
             // 
+            resources.ApplyResources(this.pRule_3, "pRule_3");
             this.pRule_3.BackColor = System.Drawing.Color.Transparent;
             this.pRule_3.Controls.Add(this.lblRule_3_Explanation);
             this.pRule_3.Controls.Add(this.labellblRule_3_Append);
             this.pRule_3.Controls.Add(this.txtRule_3_Append);
             this.pRule_3.Controls.Add(this.lblRule_3_Prepend);
             this.pRule_3.Controls.Add(this.txtRule_3_Prepend);
-            resources.ApplyResources(this.pRule_3, "pRule_3");
             this.pRule_3.Name = "pRule_3";
             // 
             // lblRule_3_Explanation
             // 
-            this.lblRule_3_Explanation.CausesValidation = false;
             resources.ApplyResources(this.lblRule_3_Explanation, "lblRule_3_Explanation");
-            this.lblRule_3_Explanation.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lblRule_3_Explanation.CausesValidation = false;
+            this.lblRule_3_Explanation.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lblRule_3_Explanation.Name = "lblRule_3_Explanation";
             // 
             // labellblRule_3_Append
@@ -281,19 +310,19 @@ namespace BatchFileRenamer
             // 
             // pRule_2
             // 
+            resources.ApplyResources(this.pRule_2, "pRule_2");
             this.pRule_2.BackColor = System.Drawing.Color.Transparent;
             this.pRule_2.Controls.Add(this.pictureBox2);
             this.pRule_2.Controls.Add(this.lblRule_2_ReplaceLbl);
             this.pRule_2.Controls.Add(this.txtRule_2_Replace);
             this.pRule_2.Controls.Add(this.lblRule_2_SearchLbl);
             this.pRule_2.Controls.Add(this.txtRule_2_Search);
-            resources.ApplyResources(this.pRule_2, "pRule_2");
             this.pRule_2.Name = "pRule_2";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
@@ -344,28 +373,20 @@ namespace BatchFileRenamer
             // 
             // pbSeparator_1
             // 
-            this.pbSeparator_1.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.pbSeparator_1, "pbSeparator_1");
+            this.pbSeparator_1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pbSeparator_1.Name = "pbSeparator_1";
             this.pbSeparator_1.TabStop = false;
             // 
             // pRule_1
             // 
+            resources.ApplyResources(this.pRule_1, "pRule_1");
             this.pRule_1.BackColor = System.Drawing.Color.Transparent;
-            this.pRule_1.Controls.Add(this.pictureBox1);
             this.pRule_1.Controls.Add(this.lblRule_1_ReplaceLbl);
             this.pRule_1.Controls.Add(this.txtRule_1_Replace);
             this.pRule_1.Controls.Add(this.lblRule_1_SearchLbl);
             this.pRule_1.Controls.Add(this.txtRule_1_Search);
-            resources.ApplyResources(this.pRule_1, "pRule_1");
             this.pRule_1.Name = "pRule_1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
             // 
             // lblRule_1_ReplaceLbl
             // 
@@ -454,11 +475,14 @@ namespace BatchFileRenamer
             this.gbFiles.ResumeLayout(false);
             this.gbSource.ResumeLayout(false);
             this.gbSource.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOpenDir)).EndInit();
             this.pFileending.ResumeLayout(false);
             this.pFileending.PerformLayout();
             this.gbRules.ResumeLayout(false);
             this.gbRules.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnResetRules)).EndInit();
             this.pRule_3.ResumeLayout(false);
             this.pRule_3.PerformLayout();
@@ -468,7 +492,6 @@ namespace BatchFileRenamer
             ((System.ComponentModel.ISupportInitialize)(this.pbSeparator_1)).EndInit();
             this.pRule_1.ResumeLayout(false);
             this.pRule_1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
@@ -494,7 +517,6 @@ namespace BatchFileRenamer
         private System.Windows.Forms.CheckBox cbRule_0_Numbers;
         private System.Windows.Forms.PictureBox pbSeparator_1;
         private System.Windows.Forms.Panel pRule_1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblRule_1_ReplaceLbl;
         private System.Windows.Forms.TextBox txtRule_1_Replace;
         private System.Windows.Forms.Label lblRule_1_SearchLbl;
@@ -525,6 +547,9 @@ namespace BatchFileRenamer
         private System.Windows.Forms.PictureBox btnResetRules;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnRevert;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

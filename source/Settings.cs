@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BatchFileRenamer
@@ -82,6 +83,7 @@ namespace BatchFileRenamer
         private void setContextIntegration(bool status)
         {
             RegistryKey regmenu = null;
+            RegistryKey regicon = null;
             RegistryKey regcmd = null;
 
             string menuEntry = "Folder\\shell\\startBatchFileRenamer";
@@ -94,12 +96,26 @@ namespace BatchFileRenamer
                 // enable
                 try
                 {
+                    // ensure app-icon is stored in bin-path
+                    string execFullPath = System.Reflection.Assembly.GetEntryAssembly().Location;
+                    string execPath = execFullPath.Replace(System.Reflection.Assembly.GetEntryAssembly().ManifestModule.Name, "");
+                    File.WriteAllBytes(execPath + "\\contexticon.ico", Properties.Resources.contexicon);
+
+                    // entry 
                     regmenu = Registry.ClassesRoot.CreateSubKey(menuEntry);
                     if (regmenu != null)
+                    {
                         regmenu.SetValue("", labelText);
-                    regcmd = Registry.ClassesRoot.CreateSubKey(menuCommand);
-                    if (regcmd != null)
-                        regcmd.SetValue("", menuCmdExecutable);
+                        // icon
+                        string iconPath = execPath + "\\contexticon.ico";
+                        regmenu.SetValue("Icon", iconPath + ",0",RegistryValueKind.String);
+
+                        // command
+                        regcmd = Registry.ClassesRoot.CreateSubKey(menuCommand);
+                        if (regcmd != null)
+                            regcmd.SetValue("", menuCmdExecutable);
+                    }
+
                 }
                 catch (Exception ex)
                 {

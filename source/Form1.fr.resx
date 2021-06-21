@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnSearchPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>779, 22</value>
+    <value>660, 22</value>
   </data>
   <data name="btnSearchPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 26</value>
@@ -127,8 +127,8 @@
   <data name="btnSearchPath.Text" xml:space="preserve">
     <value>Sélectionner le dossier</value>
   </data>
-  <data name="txtPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>758, 24</value>
+  <data name="gbFiles.Text" xml:space="preserve">
+    <value> Contenu </value>
   </data>
   <data name="colBefore.Text" xml:space="preserve">
     <value>Devant</value>
@@ -136,11 +136,17 @@
   <data name="colAfter.Text" xml:space="preserve">
     <value>Après</value>
   </data>
-  <data name="gbFiles.Text" xml:space="preserve">
-    <value> Contenu </value>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value>La source</value>
   </data>
   <data name="btnOpenDir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>941, 23</value>
+    <value>822, 23</value>
+  </data>
+  <data name="pFileending.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 54</value>
+  </data>
+  <data name="pFileending.Size" type="System.Drawing.Size, System.Drawing">
+    <value>469, 27</value>
   </data>
   <data name="cbFileending.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 19</value>
@@ -150,12 +156,6 @@
   </data>
   <data name="txtFiletype.Size" type="System.Drawing.Size, System.Drawing">
     <value>364, 22</value>
-  </data>
-  <data name="pFileending.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 54</value>
-  </data>
-  <data name="pFileending.Size" type="System.Drawing.Size, System.Drawing">
-    <value>469, 27</value>
   </data>
   <data name="rbDirs.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 20</value>
@@ -169,8 +169,8 @@
   <data name="rbFiles.Text" xml:space="preserve">
     <value>Fichiers</value>
   </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value>La source</value>
+  <data name="gbRules.Text" xml:space="preserve">
+    <value> Réglementer </value>
   </data>
   <data name="lblRule_3_Explanation.Text" xml:space="preserve">
     <value>Ajouter un texte à chaque dossier</value>
@@ -206,7 +206,7 @@
     <value>172, 19</value>
   </data>
   <data name="lblRule_0_example.Text" xml:space="preserve">
-    <value>01-Nomdefichier</value>
+    <value>01-Nomdedossiers</value>
   </data>
   <data name="txtRule_0_pattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 48</value>
@@ -289,15 +289,8 @@
   <data name="txtRule_1_Search.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 21</value>
   </data>
-  <data name="gbRules.Text" xml:space="preserve">
-    <value> Réglementer </value>
-  </data>
   <data name="btnStart.Text" xml:space="preserve">
     <value>Commencer</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnRevert.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="btnRevert.Text" xml:space="preserve">
     <value>Revenir</value>
