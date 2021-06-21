@@ -5,12 +5,12 @@
 <h2 align="center">Easy to use user interface</h2>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/5656573/122681404-7760f380-d1f4-11eb-9bb6-98d74b6a2b9f.png" alt="BatchFileRenamer UI"/>
+  <img src="https://user-images.githubusercontent.com/5656573/122804203-e3f8f280-d2c7-11eb-8a88-ec8b813d43e0.png" alt="BatchFileRenamer UI"/>
 </p>
 <br>
 
 ## Features:
-* English, German & French language translations!
+* English, German & French interface language!
 
 * Handles files & directories!
 
