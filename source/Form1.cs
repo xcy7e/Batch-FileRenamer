@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -28,11 +29,36 @@ namespace BatchFileRenamer
             InitializeComponent();
             resizeContentList();
             setButtonTooltip();
-            if(args.Length >= 1)
+            if (args.Length >= 1)
             {
                 // if called from context menu set path of selected folder
                 txtPath.Text = args[0].ToString();
                 btnStart.Enabled = true;
+            }
+            firstStart();
+        }
+
+        private void firstStart()
+        {
+            if(Properties.Settings.Default.first_start==true)
+            {
+                // Change icon of application in Windows AddOrRemove (Control Panel)
+                RegistryKey myUninstallKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall");
+                string iconSourcePath = System.Reflection.Assembly.GetExecutingAssembly().Location+",0";
+                string[] mySubKeyNames = myUninstallKey.GetSubKeyNames();
+                for (int i = 0; i <= mySubKeyNames.Length - 1; i++)
+                {
+                    RegistryKey myKey = myUninstallKey.OpenSubKey(mySubKeyNames[i], true);
+                    object myValue = myKey.GetValue("DisplayName");
+                    if (myValue != null && myValue.ToString() == "Batch FileRenamer")
+                    {
+                        myKey.SetValue("DisplayIcon", iconSourcePath);
+                        break;
+                    }
+                }
+                // done forever!
+                Properties.Settings.Default.first_start = false;
+                Properties.Settings.Default.Save();
             }
         }
 

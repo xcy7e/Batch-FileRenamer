@@ -75,7 +75,7 @@ namespace BatchFileRenamer
                     break;
             }    
             setContextIntegration(cbContextIntegration.Checked);
-
+            Properties.Settings.Default.Save();
             mainFrm.updateLanguage();
             this.Close();
         }

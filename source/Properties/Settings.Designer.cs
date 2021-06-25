@@ -46,5 +46,17 @@ namespace BatchFileRenamer.Properties {
                 this["explorer_context"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool first_start {
+            get {
+                return ((bool)(this["first_start"]));
+            }
+            set {
+                this["first_start"] = value;
+            }
+        }
     }
 }
