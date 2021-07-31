@@ -591,15 +591,19 @@ namespace BatchFileRenamer
                     string newFilenameFullPath = txtPath.Text + "\\" + newFilename;
                     if (oldFilename != newFilename)
                     {
+                        // check if new filename already exist and append suffix (_%n) at the end of filename
+                        string fileExt = Path.GetExtension(newFilenameFullPath);
+                        newFilenameFullPath = newFilenameFullPath.Substring(0, newFilenameFullPath.LastIndexOf(fileExt)) + fileExistDuplicateSuffix(newFilenameFullPath) + fileExt;
+
                         // RENAME
-                        if(simulateRename==false)
+                        if (simulateRename==false)
                         {
                             System.IO.File.Move(oldFilenameFullPath, newFilenameFullPath);
                         }
                         // add list entry
                         ListViewItem itemListRow = new ListViewItem(oldFilename);
                         itemListRow.UseItemStyleForSubItems = false;
-                        itemListRow.SubItems.Add(newFilename);
+                        itemListRow.SubItems.Add(Path.GetFileName(newFilenameFullPath));
                         itemListRow.SubItems[1].ForeColor = Color.Green;
                         listViewContent.Items.Add(itemListRow);
 
@@ -635,6 +639,9 @@ namespace BatchFileRenamer
                     string newDirnameFullPath = txtPath.Text + "\\" + newDirname;
                     if(oldDirname != newDirname)
                     {
+                        // check if new dirname already exist and append suffix (_%n) 
+                        newDirnameFullPath = newDirnameFullPath + dirExistDuplicateSuffix(newDirnameFullPath);
+
                         // RENAME
                         if (simulateRename==false)
                         {
@@ -643,7 +650,7 @@ namespace BatchFileRenamer
                         // add protocoll entry
                         ListViewItem itemListRow = new ListViewItem(oldDirname);
                         itemListRow.UseItemStyleForSubItems = false;
-                        itemListRow.SubItems.Add(newDirname);
+                        itemListRow.SubItems.Add(new DirectoryInfo(newDirnameFullPath).Name);
                         itemListRow.SubItems[1].ForeColor = Color.Green;
                         listViewContent.Items.Add(itemListRow);
 
@@ -667,6 +674,46 @@ namespace BatchFileRenamer
             }
             saveRules();
             finish();
+        }
+
+        private string fileExistDuplicateSuffix(string filename, string parentDir = null, int c = 1)
+        {
+            string suffix = "";
+            string tmpSuffix = "";
+            if(parentDir != null)
+            {
+                filename = parentDir + @"\" + filename;
+            }
+            while(File.Exists(filename+tmpSuffix))
+            {
+                c++;
+                tmpSuffix = "_" + c.ToString();
+            }
+            if(c > 1)
+            {
+                suffix = "_" + c.ToString();
+            }
+            return suffix;
+        }
+
+        private string dirExistDuplicateSuffix(string dirname, string parentDir = null, int c = 1)
+        {
+            string suffix = "";
+            string tmpSuffix = "";
+            if (parentDir != null)
+            {
+                dirname = parentDir + @"\" + dirname;
+            }
+            while (Directory.Exists(dirname+tmpSuffix))
+            {
+                c++;
+                tmpSuffix = "_" + c.ToString();
+            }
+            if(c > 1)
+            {
+                suffix = "_" + c.ToString();
+            }
+            return suffix;
         }
 
         private void finish()
