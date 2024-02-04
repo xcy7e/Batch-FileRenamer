@@ -5,8 +5,9 @@
 <h2 align="center">Intuitive Interface</h2>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/5656573/122804203-e3f8f280-d2c7-11eb-8a88-ec8b813d43e0.png" alt="BatchFileRenamer UI"/>
+  <img src="https://github.com/xcy7e/Batch-FileRenamer/assets/5656573/b408ca4f-8f01-4199-853e-bd8a2b10172b" alt="BatchFileRenamer UI"/>
 </p>
+
 <br>
 
 ## Features:
