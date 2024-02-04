@@ -76,6 +76,13 @@ namespace BatchFileRenamer
             tEN.Add("revert_rename_dialog_error_msg", "%n %e could not been reverted!");
             tFR.Add("revert_rename_dialog_error_msg", "%n %e n'ont pas pu être rétablis!");
 
+            tDE.Add("regex_help_tooltip", "Öffne regex101.com für weitere Unterstützung");
+            tEN.Add("regex_help_tooltip", "Open regex101.com for more information");
+            tFR.Add("regex_help_tooltip", "Ouvrez regex101.com pour obtenir de l'aide supplémentaire");
+            tDE.Add("err_regex_invalid", "Regex ungültig!");
+            tEN.Add("err_regex_invalid", "Regex invalid!");
+            tFR.Add("err_regex_invalid", "Regex invalide!");
+
             tDE.Add("settings_helpContextIntegration", "Fügt eine Funktion im Windows-Explorer Rechtsklickmenü ein,\num Batch FileRenamer vom jeweiligen Pfad auszuführen.");
             tEN.Add("settings_helpContextIntegration", "Adds an entry in windows-explorer rightclick menu,\nto start Batch FileRenamer from a respective location.");
             tFR.Add("settings_helpContextIntegration", "Ajoute une entrée dans le menu contextuel de l'explorateur Windows,\ne pas démarrer Batch File Renamer à partir d'un emplacement respectif.");

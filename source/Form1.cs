@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -18,6 +19,7 @@ namespace BatchFileRenamer
         public bool renamingCompleted = false;
         private bool rulesChanged = true;
         private bool simulateRename = false; // true = do not change any file/dir names
+        private bool regexInvalid = false;
 
         private Dictionary<string, string> lastRules = new Dictionary<string, string>();
         private Dictionary<int, Dictionary<string, string>> renamedFiles = new Dictionary<int, Dictionary<string, string>>();
@@ -27,6 +29,16 @@ namespace BatchFileRenamer
         {
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(Properties.Settings.Default.language);
             InitializeComponent();
+
+            // set viewmode from last session
+            if(Properties.Settings.Default.view_mode == 'f')
+            {
+                rbFiles.Checked = true;
+            } else
+            {
+                rbDirs.Checked = true;
+            }
+
             resizeContentList();
             setButtonTooltip();
             if (args.Length >= 1)
@@ -60,6 +72,10 @@ namespace BatchFileRenamer
                 Properties.Settings.Default.first_start = false;
                 Properties.Settings.Default.Save();
             }
+
+            dropDown_rule4_regexOptions.SelectedIndex = 0;
+            cbRule4_RegexEnable.Checked = false;
+            this.enableDisableRule4Regex();
         }
 
         private void setButtonTooltip()
@@ -78,6 +94,10 @@ namespace BatchFileRenamer
                 // files
                 t2.SetToolTip(btnRevert, getLocStr("btnRevert_files_tt"));
             }
+
+            ToolTip regexHelptt = new ToolTip();
+            regexHelptt.SetToolTip(llabel_rule4_regex101Link, null);
+            regexHelptt.SetToolTip(llabel_rule4_regex101Link, getLocStr("regex_help_tooltip"));
         }
 
         private void setLabelText()
@@ -127,6 +147,9 @@ namespace BatchFileRenamer
                 ToolTip t = new ToolTip();
                 t.SetToolTip(btnRevert, null);
                 t.SetToolTip(btnRevert, getLocStr("btnRevert_files_tt"));
+
+                // ViewMode speichern
+                Properties.Settings.Default.view_mode = 'f';
             } else
             {
                 lblRule_3_Explanation.Text = getLocStr("label_rule3_explanation_dir");
@@ -134,6 +157,9 @@ namespace BatchFileRenamer
                 ToolTip t = new ToolTip();
                 t.SetToolTip(btnRevert, null);
                 t.SetToolTip(btnRevert, getLocStr("btnRevert_dirs_tt"));
+
+                // ViewMode speichern
+                Properties.Settings.Default.view_mode = 'd';
             }
         }
 
@@ -151,6 +177,7 @@ namespace BatchFileRenamer
             }
             list.Items.Clear();
             int itemsCount = 0;
+            this.regexInvalid = false;
 
             DirectoryInfo dinfo = new DirectoryInfo(dir);
 
@@ -358,6 +385,48 @@ namespace BatchFileRenamer
             } else
             {
                 newName = newName + txtRule_3_Append.Text;
+            }
+            // 6. Regex
+            if(cbRule4_RegexEnable.Checked && this.regexInvalid == false)
+            {
+                try
+                {
+                    if (rbRule_4_matchDelete.Checked)
+                    {
+                        // Regex-Remove
+                        newName = Regex.Replace(newName, txtRule_4_Regex.Text, "");
+                    }
+                    else
+                    {
+                        // Regex-Replace
+                        RegexOptions regOpt = RegexOptions.None;
+                        switch (dropDown_rule4_regexOptions.SelectedIndex)
+                        {
+                            case 1:
+                                regOpt = RegexOptions.IgnoreCase;
+                                break;
+                            case 2:
+                                regOpt = RegexOptions.Compiled;
+                                break;
+                            case 3:
+                                regOpt = RegexOptions.Singleline;
+                                break;
+                            case 4:
+                                regOpt = RegexOptions.Multiline;
+                                break;
+                        }
+
+                        newName = Regex.Replace(newName, txtRule_4_Regex.Text, txtRule_4_Replace.Text, regOpt);
+                    }
+                    this.regexInvalid = false;
+                    lbl_rule4_regexError.Visible = false;
+                } catch(ArgumentException e)
+                {
+                    lbl_rule4_regexError.Text = this.getLocStr("err_regex_invalid") + "\n" + e.Message;
+                    lbl_rule4_regexError.Visible = true;
+                    this.regexInvalid = true;
+                }
+                
             }
             return newName;
         }
@@ -736,6 +805,11 @@ namespace BatchFileRenamer
             txtRule_2_Search.Text = "";
             txtRule_2_Replace.Text = "";
             txtRule_0_pattern.Text = "%nn-";
+            txtRule_4_Regex.Text = "";
+            txtRule_4_Replace.Text = "";
+            dropDown_rule4_regexOptions.SelectedIndex = 0;
+            lbl_rule4_regexError.Text = "Regex ungültig!";
+            lbl_rule4_regexError.Visible = false;
             btnRevert.Enabled = true;
             renamingCompleted = false;
         }
@@ -772,6 +846,16 @@ namespace BatchFileRenamer
             cbRule_0_Numbers.Checked = false;
             rbRule_0_before.Checked = true;
             lblRule_0_example.Text = "";
+            txtRule_4_Regex.Text = Properties.Settings.Default.regex_default;
+            txtRule_4_Replace.Text = "";
+            rbRule_4_matchReplace.Checked = true;
+            cbRule4_RegexEnable.Checked = false;
+            dropDown_rule4_regexOptions.SelectedIndex = 0;
+            lbl_rule4_regexError.Visible = false;
+            lbl_rule4_regexError.Text = getLocStr("err_regex_invalid");
+            ToolTip regexHelptt = new ToolTip();
+            regexHelptt.SetToolTip(llabel_rule4_regex101Link, null);
+            regexHelptt.SetToolTip(llabel_rule4_regex101Link, getLocStr("regex_help_tooltip"));
             setExampleRuleText();
 
             btnResetRules.Image = Properties.Resources.shell32_16803_disabled;
@@ -1018,6 +1102,66 @@ namespace BatchFileRenamer
                     row.SubItems[1].ForeColor = Color.Black;
                 }
             }
+        }
+
+        /**
+         * Enable/Disable "Regex-Replace"-Textbox
+         */
+        private void rbRule_4_matchDelete_CheckedChanged(object sender, EventArgs e)
+        {
+            txtRule_4_Replace.Enabled = !rbRule_4_matchDelete.Checked;
+            updateResultExample();
+        }
+
+        /**
+         * Enable "Regex-Replace"-Textbox (ensure its enabled, though negative radio-group logic should handle this)
+         */
+        private void rbRule_4_matchReplace_CheckedChanged(object sender, EventArgs e)
+        {
+            txtRule_4_Replace.Enabled = rbRule_4_matchReplace.Checked;
+            updateResultExample();
+        }
+
+        private void txtRule_4_Regex_TextChanged(object sender, EventArgs e)
+        {
+            updateResultExample();
+        }
+
+        private void txtRule_4_Replace_TextChanged(object sender, EventArgs e)
+        {
+            updateResultExample();
+        }
+
+        private void dropDown_rule4_regexOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateResultExample();
+        }
+
+        private void llabel_rule4_regex101Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Öffne den eingegeben Regex-String auf regex101 für .NET
+            string url = "https://regex101.com/?flavor=dotnet&regex=";
+            url = Uri.EscapeUriString(url+txtRule_4_Regex.Text);
+
+            ProcessStartInfo sInfo = new ProcessStartInfo(url);
+            Process.Start(sInfo);
+
+        }
+
+        private void cbRule4_RegexEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            this.enableDisableRule4Regex();
+
+            updateResultExample();
+        }
+
+        private void enableDisableRule4Regex()
+        {
+            txtRule_4_Regex.Enabled = cbRule4_RegexEnable.Checked;
+            rbRule_4_matchReplace.Enabled = cbRule4_RegexEnable.Checked;
+            rbRule_4_matchDelete.Enabled = cbRule4_RegexEnable.Checked;
+            dropDown_rule4_regexOptions.Enabled = cbRule4_RegexEnable.Checked;
+            txtRule_4_Replace.Enabled = cbRule4_RegexEnable.Checked;
         }
     }
 }

@@ -47,16 +47,28 @@ namespace BatchFileRenamer
             this.rbDirs = new System.Windows.Forms.RadioButton();
             this.rbFiles = new System.Windows.Forms.RadioButton();
             this.gbRules = new System.Windows.Forms.GroupBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cbRule4_RegexEnable = new System.Windows.Forms.CheckBox();
+            this.dropDown_rule4_regexOptions = new System.Windows.Forms.ComboBox();
+            this.llabel_rule4_regex101Link = new System.Windows.Forms.LinkLabel();
+            this.lbl_rule4_regexError = new System.Windows.Forms.Label();
+            this.rbRule_4_matchDelete = new System.Windows.Forms.RadioButton();
+            this.rbRule_4_matchReplace = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRule_4_Replace = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtRule_4_Regex = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnResetRules = new System.Windows.Forms.PictureBox();
+            this.lblRule_0_example = new System.Windows.Forms.Label();
             this.pRule_3 = new System.Windows.Forms.Panel();
             this.lblRule_3_Explanation = new System.Windows.Forms.Label();
             this.labellblRule_3_Append = new System.Windows.Forms.Label();
             this.txtRule_3_Append = new System.Windows.Forms.TextBox();
             this.lblRule_3_Prepend = new System.Windows.Forms.Label();
             this.txtRule_3_Prepend = new System.Windows.Forms.TextBox();
-            this.lblRule_0_example = new System.Windows.Forms.Label();
             this.txtRule_0_pattern = new System.Windows.Forms.TextBox();
             this.lblRule_0_pattern = new System.Windows.Forms.Label();
             this.pRule_2 = new System.Windows.Forms.Panel();
@@ -86,6 +98,7 @@ namespace BatchFileRenamer
             ((System.ComponentModel.ISupportInitialize)(this.btnOpenDir)).BeginInit();
             this.pFileending.SuspendLayout();
             this.gbRules.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnResetRules)).BeginInit();
@@ -155,8 +168,8 @@ namespace BatchFileRenamer
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.pictureBox4, "pictureBox4");
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::BatchFileRenamer.Properties.Resources.iconbg;
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.TabStop = false;
@@ -176,9 +189,9 @@ namespace BatchFileRenamer
             // 
             // pFileending
             // 
+            resources.ApplyResources(this.pFileending, "pFileending");
             this.pFileending.Controls.Add(this.cbFileending);
             this.pFileending.Controls.Add(this.txtFiletype);
-            resources.ApplyResources(this.pFileending, "pFileending");
             this.pFileending.Name = "pFileending";
             // 
             // cbFileending
@@ -213,11 +226,11 @@ namespace BatchFileRenamer
             // gbRules
             // 
             resources.ApplyResources(this.gbRules, "gbRules");
-            this.gbRules.Controls.Add(this.pictureBox5);
+            this.gbRules.Controls.Add(this.panel2);
             this.gbRules.Controls.Add(this.pictureBox1);
             this.gbRules.Controls.Add(this.btnResetRules);
-            this.gbRules.Controls.Add(this.pRule_3);
             this.gbRules.Controls.Add(this.lblRule_0_example);
+            this.gbRules.Controls.Add(this.pRule_3);
             this.gbRules.Controls.Add(this.txtRule_0_pattern);
             this.gbRules.Controls.Add(this.lblRule_0_pattern);
             this.gbRules.Controls.Add(this.pRule_2);
@@ -229,43 +242,149 @@ namespace BatchFileRenamer
             this.gbRules.Name = "gbRules";
             this.gbRules.TabStop = false;
             // 
+            // panel2
+            // 
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.cbRule4_RegexEnable);
+            this.panel2.Controls.Add(this.dropDown_rule4_regexOptions);
+            this.panel2.Controls.Add(this.llabel_rule4_regex101Link);
+            this.panel2.Controls.Add(this.lbl_rule4_regexError);
+            this.panel2.Controls.Add(this.rbRule_4_matchDelete);
+            this.panel2.Controls.Add(this.rbRule_4_matchReplace);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.txtRule_4_Replace);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.txtRule_4_Regex);
+            this.panel2.Name = "panel2";
+            // 
+            // cbRule4_RegexEnable
+            // 
+            resources.ApplyResources(this.cbRule4_RegexEnable, "cbRule4_RegexEnable");
+            this.cbRule4_RegexEnable.Name = "cbRule4_RegexEnable";
+            this.cbRule4_RegexEnable.UseVisualStyleBackColor = true;
+            this.cbRule4_RegexEnable.CheckedChanged += new System.EventHandler(this.cbRule4_RegexEnable_CheckedChanged);
+            // 
+            // dropDown_rule4_regexOptions
+            // 
+            resources.ApplyResources(this.dropDown_rule4_regexOptions, "dropDown_rule4_regexOptions");
+            this.dropDown_rule4_regexOptions.DropDownWidth = 150;
+            this.dropDown_rule4_regexOptions.FormattingEnabled = true;
+            this.dropDown_rule4_regexOptions.Items.AddRange(new object[] {
+            resources.GetString("dropDown_rule4_regexOptions.Items"),
+            resources.GetString("dropDown_rule4_regexOptions.Items1"),
+            resources.GetString("dropDown_rule4_regexOptions.Items2"),
+            resources.GetString("dropDown_rule4_regexOptions.Items3"),
+            resources.GetString("dropDown_rule4_regexOptions.Items4")});
+            this.dropDown_rule4_regexOptions.Name = "dropDown_rule4_regexOptions";
+            this.dropDown_rule4_regexOptions.SelectedIndexChanged += new System.EventHandler(this.dropDown_rule4_regexOptions_SelectedIndexChanged);
+            // 
+            // llabel_rule4_regex101Link
+            // 
+            resources.ApplyResources(this.llabel_rule4_regex101Link, "llabel_rule4_regex101Link");
+            this.llabel_rule4_regex101Link.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.llabel_rule4_regex101Link.Name = "llabel_rule4_regex101Link";
+            this.llabel_rule4_regex101Link.TabStop = true;
+            this.llabel_rule4_regex101Link.Tag = "";
+            this.llabel_rule4_regex101Link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llabel_rule4_regex101Link_LinkClicked);
+            // 
+            // lbl_rule4_regexError
+            // 
+            resources.ApplyResources(this.lbl_rule4_regexError, "lbl_rule4_regexError");
+            this.lbl_rule4_regexError.CausesValidation = false;
+            this.lbl_rule4_regexError.ForeColor = System.Drawing.Color.Red;
+            this.lbl_rule4_regexError.Name = "lbl_rule4_regexError";
+            // 
+            // rbRule_4_matchDelete
+            // 
+            resources.ApplyResources(this.rbRule_4_matchDelete, "rbRule_4_matchDelete");
+            this.rbRule_4_matchDelete.Name = "rbRule_4_matchDelete";
+            this.rbRule_4_matchDelete.UseVisualStyleBackColor = true;
+            this.rbRule_4_matchDelete.CheckedChanged += new System.EventHandler(this.rbRule_4_matchDelete_CheckedChanged);
+            // 
+            // rbRule_4_matchReplace
+            // 
+            resources.ApplyResources(this.rbRule_4_matchReplace, "rbRule_4_matchReplace");
+            this.rbRule_4_matchReplace.Checked = true;
+            this.rbRule_4_matchReplace.Name = "rbRule_4_matchReplace";
+            this.rbRule_4_matchReplace.TabStop = true;
+            this.rbRule_4_matchReplace.UseVisualStyleBackColor = true;
+            this.rbRule_4_matchReplace.CheckedChanged += new System.EventHandler(this.rbRule_4_matchReplace_CheckedChanged);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
             // pictureBox5
             // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.pictureBox5, "pictureBox5");
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
             // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.CausesValidation = false;
+            this.label2.Name = "label2";
+            // 
+            // txtRule_4_Replace
+            // 
+            resources.ApplyResources(this.txtRule_4_Replace, "txtRule_4_Replace");
+            this.txtRule_4_Replace.Name = "txtRule_4_Replace";
+            this.txtRule_4_Replace.TextChanged += new System.EventHandler(this.txtRule_4_Replace_TextChanged);
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // txtRule_4_Regex
+            // 
+            resources.ApplyResources(this.txtRule_4_Regex, "txtRule_4_Regex");
+            this.txtRule_4_Regex.CausesValidation = false;
+            this.txtRule_4_Regex.Name = "txtRule_4_Regex";
+            this.txtRule_4_Regex.Tag = "";
+            this.txtRule_4_Regex.TextChanged += new System.EventHandler(this.txtRule_4_Regex_TextChanged);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
             // btnResetRules
             // 
-            this.btnResetRules.Image = global::BatchFileRenamer.Properties.Resources.shell32_16803_disabled;
             resources.ApplyResources(this.btnResetRules, "btnResetRules");
+            this.btnResetRules.Image = global::BatchFileRenamer.Properties.Resources.shell32_16803_disabled;
             this.btnResetRules.Name = "btnResetRules";
             this.btnResetRules.TabStop = false;
             this.btnResetRules.Click += new System.EventHandler(this.btnResetRules_Click);
             // 
+            // lblRule_0_example
+            // 
+            resources.ApplyResources(this.lblRule_0_example, "lblRule_0_example");
+            this.lblRule_0_example.Name = "lblRule_0_example";
+            // 
             // pRule_3
             // 
+            resources.ApplyResources(this.pRule_3, "pRule_3");
             this.pRule_3.BackColor = System.Drawing.Color.Transparent;
             this.pRule_3.Controls.Add(this.lblRule_3_Explanation);
             this.pRule_3.Controls.Add(this.labellblRule_3_Append);
             this.pRule_3.Controls.Add(this.txtRule_3_Append);
             this.pRule_3.Controls.Add(this.lblRule_3_Prepend);
             this.pRule_3.Controls.Add(this.txtRule_3_Prepend);
-            resources.ApplyResources(this.pRule_3, "pRule_3");
             this.pRule_3.Name = "pRule_3";
             // 
             // lblRule_3_Explanation
             // 
-            this.lblRule_3_Explanation.CausesValidation = false;
             resources.ApplyResources(this.lblRule_3_Explanation, "lblRule_3_Explanation");
+            this.lblRule_3_Explanation.CausesValidation = false;
             this.lblRule_3_Explanation.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.lblRule_3_Explanation.Name = "lblRule_3_Explanation";
             // 
@@ -292,11 +411,6 @@ namespace BatchFileRenamer
             this.txtRule_3_Prepend.Name = "txtRule_3_Prepend";
             this.txtRule_3_Prepend.TextChanged += new System.EventHandler(this.txtRule_3_Prepend_TextChanged);
             // 
-            // lblRule_0_example
-            // 
-            resources.ApplyResources(this.lblRule_0_example, "lblRule_0_example");
-            this.lblRule_0_example.Name = "lblRule_0_example";
-            // 
             // txtRule_0_pattern
             // 
             resources.ApplyResources(this.txtRule_0_pattern, "txtRule_0_pattern");
@@ -310,19 +424,19 @@ namespace BatchFileRenamer
             // 
             // pRule_2
             // 
+            resources.ApplyResources(this.pRule_2, "pRule_2");
             this.pRule_2.BackColor = System.Drawing.Color.Transparent;
             this.pRule_2.Controls.Add(this.pictureBox2);
             this.pRule_2.Controls.Add(this.lblRule_2_ReplaceLbl);
             this.pRule_2.Controls.Add(this.txtRule_2_Replace);
             this.pRule_2.Controls.Add(this.lblRule_2_SearchLbl);
             this.pRule_2.Controls.Add(this.txtRule_2_Search);
-            resources.ApplyResources(this.pRule_2, "pRule_2");
             this.pRule_2.Name = "pRule_2";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.TabStop = false;
             // 
@@ -373,19 +487,19 @@ namespace BatchFileRenamer
             // 
             // pbSeparator_1
             // 
-            this.pbSeparator_1.BackColor = System.Drawing.SystemColors.ControlLight;
             resources.ApplyResources(this.pbSeparator_1, "pbSeparator_1");
+            this.pbSeparator_1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pbSeparator_1.Name = "pbSeparator_1";
             this.pbSeparator_1.TabStop = false;
             // 
             // pRule_1
             // 
+            resources.ApplyResources(this.pRule_1, "pRule_1");
             this.pRule_1.BackColor = System.Drawing.Color.Transparent;
             this.pRule_1.Controls.Add(this.lblRule_1_ReplaceLbl);
             this.pRule_1.Controls.Add(this.txtRule_1_Replace);
             this.pRule_1.Controls.Add(this.lblRule_1_SearchLbl);
             this.pRule_1.Controls.Add(this.txtRule_1_Search);
-            resources.ApplyResources(this.pRule_1, "pRule_1");
             this.pRule_1.Name = "pRule_1";
             // 
             // lblRule_1_ReplaceLbl
@@ -481,6 +595,8 @@ namespace BatchFileRenamer
             this.pFileending.PerformLayout();
             this.gbRules.ResumeLayout(false);
             this.gbRules.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnResetRules)).EndInit();
@@ -550,6 +666,18 @@ namespace BatchFileRenamer
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtRule_4_Replace;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtRule_4_Regex;
+        private System.Windows.Forms.RadioButton rbRule_4_matchDelete;
+        private System.Windows.Forms.RadioButton rbRule_4_matchReplace;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_rule4_regexError;
+        private System.Windows.Forms.LinkLabel llabel_rule4_regex101Link;
+        private System.Windows.Forms.ComboBox dropDown_rule4_regexOptions;
+        private System.Windows.Forms.CheckBox cbRule4_RegexEnable;
     }
 }
 

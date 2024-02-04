@@ -172,6 +172,75 @@
   <data name="gbRules.Text" xml:space="preserve">
     <value> Réglementer </value>
   </data>
+  <data name="cbRule4_RegexEnable.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 19</value>
+  </data>
+  <data name="cbRule4_RegexEnable.Text" xml:space="preserve">
+    <value>Expression régulière</value>
+  </data>
+  <data name="llabel_rule4_regex101Link.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 7</value>
+  </data>
+  <data name="llabel_rule4_regex101Link.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="llabel_rule4_regex101Link.Text" xml:space="preserve">
+    <value>Aider...</value>
+  </data>
+  <data name="lbl_rule4_regexError.Text" xml:space="preserve">
+    <value>Regex invalide !</value>
+  </data>
+  <data name="rbRule_4_matchDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 63</value>
+  </data>
+  <data name="rbRule_4_matchDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 19</value>
+  </data>
+  <data name="rbRule_4_matchDelete.Text" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="rbRule_4_matchReplace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 63</value>
+  </data>
+  <data name="rbRule_4_matchReplace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 19</value>
+  </data>
+  <data name="rbRule_4_matchReplace.Text" xml:space="preserve">
+    <value>Remplacement</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 15</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Résultats</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 15</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Remplacer</value>
+  </data>
+  <data name="txtRule_4_Replace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 88</value>
+  </data>
+  <data name="txtRule_4_Replace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtRule_4_Regex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 33</value>
+  </data>
+  <data name="txtRule_4_Regex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 22</value>
+  </data>
+  <data name="lblRule_0_example.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 51</value>
+  </data>
+  <data name="lblRule_0_example.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 19</value>
+  </data>
+  <data name="lblRule_0_example.Text" xml:space="preserve">
+    <value>01-Nomdedossiers</value>
+  </data>
   <data name="lblRule_3_Explanation.Text" xml:space="preserve">
     <value>Ajouter un texte à chaque dossier</value>
   </data>
@@ -198,15 +267,6 @@
   </data>
   <data name="txtRule_3_Prepend.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 21</value>
-  </data>
-  <data name="lblRule_0_example.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 51</value>
-  </data>
-  <data name="lblRule_0_example.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 19</value>
-  </data>
-  <data name="lblRule_0_example.Text" xml:space="preserve">
-    <value>01-Nomdedossiers</value>
   </data>
   <data name="txtRule_0_pattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 48</value>

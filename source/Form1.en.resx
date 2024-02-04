@@ -124,17 +124,14 @@
   <data name="btnSearchPath.Text" xml:space="preserve">
     <value>Choose directory</value>
   </data>
-  <data name="gbFiles.Text" xml:space="preserve">
-    <value> Content </value>
-  </data>
   <data name="colBefore.Text" xml:space="preserve">
     <value>Before</value>
   </data>
   <data name="colAfter.Text" xml:space="preserve">
     <value>After</value>
   </data>
-  <data name="gbSource.Text" xml:space="preserve">
-    <value> Source </value>
+  <data name="gbFiles.Text" xml:space="preserve">
+    <value> Content </value>
   </data>
   <data name="btnOpenDir.Location" type="System.Drawing.Point, System.Drawing">
     <value>787, 23</value>
@@ -163,8 +160,47 @@
   <data name="rbFiles.Text" xml:space="preserve">
     <value>Files</value>
   </data>
-  <data name="gbRules.Text" xml:space="preserve">
-    <value> Rules </value>
+  <data name="gbSource.Text" xml:space="preserve">
+    <value> Source </value>
+  </data>
+  <data name="cbRule4_RegexEnable.Text" xml:space="preserve">
+    <value>Regular Expression</value>
+  </data>
+  <data name="llabel_rule4_regex101Link.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="llabel_rule4_regex101Link.Text" xml:space="preserve">
+    <value>Help...</value>
+  </data>
+  <data name="lbl_rule4_regexError.Text" xml:space="preserve">
+    <value>Regex invalid!</value>
+  </data>
+  <data name="rbRule_4_matchDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 19</value>
+  </data>
+  <data name="rbRule_4_matchDelete.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="rbRule_4_matchReplace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 19</value>
+  </data>
+  <data name="rbRule_4_matchReplace.Text" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 15</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Matches</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 15</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="lblRule_0_example.Text" xml:space="preserve">
+    <value>01-Directoryname</value>
   </data>
   <data name="lblRule_3_Explanation.Text" xml:space="preserve">
     <value>Add text to every directory</value>
@@ -180,9 +216,6 @@
   </data>
   <data name="lblRule_3_Prepend.Text" xml:space="preserve">
     <value>Before</value>
-  </data>
-  <data name="lblRule_0_example.Text" xml:space="preserve">
-    <value>01-Directoryname</value>
   </data>
   <data name="lblRule_0_pattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 15</value>
@@ -234,6 +267,9 @@
   </data>
   <data name="lblRule_1_SearchLbl.Text" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="gbRules.Text" xml:space="preserve">
+    <value> Rules </value>
   </data>
   <data name="btnStart.Text" xml:space="preserve">
     <value>begin</value>
@@ -466,10 +502,6 @@
         AAAAAD8A/gAAAAAAfwD/AAAAAAD/AP+AAAAAAf8A/8AAAAAD/wD/8AAAAA//AP/4AAAAH/8A//4AAAB/
         /wD//4AAAf//AP//8AAP//8A////w////wA=
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Batch File Renamer</value>

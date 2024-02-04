@@ -11,5 +11,11 @@
     <Setting Name="first_start" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="regex_default" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">(?&lt;=\()[^)(]*(?=)</Value>
+    </Setting>
+    <Setting Name="view_mode" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">d</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

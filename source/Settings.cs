@@ -83,7 +83,7 @@ namespace BatchFileRenamer
         private void setContextIntegration(bool status)
         {
             RegistryKey regmenu = null;
-            RegistryKey regicon = null;
+            //RegistryKey regicon = null;
             RegistryKey regcmd = null;
 
             string menuEntry = "Folder\\shell\\startBatchFileRenamer";
@@ -176,7 +176,7 @@ namespace BatchFileRenamer
 
         private void lblCreator_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ProcessStartInfo sInfo = new ProcessStartInfo("http://www.xcy7e.de");
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://www.xcy7e.pro");
             Process.Start(sInfo);
         }
     }
