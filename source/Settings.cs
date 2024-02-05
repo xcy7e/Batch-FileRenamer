@@ -102,7 +102,7 @@ namespace BatchFileRenamer
                     File.WriteAllBytes(execPath + "\\contexticon.ico", Properties.Resources.contexicon);
 
                     // entry 
-                    regmenu = Registry.ClassesRoot.CreateSubKey(menuEntry);
+                    regmenu = Registry.ClassesRoot.CreateSubKey(menuEntry, true);
                     if (regmenu != null)
                     {
                         regmenu.SetValue("", labelText);
@@ -111,7 +111,7 @@ namespace BatchFileRenamer
                         regmenu.SetValue("Icon", iconPath + ",0",RegistryValueKind.String);
 
                         // command
-                        regcmd = Registry.ClassesRoot.CreateSubKey(menuCommand);
+                        regcmd = Registry.ClassesRoot.CreateSubKey(menuCommand, true);
                         if (regcmd != null)
                             regcmd.SetValue("", menuCmdExecutable);
                     }
@@ -136,13 +136,13 @@ namespace BatchFileRenamer
                 // disable
                 try
                 {
-                    RegistryKey reg = Registry.ClassesRoot.OpenSubKey(menuCommand);
+                    RegistryKey reg = Registry.ClassesRoot.OpenSubKey(menuCommand, true);
                     if (reg != null)
                     {
                         reg.Close();
                         Registry.ClassesRoot.DeleteSubKey(menuCommand);
                     }
-                    reg = Registry.ClassesRoot.OpenSubKey(menuEntry);
+                    reg = Registry.ClassesRoot.OpenSubKey(menuEntry, true);
                     if (reg != null)
                     {
                         reg.Close();
