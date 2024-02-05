@@ -40,7 +40,7 @@
 <h1 align="center">How to install</h1>
 <p align="center">
 To install this application, download and extract the latest zip file:</p>
-<h3 align="center"><a href="https://github.com/xcy7e/Batch-FileRenamer/blob/master/BatchFileRenamer_v2.1.0.1.zip">BatchFileRenamer_v2.1.0.1.zip</a></h3>
+<h3 align="center"><a href="https://github.com/xcy7e/Batch-FileRenamer/blob/master/BatchFileRenamer_v2.1.1.6.zip">BatchFileRenamer_v2.1.1.6.zip</a></h3>
 <p align="center">(<i>Extract & run setup.exe</i>)</p>
 <p align="center">Important: To updated an existing installation, please remove the current version before installing the new one.</p>
 <br><br>
