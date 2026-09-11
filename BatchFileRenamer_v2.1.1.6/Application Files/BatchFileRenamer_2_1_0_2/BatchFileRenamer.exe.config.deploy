@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <section name="BatchFileRenamer.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false"/>
+        </sectionGroup>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <section name="BatchFileRenamer.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false"/>
+        </sectionGroup>
+    </configSections>
+    <userSettings>
+        <BatchFileRenamer.Properties.Settings>
+            <setting name="language" serializeAs="String">
+                <value>en</value>
+            </setting>
+            <setting name="explorer_context" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="first_start" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="view_mode" serializeAs="String">
+                <value>d</value>
+            </setting>
+        </BatchFileRenamer.Properties.Settings>
+    </userSettings>
+    <applicationSettings>
+        <BatchFileRenamer.Properties.Settings>
+            <setting name="regex_default" serializeAs="String">
+                <value>(?&lt;=\()[^)(]*(?=)</value>
+            </setting>
+        </BatchFileRenamer.Properties.Settings>
+    </applicationSettings>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.8"/></startup></configuration>
